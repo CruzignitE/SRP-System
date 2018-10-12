@@ -6,15 +6,29 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TestForms
 {
     public partial class SalesRecords : Form
     {
+        //DATABASE CONNECTION VARIABLES
+        //string path = Application
+        private string path = Path.GetDirectoryName(Application.StartupPath);
+        private static string databasePath;
+        String conString;
+        //string path = Path.GetDirectoryName(Application.StartupPath);
+        SqlDataAdapter dataAdapter;
+        DataTable table;
+
         public SalesRecords()
         {
             InitializeComponent();
+            databasePath = path.Substring(0, path.Length - 3);
+            conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + databasePath + @"database\SRP_SYSTEM.mdf;Integrated Security=True;Connect Timeout=30";
+            AppDomain.CurrentDomain.SetData("dataPath", System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "database"));
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -89,18 +103,27 @@ namespace TestForms
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //DATABASE UDPATE 12/10/2018 BY FELIX
+        private void SalesRecords_Load(object sender, EventArgs e)
         {
-            DataGridTableStyle ts1 = new DataGridTableStyle();
-            ts1.MappingName = "Customers";
+            dataGridView1.DataSource = bindingSource1;
+            GetData("Select * from Product");
+        }
 
-            DataGridBoolColumn myDataCol = new DataGridBoolColumn();
-            myDataCol.HeaderText = "My New Column";
-            myDataCol.MappingName = "Current";
+        private void GetData(String cmd)
+        {
+            try
+            {
+                dataAdapter = new SqlDataAdapter(cmd, conString);
+                table = new DataTable();
+                dataAdapter.Fill(table);
 
-            ts1.GridColumnStyles.Add(myDataCol);
+                bindingSource1.DataSource = table;
 
-            dataGridView1.TableStyles.Add(ts1);
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
