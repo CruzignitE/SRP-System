@@ -16,3 +16,21 @@ D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.GenerateRe
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.CoreCompileInputs.cache
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.exe
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.pdb
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\add.png
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\confirm.png
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\delete.png
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\edit.png
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\inventory.png
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\log.png
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\sales-records.png
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\TestForms.exe.config
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\TestForms.exe
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\TestForms.pdb
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csprojAssemblyReference.cache
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.AddEditSalesRecord.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecords.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Properties.Resources.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.GenerateResource.cache
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.CoreCompileInputs.cache
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.exe
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.pdb

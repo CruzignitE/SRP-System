@@ -90,7 +90,8 @@ namespace TestForms
 
         private void addButton_Click(object sender, EventArgs e)
         {
-
+            AddEditSalesRecord AddRecord = new AddEditSalesRecord();
+            AddRecord.ShowDialog();  // Shows the AddEditSalesRecord page
         }
 
         private void editButton_Click(object sender, EventArgs e)
