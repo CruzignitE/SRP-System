@@ -52,6 +52,30 @@
     <Compile Include="AddEditSalesRecord.Designer.cs">
       <DependentUpon>AddEditSalesRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory.Designer.cs">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductsAdd.Designer.cs">
+      <DependentUpon>ProductsAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductsEdit.Designer.cs">
+      <DependentUpon>ProductsEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductsList.Designer.cs">
+      <DependentUpon>ProductsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalesRecords.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,8 +84,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StockAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockAdd.Designer.cs">
+      <DependentUpon>StockAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockEdit.Designer.cs">
+      <DependentUpon>StockEdit.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddEditSalesRecord.resx">
       <DependentUpon>AddEditSalesRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory.resx">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductsAdd.resx">
+      <DependentUpon>ProductsAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductsEdit.resx">
+      <DependentUpon>ProductsEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductsList.resx">
+      <DependentUpon>ProductsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesRecords.resx">
       <DependentUpon>SalesRecords.cs</DependentUpon>
@@ -76,6 +124,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="StockAdd.resx">
+      <DependentUpon>StockAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockEdit.resx">
+      <DependentUpon>StockEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +147,7 @@
     <Content Include="images\add.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\cancel.png" />
     <Content Include="images\confirm.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -109,6 +164,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\prediction.png" />
+    <Content Include="images\products.png" />
     <Content Include="images\sales-records.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
