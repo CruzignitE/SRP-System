@@ -34,3 +34,12 @@ C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\Test
 C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.CoreCompileInputs.cache
 C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.exe
 C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.pdb
+D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\images\cancel.png
+D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\images\prediction.png
+D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\images\products.png
+D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Inventory.resources
+D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsAdd.resources
+D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsEdit.resources
+D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsList.resources
+D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockAdd.resources
+D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockEdit.resources
