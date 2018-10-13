@@ -43,3 +43,12 @@ D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsEdit.reso
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsList.resources
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockAdd.resources
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockEdit.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\cancel.png
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\prediction.png
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\products.png
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Inventory.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsAdd.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsEdit.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsList.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockAdd.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockEdit.resources

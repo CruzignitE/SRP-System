@@ -126,6 +126,20 @@ namespace TestForms
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Inventory goInventory = new Inventory();
+            goInventory.ShowDialog(); // Shows the Inventory page
+            Hide(); // Lee: Needs debugging
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ProductsList goProductList = new ProductsList();
+            goProductList.ShowDialog(); // Shows the Product List page
+            Hide(); // Lee: Needs debugging
+        }
     }
 }
 
