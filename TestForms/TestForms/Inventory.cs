@@ -31,16 +31,20 @@ namespace TestForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SalesRecords goSalesRecords = new SalesRecords();
-            goSalesRecords.ShowDialog(); // Shows the Sales Records page
-            Hide(); // Lee: Needs debugging
+            SalesRecords goSalesRecords = new SalesRecords(); // Shows the Sales Records page
+            this.Hide();
+            goSalesRecords.FormClosed += (s, args) => this.Close();
+            goSalesRecords.Show();
+            goSalesRecords.Focus();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            ProductsList goProductsList = new ProductsList();
-            goProductsList.ShowDialog(); // Shows the Product List page
-            Hide(); // Lee: Needs debugging
+            ProductsList goProductsList = new ProductsList(); // Shows the Product List page
+            this.Hide();
+            goProductsList.FormClosed += (s, args) => this.Close();
+            goProductsList.Show();
+            goProductsList.Focus();
         }
     }
 }

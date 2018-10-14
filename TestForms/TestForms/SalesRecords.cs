@@ -129,16 +129,20 @@ namespace TestForms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Inventory goInventory = new Inventory();
-            goInventory.ShowDialog(); // Shows the Inventory page
-            Hide(); // Lee: Needs debugging
+            Inventory goInventory = new Inventory(); // Shows the Inventory page
+            this.Hide();
+            goInventory.FormClosed += (s, args) => this.Close();
+            goInventory.Show();
+            goInventory.Focus();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            ProductsList goProductList = new ProductsList();
-            goProductList.ShowDialog(); // Shows the Product List page
-            Hide(); // Lee: Needs debugging
+            ProductsList goProductList = new ProductsList();  // Shows the Product List page
+            this.Hide();
+            goProductList.FormClosed += (s, args) => this.Close();
+            goProductList.Show();
+            goProductList.Focus();
         }
     }
 }
