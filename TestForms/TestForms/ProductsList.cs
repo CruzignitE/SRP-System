@@ -27,7 +27,6 @@ namespace TestForms
             InitializeComponent();
             databasePath = path.Substring(0, path.Length - 3);
             conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + databasePath + @"database\SRP_SYSTEM.mdf;Integrated Security=True;Connect Timeout=30";
-            AppDomain.CurrentDomain.SetData("dataPath", System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "database"));
         }
 
         private void ProductsList_Load(object sender, EventArgs e)
@@ -36,7 +35,7 @@ namespace TestForms
             GetProductData("SELECT * FROM Product");
         }
 
-        private void GetProductData(String cmd)
+        public void GetProductData(String cmd)
         {
             try
             {

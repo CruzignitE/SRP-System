@@ -15,11 +15,9 @@ namespace TestForms
     public partial class SalesRecords : Form
     {
         //DATABASE CONNECTION VARIABLES
-        //string path = Application
         private string path = Path.GetDirectoryName(Application.StartupPath);
         private static string databasePath;
         String conString;
-        //string path = Path.GetDirectoryName(Application.StartupPath);
         SqlDataAdapter dataAdapter;
         DataTable table;
 
@@ -28,7 +26,6 @@ namespace TestForms
             InitializeComponent();
             databasePath = path.Substring(0, path.Length - 3);
             conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + databasePath + @"database\SRP_SYSTEM.mdf;Integrated Security=True;Connect Timeout=30";
-            AppDomain.CurrentDomain.SetData("dataPath", System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "database"));
         }
 
         private void label1_Click(object sender, EventArgs e)

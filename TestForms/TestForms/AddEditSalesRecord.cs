@@ -26,5 +26,11 @@ namespace TestForms
         {
             
         }
+
+        private void btnBrowseProduct_Click(object sender, EventArgs e)
+        {
+            BrowseProductForm browseProduct = new BrowseProductForm();
+            browseProduct.ShowDialog();
+        }
     }
 }

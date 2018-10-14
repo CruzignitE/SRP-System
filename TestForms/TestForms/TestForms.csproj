@@ -52,6 +52,12 @@
     <Compile Include="AddEditSalesRecord.Designer.cs">
       <DependentUpon>AddEditSalesRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="BrowseProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowseProductForm.Designer.cs">
+      <DependentUpon>BrowseProductForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="AddEditSalesRecord.resx">
       <DependentUpon>AddEditSalesRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrowseProductForm.resx">
+      <DependentUpon>BrowseProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
