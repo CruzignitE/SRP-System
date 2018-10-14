@@ -52,3 +52,30 @@ C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\Test
 C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsList.resources
 C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockAdd.resources
 C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockEdit.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\add.png
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\cancel.png
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\confirm.png
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\delete.png
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\edit.png
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\inventory.png
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\log.png
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\prediction.png
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\products.png
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\sales-records.png
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\TestForms.exe.config
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\TestForms.exe
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\TestForms.pdb
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csprojAssemblyReference.cache
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.AddEditSalesRecord.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Inventory.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsAdd.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsEdit.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsList.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecords.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Properties.Resources.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockAdd.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockEdit.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.GenerateResource.cache
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.CoreCompileInputs.cache
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.exe
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.pdb

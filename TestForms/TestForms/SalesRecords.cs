@@ -108,7 +108,7 @@ namespace TestForms
         private void SalesRecords_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = bindingSource1;
-            GetData("Select * from Product");
+            GetData("SELECT * FROM Sales_Record");
         }
 
         private void GetData(String cmd)
