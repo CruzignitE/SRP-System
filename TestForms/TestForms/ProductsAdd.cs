@@ -32,26 +32,36 @@ namespace TestForms
             string insertCmd = @"INSERT INTO Product (product_name, product_category, product_price, product_status)
                                     VALUES(@product_name, @product_category, @product_price, @product_status)";
 
-            using (SqlConnection conn = new SqlConnection(conString))
+            if (txtBoxName.Text != "" && txtBoxCategory.Text != "")
             {
-                try
+                using (SqlConnection conn = new SqlConnection(conString))
                 {
-                    conn.Open();
-                    command = new SqlCommand(insertCmd, conn);
-                    command.Parameters.AddWithValue(@"product_name", txtBoxName.Text);
-                    command.Parameters.AddWithValue(@"product_category", txtBoxCategory.Text);
-                    double price = Convert.ToDouble(txtBoxPrice.Text);
-                    command.Parameters.AddWithValue(@"product_price", price);
-                    command.Parameters.AddWithValue(@"product_status", 1);
-                    command.ExecuteNonQuery();
+                    try
+                    {
+                        conn.Open();
+                        command = new SqlCommand(insertCmd, conn);
+                        command.Parameters.AddWithValue(@"product_name", txtBoxName.Text);
+                        command.Parameters.AddWithValue(@"product_category", txtBoxCategory.Text);
+                        double price = Convert.ToDouble(txtBoxPrice.Text);
+                        command.Parameters.AddWithValue(@"product_price", price);
+                        command.Parameters.AddWithValue(@"product_status", 1);
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                ProductsList productsListForm = new ProductsList();
+                productsListForm.RefreshPage();
+                this.Close();
             }
-            ProductsList productsListForm = new ProductsList();
-            productsListForm.GetProductData("SELECT * FROM Product");
+            else
+                MessageBox.Show("The required form must be filled.");
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

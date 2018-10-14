@@ -46,7 +46,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBox1.Location = new System.Drawing.Point(44, 65);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(184, 26);
@@ -78,7 +78,7 @@
             // 
             this.txtBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtBoxName.Location = new System.Drawing.Point(280, 65);
-            this.txtBoxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.Size = new System.Drawing.Size(463, 26);
             this.txtBoxName.TabIndex = 2;
@@ -88,7 +88,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.checkBox1.Location = new System.Drawing.Point(783, 65);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(119, 24);
             this.checkBox1.TabIndex = 4;
@@ -110,7 +110,7 @@
             // 
             this.txtBoxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtBoxCategory.Location = new System.Drawing.Point(44, 145);
-            this.txtBoxCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxCategory.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxCategory.Name = "txtBoxCategory";
             this.txtBoxCategory.Size = new System.Drawing.Size(184, 26);
             this.txtBoxCategory.TabIndex = 5;
@@ -127,6 +127,7 @@
             this.editButton.Size = new System.Drawing.Size(67, 62);
             this.editButton.TabIndex = 27;
             this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // addButton
             // 
@@ -159,7 +160,7 @@
             this.txtBoxPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtBoxPrice.InterceptArrowKeys = false;
             this.txtBoxPrice.Location = new System.Drawing.Point(280, 145);
-            this.txtBoxPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxPrice.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -187,7 +188,7 @@
             this.Controls.Add(this.txtBoxName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductsAdd";
             this.Text = "ProductsAdd";
             ((System.ComponentModel.ISupportInitialize)(this.txtBoxPrice)).EndInit();

@@ -35,7 +35,7 @@ namespace TestForms
             GetProductData("SELECT * FROM Product");
         }
 
-        public void GetProductData(String cmd)
+        private void GetProductData(String cmd)
         {
             try
             {
@@ -50,6 +50,12 @@ namespace TestForms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        
+        public void RefreshPage()
+        {
+            GetProductData("SELECT * FROM Product");
+            ProductGridTable.Update();
         }
 
         private void addButton_Click(object sender, EventArgs e)
