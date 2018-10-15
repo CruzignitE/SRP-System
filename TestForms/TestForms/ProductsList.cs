@@ -18,49 +18,31 @@ namespace TestForms
         private string path = Path.GetDirectoryName(Application.StartupPath);
         private static string databasePath;
         String conString;
-        SqlDataAdapter dataAdapter;
-        DataTable table;
-
 
         public ProductsList()
         {
             InitializeComponent();
             databasePath = path.Substring(0, path.Length - 3);
-            conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + databasePath + @"database\SRP_SYSTEM.mdf;Integrated Security=True;Connect Timeout=30";
+            conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + databasePath + @"SRP_SYSTEM.mdf;Integrated Security=True;Connect Timeout=30";
         }
 
         private void ProductsList_Load(object sender, EventArgs e)
         {
-            ProductGridTable.DataSource = productBinding;
-            GetProductData("SELECT * FROM Product");
+            // TODO: This line of code loads data into the 'sRP_SYSTEMDataSet.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter.Fill(this.sRP_SYSTEMDataSet.Product);
         }
 
-        private void GetProductData(String cmd)
+        public void Refresh_Product_List()
         {
-            try
-            {
-                dataAdapter = new SqlDataAdapter(cmd, conString);
-                table = new DataTable();
-                dataAdapter.Fill(table);
-
-                productBinding.DataSource = table;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        
-        public void RefreshPage()
-        {
-            GetProductData("SELECT * FROM Product");
-            ProductGridTable.Update();
+            SqlDataAdapter productAdapter = new SqlDataAdapter("SELECT * FROM Product", conString);
+            DataSet productDataSet = new DataSet();
+            productAdapter.Fill(productDataSet, "Product"); 
+            productGridTable.DataSource = productDataSet.Tables["Product"];
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            ProductsAdd AddProducts = new ProductsAdd();
+            ProductsAdd AddProducts = new ProductsAdd(this);
             AddProducts.ShowDialog();  // Shows the Products Add page
         }
 

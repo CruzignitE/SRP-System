@@ -18,12 +18,14 @@ namespace TestForms
         private string path = Path.GetDirectoryName(Application.StartupPath);
         private static string databasePath;
         String conString;
+        private readonly ProductsList productsList;
 
-        public ProductsAdd()
+        public ProductsAdd(ProductsList pl)
         {
             InitializeComponent();
+            productsList = pl;
             databasePath = path.Substring(0, path.Length - 3);
-            conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + databasePath + @"database\SRP_SYSTEM.mdf;Integrated Security=True;Connect Timeout=30";
+            conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + databasePath + @"SRP_SYSTEM.mdf;Integrated Security=True;Connect Timeout=30";
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -52,8 +54,7 @@ namespace TestForms
                         MessageBox.Show(ex.Message);
                     }
                 }
-                ProductsList productsListForm = new ProductsList();
-                productsListForm.RefreshPage();
+                productsList.Refresh_Product_List();
                 this.Close();
             }
             else

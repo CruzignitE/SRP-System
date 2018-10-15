@@ -80,3 +80,10 @@ C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestFo
 C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.exe
 C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.pdb
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.BrowseProductForm.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.BrowseProductForm.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ManagerControl.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.RefundAdd.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Refunds.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockChanges.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\SRP_SYSTEM.mdf
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\SRP_SYSTEM_log.ldf
