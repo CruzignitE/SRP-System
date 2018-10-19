@@ -15,17 +15,14 @@ namespace TestForms
     public partial class BrowseProductForm : Form
     {
         //DATABASE CONNECTION VARIABLES
-        private string path = Path.GetDirectoryName(Application.StartupPath);
-        private static string databasePath;
-        String conString;
-        SqlDataAdapter dataAdapter;
-        DataTable table;
+        private ConnectionString connString;
+        private SqlDataAdapter dataAdapter;
+        private DataTable table;
 
         public BrowseProductForm()
         {
             InitializeComponent();
-            databasePath = path.Substring(0, path.Length - 3);
-            conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + databasePath + @"database\SRP_SYSTEM.mdf;Integrated Security=True;Connect Timeout=30";
+            connString = new ConnectionString();
         }
 
         private void BrowseProductForm_Load(object sender, EventArgs e)
@@ -38,7 +35,7 @@ namespace TestForms
         {
             try
             {
-                dataAdapter = new SqlDataAdapter(cmd, conString);
+                dataAdapter = new SqlDataAdapter(cmd, connString.getConnString());
                 table = new DataTable();
                 dataAdapter.Fill(table);
 

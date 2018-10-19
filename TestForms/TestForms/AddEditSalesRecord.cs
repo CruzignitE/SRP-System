@@ -32,5 +32,10 @@ namespace TestForms
             BrowseProductForm browseProduct = new BrowseProductForm();
             browseProduct.ShowDialog();
         }
+
+        private void AddEditSalesRecord_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

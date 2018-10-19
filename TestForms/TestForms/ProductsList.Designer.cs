@@ -41,23 +41,10 @@
             this.addButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.productGridTable = new System.Windows.Forms.DataGridView();
-            this.productidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productstockqtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productcategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productunitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productexpirydateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productdescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productstatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sRP_SYSTEMDataSet = new TestForms.sRP_SYSTEMDataSet();
-            this.productTableAdapter = new TestForms.sRP_SYSTEMDataSetTableAdapters.ProductTableAdapter();
-            this.tableAdapterManager = new TestForms.sRP_SYSTEMDataSetTableAdapters.TableAdapterManager();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productGridTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sRP_SYSTEMDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -65,30 +52,27 @@
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBox1.Location = new System.Drawing.Point(440, 17);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Location = new System.Drawing.Point(587, 23);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(179, 24);
+            this.comboBox1.Size = new System.Drawing.Size(237, 28);
             this.comboBox1.TabIndex = 25;
             this.comboBox1.Text = "Filter By";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox1.Location = new System.Drawing.Point(240, 17);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Location = new System.Drawing.Point(320, 23);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 23);
+            this.textBox1.Size = new System.Drawing.Size(239, 26);
             this.textBox1.TabIndex = 24;
             this.textBox1.Text = "Search";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 17);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(45, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 18;
             this.label1.Text = "SRP System";
             // 
@@ -100,8 +84,9 @@
             this.panel1.Controls.Add(this.button5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(122, 518);
+            this.panel1.Size = new System.Drawing.Size(163, 691);
             this.panel1.TabIndex = 26;
             // 
             // button3
@@ -112,10 +97,9 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = global::TestForms.Properties.Resources.prediction;
-            this.button3.Location = new System.Drawing.Point(0, 346);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Location = new System.Drawing.Point(0, 461);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 97);
+            this.button3.Size = new System.Drawing.Size(160, 129);
             this.button3.TabIndex = 20;
             this.button3.Text = "Sales Predictions";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -129,10 +113,9 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = global::TestForms.Properties.Resources.inventory;
-            this.button2.Location = new System.Drawing.Point(0, 249);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(0, 332);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 97);
+            this.button2.Size = new System.Drawing.Size(160, 129);
             this.button2.TabIndex = 19;
             this.button2.Text = "Inventory";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -148,10 +131,9 @@
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = global::TestForms.Properties.Resources.products;
-            this.button5.Location = new System.Drawing.Point(0, 152);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Location = new System.Drawing.Point(0, 203);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 97);
+            this.button5.Size = new System.Drawing.Size(160, 129);
             this.button5.TabIndex = 18;
             this.button5.Text = "Products List";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -163,10 +145,9 @@
             this.deleteButton.FlatAppearance.BorderSize = 0;
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteButton.Image = global::TestForms.Properties.Resources.delete;
-            this.deleteButton.Location = new System.Drawing.Point(503, 455);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.deleteButton.Location = new System.Drawing.Point(671, 607);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(50, 46);
+            this.deleteButton.Size = new System.Drawing.Size(67, 61);
             this.deleteButton.TabIndex = 22;
             this.deleteButton.UseVisualStyleBackColor = false;
             // 
@@ -176,10 +157,9 @@
             this.editButton.FlatAppearance.BorderSize = 0;
             this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editButton.Image = global::TestForms.Properties.Resources.edit;
-            this.editButton.Location = new System.Drawing.Point(417, 455);
-            this.editButton.Margin = new System.Windows.Forms.Padding(2);
+            this.editButton.Location = new System.Drawing.Point(556, 607);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(50, 46);
+            this.editButton.Size = new System.Drawing.Size(67, 61);
             this.editButton.TabIndex = 21;
             this.editButton.UseVisualStyleBackColor = false;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
@@ -190,10 +170,9 @@
             this.addButton.FlatAppearance.BorderSize = 0;
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButton.Image = global::TestForms.Properties.Resources.add;
-            this.addButton.Location = new System.Drawing.Point(327, 455);
-            this.addButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addButton.Location = new System.Drawing.Point(436, 607);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(50, 46);
+            this.addButton.Size = new System.Drawing.Size(67, 61);
             this.addButton.TabIndex = 20;
             this.addButton.UseVisualStyleBackColor = false;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
@@ -206,10 +185,9 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::TestForms.Properties.Resources.sales_records;
-            this.button1.Location = new System.Drawing.Point(0, 56);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(0, 75);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 97);
+            this.button1.Size = new System.Drawing.Size(160, 129);
             this.button1.TabIndex = 19;
             this.button1.Text = "Sales Records";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -218,106 +196,20 @@
             // 
             // productGridTable
             // 
-            this.productGridTable.AutoGenerateColumns = false;
             this.productGridTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productGridTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.productidDataGridViewTextBoxColumn,
-            this.productnameDataGridViewTextBoxColumn,
-            this.productstockqtyDataGridViewTextBoxColumn,
-            this.productcategoryDataGridViewTextBoxColumn,
-            this.productunitDataGridViewTextBoxColumn,
-            this.productexpirydateDataGridViewTextBoxColumn,
-            this.productpriceDataGridViewTextBoxColumn,
-            this.productdescriptionDataGridViewTextBoxColumn,
-            this.productstatusDataGridViewTextBoxColumn});
-            this.productGridTable.DataSource = this.productBindingSource;
-            this.productGridTable.Location = new System.Drawing.Point(137, 56);
+            this.productGridTable.Location = new System.Drawing.Point(183, 75);
+            this.productGridTable.Margin = new System.Windows.Forms.Padding(4);
             this.productGridTable.Name = "productGridTable";
             this.productGridTable.RowTemplate.Height = 23;
-            this.productGridTable.Size = new System.Drawing.Size(635, 387);
+            this.productGridTable.Size = new System.Drawing.Size(847, 516);
             this.productGridTable.TabIndex = 1;
-            // 
-            // productidDataGridViewTextBoxColumn
-            // 
-            this.productidDataGridViewTextBoxColumn.DataPropertyName = "product_id";
-            this.productidDataGridViewTextBoxColumn.HeaderText = "product_id";
-            this.productidDataGridViewTextBoxColumn.Name = "productidDataGridViewTextBoxColumn";
-            this.productidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productnameDataGridViewTextBoxColumn
-            // 
-            this.productnameDataGridViewTextBoxColumn.DataPropertyName = "product_name";
-            this.productnameDataGridViewTextBoxColumn.HeaderText = "product_name";
-            this.productnameDataGridViewTextBoxColumn.Name = "productnameDataGridViewTextBoxColumn";
-            // 
-            // productstockqtyDataGridViewTextBoxColumn
-            // 
-            this.productstockqtyDataGridViewTextBoxColumn.DataPropertyName = "product_stock_qty";
-            this.productstockqtyDataGridViewTextBoxColumn.HeaderText = "product_stock_qty";
-            this.productstockqtyDataGridViewTextBoxColumn.Name = "productstockqtyDataGridViewTextBoxColumn";
-            // 
-            // productcategoryDataGridViewTextBoxColumn
-            // 
-            this.productcategoryDataGridViewTextBoxColumn.DataPropertyName = "product_category";
-            this.productcategoryDataGridViewTextBoxColumn.HeaderText = "product_category";
-            this.productcategoryDataGridViewTextBoxColumn.Name = "productcategoryDataGridViewTextBoxColumn";
-            // 
-            // productunitDataGridViewTextBoxColumn
-            // 
-            this.productunitDataGridViewTextBoxColumn.DataPropertyName = "product_unit";
-            this.productunitDataGridViewTextBoxColumn.HeaderText = "product_unit";
-            this.productunitDataGridViewTextBoxColumn.Name = "productunitDataGridViewTextBoxColumn";
-            // 
-            // productexpirydateDataGridViewTextBoxColumn
-            // 
-            this.productexpirydateDataGridViewTextBoxColumn.DataPropertyName = "product_expiry_date";
-            this.productexpirydateDataGridViewTextBoxColumn.HeaderText = "product_expiry_date";
-            this.productexpirydateDataGridViewTextBoxColumn.Name = "productexpirydateDataGridViewTextBoxColumn";
-            // 
-            // productpriceDataGridViewTextBoxColumn
-            // 
-            this.productpriceDataGridViewTextBoxColumn.DataPropertyName = "product_price";
-            this.productpriceDataGridViewTextBoxColumn.HeaderText = "product_price";
-            this.productpriceDataGridViewTextBoxColumn.Name = "productpriceDataGridViewTextBoxColumn";
-            // 
-            // productdescriptionDataGridViewTextBoxColumn
-            // 
-            this.productdescriptionDataGridViewTextBoxColumn.DataPropertyName = "product_description";
-            this.productdescriptionDataGridViewTextBoxColumn.HeaderText = "product_description";
-            this.productdescriptionDataGridViewTextBoxColumn.Name = "productdescriptionDataGridViewTextBoxColumn";
-            // 
-            // productstatusDataGridViewTextBoxColumn
-            // 
-            this.productstatusDataGridViewTextBoxColumn.DataPropertyName = "product_status";
-            this.productstatusDataGridViewTextBoxColumn.HeaderText = "product_status";
-            this.productstatusDataGridViewTextBoxColumn.Name = "productstatusDataGridViewTextBoxColumn";
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "Product";
-            this.productBindingSource.DataSource = this.sRP_SYSTEMDataSet;
-            // 
-            // sRP_SYSTEMDataSet
-            // 
-            this.sRP_SYSTEMDataSet.DataSetName = "sRP_SYSTEMDataSet";
-            this.sRP_SYSTEMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productTableAdapter
-            // 
-            this.productTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ProductTableAdapter = this.productTableAdapter;
-            this.tableAdapterManager.UpdateOrder = TestForms.sRP_SYSTEMDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // ProductsList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(784, 518);
+            this.ClientSize = new System.Drawing.Size(1045, 691);
             this.Controls.Add(this.productGridTable);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
@@ -327,13 +219,15 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductsList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductsList";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProductsList_FormClosing);
             this.Load += new System.EventHandler(this.ProductsList_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.productGridTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sRP_SYSTEMDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,18 +247,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView productGridTable;
-        private sRP_SYSTEMDataSet sRP_SYSTEMDataSet;
-        private System.Windows.Forms.BindingSource productBindingSource;
-        private sRP_SYSTEMDataSetTableAdapters.ProductTableAdapter productTableAdapter;
-        private sRP_SYSTEMDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productstockqtyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productcategoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productunitDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productexpirydateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productpriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productdescriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productstatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

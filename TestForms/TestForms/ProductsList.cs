@@ -14,36 +14,49 @@ namespace TestForms
 {
     public partial class ProductsList : Form
     {
-
-        private string path = Path.GetDirectoryName(Application.StartupPath);
-        private static string databasePath;
-        String conString;
+        private ConnectionString connString;
+        private SqlDataAdapter dataAdapter;
+        private DataTable table;
 
         public ProductsList()
         {
             InitializeComponent();
-            databasePath = path.Substring(0, path.Length - 3);
-            conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + databasePath + @"SRP_SYSTEM.mdf;Integrated Security=True;Connect Timeout=30";
+            connString = new ConnectionString();
         }
 
         private void ProductsList_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sRP_SYSTEMDataSet.Product' table. You can move, or remove it, as needed.
-            this.productTableAdapter.Fill(this.sRP_SYSTEMDataSet.Product);
+            productGridTable.DataSource = bindingSource1;
+            GetData("SELECT * FROM Product");
         }
 
-        public void Refresh_Product_List()
+        private void GetData(string cmd)
         {
-            SqlDataAdapter productAdapter = new SqlDataAdapter("SELECT * FROM Product", conString);
-            DataSet productDataSet = new DataSet();
-            productAdapter.Fill(productDataSet, "Product"); 
-            productGridTable.DataSource = productDataSet.Tables["Product"];
+            try
+            {
+                dataAdapter = new SqlDataAdapter(cmd, connString.getConnString());
+                table = new DataTable();
+                dataAdapter.Fill(table);
+
+                bindingSource1.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
+        private void RefreshPage()
+        {
+            productGridTable.Update();
+            GetData("SELECT * FROM Product");
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            ProductsAdd AddProducts = new ProductsAdd(this);
-            AddProducts.ShowDialog();  // Shows the Products Add page
+            ProductsAdd AddProducts = new ProductsAdd();
+            AddProducts.FormClosing += new FormClosingEventHandler(this.ProductsList_FormClosing);
+            AddProducts.Show();  // Shows the Products Add page
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -63,11 +76,16 @@ namespace TestForms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ProductsList goProductsList = new ProductsList(); // Shows the Product List page
+            Inventory goInventory = new Inventory(); // Shows the Inventory page
             this.Hide();
-            goProductsList.FormClosed += (s, args) => this.Close();
-            goProductsList.Show();
-            goProductsList.Focus();
+            goInventory.FormClosed += (s, args) => this.Close();
+            goInventory.Show();
+            goInventory.Focus();
+        }
+
+        private void ProductsList_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            RefreshPage();
         }
     }
 }

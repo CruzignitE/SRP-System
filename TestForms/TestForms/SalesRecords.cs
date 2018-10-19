@@ -15,17 +15,14 @@ namespace TestForms
     public partial class SalesRecords : Form
     {
         //DATABASE CONNECTION VARIABLES
-        private string path = Path.GetDirectoryName(Application.StartupPath);
-        private static string databasePath;
-        String conString;
+        ConnectionString connString;
         SqlDataAdapter dataAdapter;
         DataTable table;
 
         public SalesRecords()
         {
             InitializeComponent();
-            databasePath = path.Substring(0, path.Length - 3);
-            conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + databasePath + @"database\SRP_SYSTEM.mdf;Integrated Security=True;Connect Timeout=30";
+            connString = new ConnectionString();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -112,7 +109,7 @@ namespace TestForms
         {
             try
             {
-                dataAdapter = new SqlDataAdapter(cmd, conString);
+                dataAdapter = new SqlDataAdapter(cmd, connString.getConnString());
                 table = new DataTable();
                 dataAdapter.Fill(table);
 

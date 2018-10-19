@@ -14,18 +14,12 @@ namespace TestForms
 {
     public partial class ProductsAdd : Form
     {
+        private ConnectionString connString;
 
-        private string path = Path.GetDirectoryName(Application.StartupPath);
-        private static string databasePath;
-        String conString;
-        private readonly ProductsList productsList;
-
-        public ProductsAdd(ProductsList pl)
+        public ProductsAdd()
         {
             InitializeComponent();
-            productsList = pl;
-            databasePath = path.Substring(0, path.Length - 3);
-            conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + databasePath + @"SRP_SYSTEM.mdf;Integrated Security=True;Connect Timeout=30";
+            connString = new ConnectionString();
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -36,7 +30,7 @@ namespace TestForms
 
             if (txtBoxName.Text != "" && txtBoxCategory.Text != "")
             {
-                using (SqlConnection conn = new SqlConnection(conString))
+                using (SqlConnection conn = new SqlConnection(connString.getConnString()))
                 {
                     try
                     {
@@ -54,7 +48,6 @@ namespace TestForms
                         MessageBox.Show(ex.Message);
                     }
                 }
-                productsList.Refresh_Product_List();
                 this.Close();
             }
             else

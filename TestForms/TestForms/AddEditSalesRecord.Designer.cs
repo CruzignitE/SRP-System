@@ -38,17 +38,19 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.txtBoxProductID = new System.Windows.Forms.TextBox();
+            this.txtBoxProductName = new System.Windows.Forms.TextBox();
+            this.txtBoxproductQty = new System.Windows.Forms.NumericUpDown();
             this.button4 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAddProduct = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnBrowseProduct = new System.Windows.Forms.Button();
+            this.dataGridSalesProduct = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBoxproductQty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSalesProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -146,40 +148,40 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.textBox6);
-            this.flowLayoutPanel1.Controls.Add(this.textBox7);
-            this.flowLayoutPanel1.Controls.Add(this.numericUpDown2);
+            this.flowLayoutPanel1.Controls.Add(this.txtBoxProductID);
+            this.flowLayoutPanel1.Controls.Add(this.txtBoxProductName);
+            this.flowLayoutPanel1.Controls.Add(this.txtBoxproductQty);
             this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(171, 113);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(767, 378);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(767, 88);
             this.flowLayoutPanel1.TabIndex = 16;
             this.flowLayoutPanel1.WrapContents = false;
             // 
-            // textBox6
+            // txtBoxProductID
             // 
-            this.textBox6.Location = new System.Drawing.Point(4, 4);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(165, 22);
-            this.textBox6.TabIndex = 0;
+            this.txtBoxProductID.Location = new System.Drawing.Point(4, 4);
+            this.txtBoxProductID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxProductID.Name = "txtBoxProductID";
+            this.txtBoxProductID.Size = new System.Drawing.Size(165, 22);
+            this.txtBoxProductID.TabIndex = 0;
             // 
-            // textBox7
+            // txtBoxProductName
             // 
-            this.textBox7.Location = new System.Drawing.Point(177, 4);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(376, 22);
-            this.textBox7.TabIndex = 1;
+            this.txtBoxProductName.Location = new System.Drawing.Point(177, 4);
+            this.txtBoxProductName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxProductName.Name = "txtBoxProductName";
+            this.txtBoxProductName.Size = new System.Drawing.Size(376, 22);
+            this.txtBoxProductName.TabIndex = 1;
             // 
-            // numericUpDown2
+            // txtBoxproductQty
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(561, 4);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(160, 22);
-            this.numericUpDown2.TabIndex = 2;
+            this.txtBoxproductQty.Location = new System.Drawing.Point(561, 4);
+            this.txtBoxproductQty.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxproductQty.Name = "txtBoxproductQty";
+            this.txtBoxproductQty.Size = new System.Drawing.Size(160, 22);
+            this.txtBoxproductQty.TabIndex = 2;
             // 
             // button4
             // 
@@ -202,18 +204,18 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(133, 26);
             this.dateTimePicker1.TabIndex = 17;
             // 
-            // button2
+            // btnAddProduct
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::TestForms.Properties.Resources.add;
-            this.button2.Location = new System.Drawing.Point(501, 498);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(67, 62);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnAddProduct.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddProduct.FlatAppearance.BorderSize = 0;
+            this.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddProduct.Image = global::TestForms.Properties.Resources.add;
+            this.btnAddProduct.Location = new System.Drawing.Point(946, 112);
+            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(67, 62);
+            this.btnAddProduct.TabIndex = 1;
+            this.btnAddProduct.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -253,15 +255,25 @@
             this.btnBrowseProduct.UseVisualStyleBackColor = true;
             this.btnBrowseProduct.Click += new System.EventHandler(this.btnBrowseProduct_Click);
             // 
+            // dataGridSalesProduct
+            // 
+            this.dataGridSalesProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridSalesProduct.Location = new System.Drawing.Point(171, 208);
+            this.dataGridSalesProduct.Name = "dataGridSalesProduct";
+            this.dataGridSalesProduct.RowTemplate.Height = 24;
+            this.dataGridSalesProduct.Size = new System.Drawing.Size(767, 283);
+            this.dataGridSalesProduct.TabIndex = 19;
+            // 
             // AddEditSalesRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1045, 690);
+            this.Controls.Add(this.dataGridSalesProduct);
             this.Controls.Add(this.btnBrowseProduct);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAddProduct);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
@@ -276,10 +288,13 @@
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddEditSalesRecord";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEditSalesRecord";
+            this.Load += new System.EventHandler(this.AddEditSalesRecord_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBoxproductQty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSalesProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,7 +303,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -300,11 +315,12 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.TextBox txtBoxProductID;
+        private System.Windows.Forms.TextBox txtBoxProductName;
+        private System.Windows.Forms.NumericUpDown txtBoxproductQty;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnBrowseProduct;
+        private System.Windows.Forms.DataGridView dataGridSalesProduct;
     }
 }

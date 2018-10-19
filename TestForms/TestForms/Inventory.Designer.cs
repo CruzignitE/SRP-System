@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -36,13 +37,15 @@
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridInventory = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridInventory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -62,7 +65,7 @@
             this.panel1.Controls.Add(this.button5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(163, 690);
             this.panel1.TabIndex = 30;
@@ -158,15 +161,15 @@
             this.textBox1.TabIndex = 28;
             this.textBox1.Text = "Search";
             // 
-            // dataGridView1
+            // dataGridInventory
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(183, 70);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(848, 521);
-            this.dataGridView1.TabIndex = 27;
+            this.dataGridInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridInventory.Location = new System.Drawing.Point(183, 70);
+            this.dataGridInventory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridInventory.Name = "dataGridInventory";
+            this.dataGridInventory.RowTemplate.Height = 24;
+            this.dataGridInventory.Size = new System.Drawing.Size(848, 521);
+            this.dataGridInventory.TabIndex = 27;
             // 
             // button1
             // 
@@ -239,15 +242,18 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridInventory);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.addButton);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Inventory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory";
+            this.Load += new System.EventHandler(this.Inventory_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridInventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,9 +270,10 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridInventory;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

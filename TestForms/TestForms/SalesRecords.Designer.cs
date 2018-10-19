@@ -356,6 +356,7 @@
             this.ClientSize = new System.Drawing.Size(1045, 741);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "SalesRecords";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SRP System";
             this.Load += new System.EventHandler(this.SalesRecords_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

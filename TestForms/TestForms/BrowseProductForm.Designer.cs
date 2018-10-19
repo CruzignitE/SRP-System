@@ -98,6 +98,7 @@
             this.ClientSize = new System.Drawing.Size(919, 461);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "BrowseProductForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BrowseProductForm";
             this.Load += new System.EventHandler(this.BrowseProductForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

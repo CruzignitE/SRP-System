@@ -73,6 +73,7 @@
     <Compile Include="BrowseProductForm.Designer.cs">
       <DependentUpon>BrowseProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConnectionString.cs" />
     <Compile Include="Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,11 +124,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sRP_SYSTEMDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sRP_SYSTEMDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="StockAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,20 +200,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="sRP_SYSTEMDataSet.xsc">
-      <DependentUpon>sRP_SYSTEMDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="sRP_SYSTEMDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>sRP_SYSTEMDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="sRP_SYSTEMDataSet.xss">
-      <DependentUpon>sRP_SYSTEMDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\add.png">
