@@ -47,54 +47,60 @@
             // 
             this.label_desc.AutoSize = true;
             this.label_desc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_desc.Location = new System.Drawing.Point(30, 98);
+            this.label_desc.Location = new System.Drawing.Point(40, 121);
+            this.label_desc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_desc.Name = "label_desc";
-            this.label_desc.Size = new System.Drawing.Size(83, 17);
+            this.label_desc.Size = new System.Drawing.Size(100, 20);
             this.label_desc.TabIndex = 12;
             this.label_desc.Text = "Description:";
             // 
             // textBox_desc
             // 
             this.textBox_desc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_desc.Location = new System.Drawing.Point(33, 118);
+            this.textBox_desc.Location = new System.Drawing.Point(44, 145);
+            this.textBox_desc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_desc.Name = "textBox_desc";
-            this.textBox_desc.Size = new System.Drawing.Size(525, 23);
+            this.textBox_desc.Size = new System.Drawing.Size(699, 26);
             this.textBox_desc.TabIndex = 11;
             // 
             // label_pName
             // 
             this.label_pName.AutoSize = true;
             this.label_pName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_pName.Location = new System.Drawing.Point(207, 33);
+            this.label_pName.Location = new System.Drawing.Point(276, 41);
+            this.label_pName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_pName.Name = "label_pName";
-            this.label_pName.Size = new System.Drawing.Size(102, 17);
+            this.label_pName.Size = new System.Drawing.Size(121, 20);
             this.label_pName.TabIndex = 10;
             this.label_pName.Text = "Product Name:";
             // 
             // textBox_pName
             // 
             this.textBox_pName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_pName.Location = new System.Drawing.Point(210, 53);
+            this.textBox_pName.Location = new System.Drawing.Point(280, 65);
+            this.textBox_pName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_pName.Name = "textBox_pName";
-            this.textBox_pName.Size = new System.Drawing.Size(348, 23);
+            this.textBox_pName.Size = new System.Drawing.Size(463, 26);
             this.textBox_pName.TabIndex = 9;
             // 
             // label_pID
             // 
             this.label_pID.AutoSize = true;
             this.label_pID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_pID.Location = new System.Drawing.Point(30, 33);
+            this.label_pID.Location = new System.Drawing.Point(40, 41);
+            this.label_pID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_pID.Name = "label_pID";
-            this.label_pID.Size = new System.Drawing.Size(78, 17);
+            this.label_pID.Size = new System.Drawing.Size(94, 20);
             this.label_pID.TabIndex = 8;
             this.label_pID.Text = "Product ID:";
             // 
             // textBox_pID
             // 
             this.textBox_pID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_pID.Location = new System.Drawing.Point(33, 53);
+            this.textBox_pID.Location = new System.Drawing.Point(44, 65);
+            this.textBox_pID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_pID.Name = "textBox_pID";
-            this.textBox_pID.Size = new System.Drawing.Size(139, 23);
+            this.textBox_pID.Size = new System.Drawing.Size(184, 26);
             this.textBox_pID.TabIndex = 7;
             // 
             // editButton
@@ -103,12 +109,13 @@
             this.editButton.FlatAppearance.BorderSize = 0;
             this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editButton.Image = global::TestForms.Properties.Resources.cancel;
-            this.editButton.Location = new System.Drawing.Point(696, 146);
-            this.editButton.Margin = new System.Windows.Forms.Padding(2);
+            this.editButton.Location = new System.Drawing.Point(928, 180);
+            this.editButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(50, 50);
+            this.editButton.Size = new System.Drawing.Size(67, 62);
             this.editButton.TabIndex = 29;
             this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // addButton
             // 
@@ -116,10 +123,10 @@
             this.addButton.FlatAppearance.BorderSize = 0;
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButton.Image = global::TestForms.Properties.Resources.confirm;
-            this.addButton.Location = new System.Drawing.Point(631, 146);
-            this.addButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addButton.Location = new System.Drawing.Point(841, 180);
+            this.addButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(50, 50);
+            this.addButton.Size = new System.Drawing.Size(67, 62);
             this.addButton.TabIndex = 28;
             this.addButton.UseVisualStyleBackColor = false;
             // 
@@ -127,45 +134,49 @@
             // 
             this.label_qty.AutoSize = true;
             this.label_qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_qty.Location = new System.Drawing.Point(594, 33);
+            this.label_qty.Location = new System.Drawing.Point(792, 41);
+            this.label_qty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_qty.Name = "label_qty";
-            this.label_qty.Size = new System.Drawing.Size(65, 17);
+            this.label_qty.Size = new System.Drawing.Size(76, 20);
             this.label_qty.TabIndex = 31;
             this.label_qty.Text = "Quantity:";
             // 
             // textBox_managerPass
             // 
             this.textBox_managerPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_managerPass.Location = new System.Drawing.Point(437, 173);
+            this.textBox_managerPass.Location = new System.Drawing.Point(583, 213);
+            this.textBox_managerPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_managerPass.Name = "textBox_managerPass";
             this.textBox_managerPass.PasswordChar = '*';
-            this.textBox_managerPass.Size = new System.Drawing.Size(121, 23);
+            this.textBox_managerPass.Size = new System.Drawing.Size(160, 26);
             this.textBox_managerPass.TabIndex = 42;
             // 
             // label_managerPass
             // 
             this.label_managerPass.AutoSize = true;
             this.label_managerPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_managerPass.Location = new System.Drawing.Point(298, 176);
+            this.label_managerPass.Location = new System.Drawing.Point(397, 217);
+            this.label_managerPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_managerPass.Name = "label_managerPass";
-            this.label_managerPass.Size = new System.Drawing.Size(133, 17);
+            this.label_managerPass.Size = new System.Drawing.Size(158, 20);
             this.label_managerPass.TabIndex = 41;
             this.label_managerPass.Text = "Manager Password:";
             // 
             // numericUpDown_qty
             // 
             this.numericUpDown_qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.numericUpDown_qty.Location = new System.Drawing.Point(597, 53);
+            this.numericUpDown_qty.Location = new System.Drawing.Point(796, 65);
+            this.numericUpDown_qty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDown_qty.Name = "numericUpDown_qty";
-            this.numericUpDown_qty.Size = new System.Drawing.Size(120, 23);
+            this.numericUpDown_qty.Size = new System.Drawing.Size(160, 26);
             this.numericUpDown_qty.TabIndex = 43;
             // 
             // RefundAdd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(784, 222);
+            this.ClientSize = new System.Drawing.Size(1045, 273);
             this.Controls.Add(this.numericUpDown_qty);
             this.Controls.Add(this.textBox_managerPass);
             this.Controls.Add(this.label_managerPass);
@@ -178,6 +189,7 @@
             this.Controls.Add(this.textBox_pName);
             this.Controls.Add(this.label_pID);
             this.Controls.Add(this.textBox_pID);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RefundAdd";
             this.Text = "RefundAdd";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_qty)).EndInit();

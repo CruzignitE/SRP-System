@@ -127,7 +127,7 @@
             this.editButton.Size = new System.Drawing.Size(67, 62);
             this.editButton.TabIndex = 27;
             this.editButton.UseVisualStyleBackColor = false;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            this.editButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // addButton
             // 

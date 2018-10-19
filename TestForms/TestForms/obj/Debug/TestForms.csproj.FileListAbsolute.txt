@@ -93,3 +93,10 @@ D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ManagerControl.re
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.RefundAdd.resources
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Refunds.resources
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockChanges.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\SRP_SYSTEM.mdf
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\SRP_SYSTEM_log.ldf
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.BrowseProductForm.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ManagerControl.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.RefundAdd.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Refunds.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockChanges.resources

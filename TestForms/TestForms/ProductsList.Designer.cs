@@ -120,7 +120,7 @@
             this.button2.Text = "Inventory";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.ToInventoryFromProductList);
             // 
             // button5
             // 
@@ -192,7 +192,7 @@
             this.button1.Text = "Sales Records";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.ToSalesRecordFromProductList);
             // 
             // productGridTable
             // 

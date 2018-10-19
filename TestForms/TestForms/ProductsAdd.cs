@@ -54,7 +54,7 @@ namespace TestForms
                 MessageBox.Show("The required form must be filled.");
         }
 
-        private void editButton_Click(object sender, EventArgs e)
+        private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }

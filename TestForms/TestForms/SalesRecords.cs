@@ -121,7 +121,7 @@ namespace TestForms
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ToInventoryFromSalesRecord(object sender, EventArgs e)
         {
             Inventory goInventory = new Inventory(); // Shows the Inventory page
             this.Hide();
@@ -130,7 +130,7 @@ namespace TestForms
             goInventory.Focus();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void ToProductListFromSalesRecord(object sender, EventArgs e)
         {
             ProductsList goProductList = new ProductsList();  // Shows the Product List page
             this.Hide();

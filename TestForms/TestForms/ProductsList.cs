@@ -65,7 +65,7 @@ namespace TestForms
             EditProduct.ShowDialog(); // Shows the Products Edit page
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ToSalesRecordFromProductList(object sender, EventArgs e)
         {
             SalesRecords goSalesRecords = new SalesRecords(); // Shows the Sales Records page
             this.Hide();
@@ -74,7 +74,7 @@ namespace TestForms
             goSalesRecords.Focus();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ToInventoryFromProductList(object sender, EventArgs e)
         {
             Inventory goInventory = new Inventory(); // Shows the Inventory page
             this.Hide();

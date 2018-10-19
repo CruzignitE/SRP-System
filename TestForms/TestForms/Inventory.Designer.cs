@@ -121,7 +121,7 @@
             this.button5.Text = "Products List";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.ToProductListFromInventory);
             // 
             // button4
             // 
@@ -187,7 +187,7 @@
             this.button1.Text = "Sales Records";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.ToSalesRecordFromInventory);
             // 
             // deleteButton
             // 
