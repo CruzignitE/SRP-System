@@ -61,7 +61,15 @@ namespace TestForms
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            ProductsEdit EditProduct = new ProductsEdit();
+            List<String> selectedRow = new List<String>();
+            foreach (DataGridViewRow row in productGridTable.SelectedRows)
+            {
+                for (int i = 0; i < productGridTable.ColumnCount; i++)
+                {
+                    selectedRow.Add(row.Cells[i].Value.ToString());
+                }
+            }
+            ProductsEdit EditProduct = new ProductsEdit(selectedRow);
             EditProduct.ShowDialog(); // Shows the Products Edit page
         }
 
