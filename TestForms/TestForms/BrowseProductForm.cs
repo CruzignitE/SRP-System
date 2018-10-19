@@ -18,7 +18,7 @@ namespace TestForms
         private ConnectionString connString;
         private SqlDataAdapter dataAdapter;
         private DataTable table;
-
+        
         public BrowseProductForm()
         {
             InitializeComponent();
@@ -45,6 +45,29 @@ namespace TestForms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void dataGVBrowseProduct_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = dataGVBrowseProduct.CurrentCell.OwningRow;
+                string productID = row.Cells["product_id"].Value.ToString();
+                string productName = row.Cells["product_name"].Value.ToString();
+                AddEditSalesRecord.ProductID = productID;
+                AddEditSalesRecord.ProductName = productName;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

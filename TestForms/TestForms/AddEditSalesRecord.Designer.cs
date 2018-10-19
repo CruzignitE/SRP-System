@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,9 +49,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnBrowseProduct = new System.Windows.Forms.Button();
             this.dataGridSalesProduct = new System.Windows.Forms.DataGridView();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBoxproductQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSalesProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -164,6 +167,7 @@
             this.txtBoxProductID.Location = new System.Drawing.Point(4, 4);
             this.txtBoxProductID.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxProductID.Name = "txtBoxProductID";
+            this.txtBoxProductID.ReadOnly = true;
             this.txtBoxProductID.Size = new System.Drawing.Size(165, 22);
             this.txtBoxProductID.TabIndex = 0;
             // 
@@ -172,6 +176,7 @@
             this.txtBoxProductName.Location = new System.Drawing.Point(177, 4);
             this.txtBoxProductName.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxProductName.Name = "txtBoxProductName";
+            this.txtBoxProductName.ReadOnly = true;
             this.txtBoxProductName.Size = new System.Drawing.Size(376, 22);
             this.txtBoxProductName.TabIndex = 1;
             // 
@@ -290,11 +295,13 @@
             this.Name = "AddEditSalesRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEditSalesRecord";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddEditSalesRecord_FormClosing);
             this.Load += new System.EventHandler(this.AddEditSalesRecord_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBoxproductQty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSalesProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,5 +329,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnBrowseProduct;
         private System.Windows.Forms.DataGridView dataGridSalesProduct;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

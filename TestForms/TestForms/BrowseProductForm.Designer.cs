@@ -78,6 +78,7 @@
             this.dataGVBrowseProduct.RowTemplate.Height = 24;
             this.dataGVBrowseProduct.Size = new System.Drawing.Size(913, 362);
             this.dataGVBrowseProduct.TabIndex = 1;
+            this.dataGVBrowseProduct.SelectionChanged += new System.EventHandler(this.dataGVBrowseProduct_SelectionChanged);
             // 
             // btnSelect
             // 
@@ -90,6 +91,7 @@
             this.btnSelect.TabIndex = 2;
             this.btnSelect.Text = "SELECT";
             this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // BrowseProductForm
             // 
