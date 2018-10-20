@@ -17,6 +17,7 @@ namespace TestForms
         private ConnectionString connString;
         private SqlDataAdapter dataAdapter;
         private DataTable table;
+        private String productID, productName, productUnitPrice, productStatus, productCategory;
 
         public ProductsList()
         {
@@ -62,15 +63,23 @@ namespace TestForms
         private void editButton_Click(object sender, EventArgs e)
         {
             List<String> selectedRow = new List<String>();
-            foreach (DataGridViewRow row in productGridTable.SelectedRows)
+            DataGridViewRow row = productGridTable.CurrentCell.OwningRow;
+
+            try
             {
-                for (int i = 0; i < productGridTable.ColumnCount; i++)
-                {
-                    selectedRow.Add(row.Cells[i].Value.ToString());
-                }
+                productID = row.Cells["product_id"].Value.ToString();
+                productName = row.Cells["product_name"].Value.ToString();
+                productCategory = row.Cells["product_category"].Value.ToString();
+                productUnitPrice = row.Cells["product_price"].Value.ToString();
+                productStatus = row.Cells["product_status"].Value.ToString();
+                ProductsEdit EditProduct = new ProductsEdit(productID, productName, productCategory, productUnitPrice, productStatus);
+                EditProduct.FormClosing += new FormClosingEventHandler(this.ProductsList_FormClosing);
+                EditProduct.ShowDialog(); // Shows the Products Edit page
             }
-            ProductsEdit EditProduct = new ProductsEdit(selectedRow);
-            EditProduct.ShowDialog(); // Shows the Products Edit page
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ToSalesRecordFromProductList(object sender, EventArgs e)

@@ -7,17 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TestForms
 {
     public partial class ProductsEdit : Form
     {
-        private List<String> selectedRow = new List<String>();
-        public ProductsEdit(List<String> sr)
+        private ConnectionString connString;
+        private SqlCommand command;
+
+        public ProductsEdit(String productID, String productName, String productCategory, String productUnitPrice, String productStatus)
         {
             InitializeComponent();
-            selectedRow = sr;
-            PutValueToForm();
+            PutValueToForm(productID, productName, productCategory, productUnitPrice, productStatus);
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -25,16 +27,44 @@ namespace TestForms
             this.Close();
         }
 
-        private void PutValueToForm()
+        private void PutValueToForm(String productID, String productName, String productCategory, String productUnitPrice, String productStatus)
         {
-            txtEditProductID.Text = selectedRow[0];
-            txtEditProductName.Text = selectedRow[1];
-            txtEditProductCategory.Text = selectedRow[3];
-            txtEditProductUnitPrice.Value = Int32.Parse(selectedRow[6]);
-            if (Int32.Parse(selectedRow[8]) == 1)
+            txtEditProductID.Text = productID;
+            txtEditProductName.Text = productName;
+            txtEditProductCategory.Text = productCategory;
+            txtEditProductUnitPrice.Value = Int32.Parse(productUnitPrice);
+            if (Int32.Parse(productStatus) == 1)
                 sltEditPruductStatus.SelectedIndex = 0;
             else
                 sltEditPruductStatus.SelectedIndex = 1;
+        }
+
+        private void btnSubmitEditProductForm_Click(object sender, EventArgs e)
+        {
+            connString = new ConnectionString();
+            String updateProduct_SQL = @"UPDATE Product SET product_name = @productName, product_category = @productCategory, product_price = @productPrice, product_status = @productStatus WHERE product_id = @productID"; ;
+
+            using (SqlConnection conn = new SqlConnection(connString.getConnString()))
+            {
+                try
+                {
+                    conn.Open();
+                    command = new SqlCommand(updateProduct_SQL, conn);
+                    command.Parameters.AddWithValue(@"productName", txtEditProductName.Text);
+                    command.Parameters.AddWithValue(@"productCategory", txtEditProductCategory.Text);
+                    command.Parameters.AddWithValue(@"productPrice", txtEditProductUnitPrice.Value);
+                    command.Parameters.AddWithValue(@"productStatus", sltEditPruductStatus.SelectedIndex);
+                    command.Parameters.AddWithValue(@"productID", txtEditProductID.Text);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Product updated successfully!");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

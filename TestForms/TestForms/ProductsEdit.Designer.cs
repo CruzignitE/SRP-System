@@ -187,7 +187,7 @@
             this.btnCancelEditProductForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelEditProductForm.Image = global::TestForms.Properties.Resources.cancel;
             this.btnCancelEditProductForm.Location = new System.Drawing.Point(624, 133);
-            this.btnCancelEditProductForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelEditProductForm.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelEditProductForm.Name = "btnCancelEditProductForm";
             this.btnCancelEditProductForm.Size = new System.Drawing.Size(50, 46);
             this.btnCancelEditProductForm.TabIndex = 37;
@@ -201,11 +201,12 @@
             this.btnSubmitEditProductForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitEditProductForm.Image = global::TestForms.Properties.Resources.confirm;
             this.btnSubmitEditProductForm.Location = new System.Drawing.Point(559, 133);
-            this.btnSubmitEditProductForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmitEditProductForm.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmitEditProductForm.Name = "btnSubmitEditProductForm";
             this.btnSubmitEditProductForm.Size = new System.Drawing.Size(50, 46);
             this.btnSubmitEditProductForm.TabIndex = 36;
             this.btnSubmitEditProductForm.UseVisualStyleBackColor = false;
+            this.btnSubmitEditProductForm.Click += new System.EventHandler(this.btnSubmitEditProductForm_Click);
             // 
             // ProductsEdit
             // 
