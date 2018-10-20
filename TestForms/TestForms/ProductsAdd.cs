@@ -25,8 +25,8 @@ namespace TestForms
         private void addButton_Click(object sender, EventArgs e)
         {
             SqlCommand command;
-            string insertCmd = @"INSERT INTO Product (product_name, product_category, product_price, product_status)
-                                    VALUES(@product_name, @product_category, @product_price, @product_status)";
+            string insertCmd = @"INSERT INTO Product (product_name, product_stock_qty, product_category, product_price, product_status)
+                                    VALUES(@product_name, 0, @product_category, @product_price, @product_status)";
 
             if (txtBoxName.Text != "" && txtBoxCategory.Text != "")
             {

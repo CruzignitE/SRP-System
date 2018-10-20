@@ -15,10 +15,11 @@ namespace TestForms
     public partial class SalesRecords : Form
     {
         //DATABASE CONNECTION VARIABLES
-        ConnectionString connString;
-        SqlDataAdapter dataAdapter;
-        DataTable table;
+        private ConnectionString connString;
+        private SqlDataAdapter dataAdapter;
+        private DataTable table;
 
+        private string selectState = @"SELECT sales_record_id AS 'Sales ID', sales_record_date AS 'Sales Date', sales_record_amount AS 'Sales Total Price', tax_amount AS 'Tax Amount', sales_record_description AS 'Description' FROM Sales_Record WHERE sales_status = 1";
         public SalesRecords()
         {
             InitializeComponent();
@@ -102,7 +103,7 @@ namespace TestForms
         private void SalesRecords_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = bindingSource1;
-            GetData("SELECT * FROM Sales_Record");
+            GetData(selectState);
         }
 
         private void GetData(String cmd)

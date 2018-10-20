@@ -16,7 +16,8 @@ namespace TestForms
         private ConnectionString connString;
         private SqlDataAdapter dataAdapter;
         private DataTable table;
-        private string selectCommand = @"SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_stock_qty AS Quantity, product_expiry_date AS 'Expiry Date', product_description AS 'Description' FROM Product WHERE product_status = 1";
+        private string selectCommand = @"SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_stock_qty AS Quantity, product_arrival AS 'Arrival Date', product_expiry_date AS 'Expiry Date', product_description AS 'Description' FROM Product WHERE product_status = 1";
+        private string id, name, qty;
 
         public Inventory()
         {
@@ -26,7 +27,8 @@ namespace TestForms
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            StockAdd AddStock = new StockAdd();
+            StockAdd AddStock = new StockAdd(id, name, qty);
+            AddStock.FormClosing += new FormClosingEventHandler(this.Inventory_FormClosing);
             AddStock.ShowDialog();  // Shows the StockAdd page
         }
 
@@ -60,6 +62,17 @@ namespace TestForms
             GetData(selectCommand);
         }
 
+        private void Inventory_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            RefreshInventoryPage();
+        }
+
+        private void RefreshInventoryPage()
+        {
+            dataGridInventory.Update();
+            GetData(selectCommand);
+        }
+
         private void GetData(string cmd)
         {
             try
@@ -69,6 +82,22 @@ namespace TestForms
                 dataAdapter.Fill(table);
 
                 bindingSource1.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridInventory_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = dataGridInventory.CurrentCell.OwningRow;
+                id = row.Cells["Product ID"].Value.ToString();
+                name = row.Cells["Product Name"].Value.ToString();
+                qty = row.Cells["Quantity"].Value.ToString();
+
             }
             catch (Exception ex)
             {

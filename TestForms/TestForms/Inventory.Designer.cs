@@ -170,6 +170,7 @@
             this.dataGridInventory.RowTemplate.Height = 24;
             this.dataGridInventory.Size = new System.Drawing.Size(848, 521);
             this.dataGridInventory.TabIndex = 27;
+            this.dataGridInventory.SelectionChanged += new System.EventHandler(this.dataGridInventory_SelectionChanged);
             // 
             // button1
             // 
@@ -250,6 +251,7 @@
             this.Name = "Inventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Inventory_FormClosing);
             this.Load += new System.EventHandler(this.Inventory_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridInventory)).EndInit();
