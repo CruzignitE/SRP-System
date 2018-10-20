@@ -73,6 +73,12 @@ namespace TestForms
             GetData(selectCommand);
         }
 
+        private void showStockLog(object sender, EventArgs e)
+        {
+            StockChanges stockChanged = new StockChanges();
+            stockChanged.ShowDialog();
+        }
+
         private void GetData(string cmd)
         {
             try

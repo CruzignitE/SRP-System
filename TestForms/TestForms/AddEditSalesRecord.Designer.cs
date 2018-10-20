@@ -294,7 +294,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddEditSalesRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddEditSalesRecord";
+            this.Text = "Product Check-out";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddEditSalesRecord_FormClosing);
             this.Load += new System.EventHandler(this.AddEditSalesRecord_Load);
             this.flowLayoutPanel1.ResumeLayout(false);

@@ -43,41 +43,9 @@ namespace TestForms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dropDownName n1 = new dropDownName("Sale ID");
-            comboBox1.Items.Add(n1);
-            dropDownName n2 = new dropDownName("Item ID");
-            comboBox1.Items.Add(n2);
-            dropDownName n3 = new dropDownName("Item");
-            comboBox1.Items.Add(n3);
-            dropDownName n4 = new dropDownName("Category");
-            comboBox1.Items.Add(n4);
-            dropDownName n5 = new dropDownName("Price");
-            comboBox1.Items.Add(n5);
+
         }
-
-            public class dropDownName
-            {
-
-                private string dataName;
-
-                public dropDownName(string dataName)
-                {
-                    DataName = dataName;
-                }
-
-                public string DataName
-                {
-                    get { return dataName; }
-                    set { dataName = value; }
-                }
-
-                public override string ToString()
-                {
-                    return dataName;
-                }
-
-            }
-
+    
         private void addButton_Click(object sender, EventArgs e)
         {
             AddEditSalesRecord AddRecord = new AddEditSalesRecord();
@@ -133,6 +101,24 @@ namespace TestForms
             goProductList.FormClosed += (s, args) => this.Close();
             goProductList.Show();
             goProductList.Focus();
+        }
+
+        private void refundsPopupButton_Click(object sender, EventArgs e)
+        {
+            Refunds AddRefund = new Refunds();
+            AddRefund.ShowDialog();  // Shows the Refund page
+        }
+
+        private void popupPieButton_Click(object sender, EventArgs e)
+        {
+            SalesRecordsPie generatePieChart = new SalesRecordsPie();
+            generatePieChart.ShowDialog(); // Shows the Pie chart
+        }
+
+        private void popupGraphButton_Click(object sender, EventArgs e)
+        {
+            SalesRecordsGraph generateGraph = new SalesRecordsGraph();
+            generateGraph.ShowDialog(); // Shows the Graph
         }
     }
 }

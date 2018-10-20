@@ -100,3 +100,7 @@ C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\Test
 C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.RefundAdd.resources
 C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Refunds.resources
 C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockChanges.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\sales-display-graph.png
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\sales-display-pie.png
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecordsGraph.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecordsPie.resources

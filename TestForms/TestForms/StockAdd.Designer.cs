@@ -220,7 +220,7 @@
             this.Controls.Add(this.txtBoxProductID);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StockAdd";
-            this.Text = "StockAdd";
+            this.Text = "Add Stock";
             ((System.ComponentModel.ISupportInitialize)(this.txtBoxAddQty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

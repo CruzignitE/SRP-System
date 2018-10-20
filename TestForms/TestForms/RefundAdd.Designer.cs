@@ -58,7 +58,7 @@
             // 
             this.textBox_desc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBox_desc.Location = new System.Drawing.Point(44, 145);
-            this.textBox_desc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_desc.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_desc.Name = "textBox_desc";
             this.textBox_desc.Size = new System.Drawing.Size(699, 26);
             this.textBox_desc.TabIndex = 11;
@@ -78,7 +78,7 @@
             // 
             this.textBox_pName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBox_pName.Location = new System.Drawing.Point(280, 65);
-            this.textBox_pName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_pName.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_pName.Name = "textBox_pName";
             this.textBox_pName.Size = new System.Drawing.Size(463, 26);
             this.textBox_pName.TabIndex = 9;
@@ -98,7 +98,7 @@
             // 
             this.textBox_pID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBox_pID.Location = new System.Drawing.Point(44, 65);
-            this.textBox_pID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_pID.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_pID.Name = "textBox_pID";
             this.textBox_pID.Size = new System.Drawing.Size(184, 26);
             this.textBox_pID.TabIndex = 7;
@@ -145,7 +145,7 @@
             // 
             this.textBox_managerPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBox_managerPass.Location = new System.Drawing.Point(583, 213);
-            this.textBox_managerPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_managerPass.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_managerPass.Name = "textBox_managerPass";
             this.textBox_managerPass.PasswordChar = '*';
             this.textBox_managerPass.Size = new System.Drawing.Size(160, 26);
@@ -166,7 +166,7 @@
             // 
             this.numericUpDown_qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.numericUpDown_qty.Location = new System.Drawing.Point(796, 65);
-            this.numericUpDown_qty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown_qty.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown_qty.Name = "numericUpDown_qty";
             this.numericUpDown_qty.Size = new System.Drawing.Size(160, 26);
             this.numericUpDown_qty.TabIndex = 43;
@@ -189,9 +189,9 @@
             this.Controls.Add(this.textBox_pName);
             this.Controls.Add(this.label_pID);
             this.Controls.Add(this.textBox_pID);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RefundAdd";
-            this.Text = "RefundAdd";
+            this.Text = "Add Refund";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_qty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

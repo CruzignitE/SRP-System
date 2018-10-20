@@ -190,7 +190,7 @@
             this.Controls.Add(this.textBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductsAdd";
-            this.Text = "ProductsAdd";
+            this.Text = "Add Product";
             ((System.ComponentModel.ISupportInitialize)(this.txtBoxPrice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -53,9 +53,10 @@
             this.sltEditPruductStatus.Items.AddRange(new object[] {
             "Active",
             "Retired"});
-            this.sltEditPruductStatus.Location = new System.Drawing.Point(363, 109);
+            this.sltEditPruductStatus.Location = new System.Drawing.Point(484, 145);
+            this.sltEditPruductStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sltEditPruductStatus.Name = "sltEditPruductStatus";
-            this.sltEditPruductStatus.Size = new System.Drawing.Size(121, 24);
+            this.sltEditPruductStatus.Size = new System.Drawing.Size(160, 28);
             this.sltEditPruductStatus.TabIndex = 38;
             this.sltEditPruductStatus.Text = "Active";
             // 
@@ -63,27 +64,30 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(30, 91);
+            this.label3.Location = new System.Drawing.Point(40, 121);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 17);
+            this.label3.Size = new System.Drawing.Size(81, 20);
             this.label3.TabIndex = 35;
             this.label3.Text = "Category:";
             // 
             // txtEditProductCategory
             // 
             this.txtEditProductCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtEditProductCategory.Location = new System.Drawing.Point(33, 109);
+            this.txtEditProductCategory.Location = new System.Drawing.Point(44, 145);
+            this.txtEditProductCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEditProductCategory.Name = "txtEditProductCategory";
-            this.txtEditProductCategory.Size = new System.Drawing.Size(139, 23);
+            this.txtEditProductCategory.Size = new System.Drawing.Size(184, 26);
             this.txtEditProductCategory.TabIndex = 34;
             // 
             // chkEditProductPerishable
             // 
             this.chkEditProductPerishable.AutoSize = true;
             this.chkEditProductPerishable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.chkEditProductPerishable.Location = new System.Drawing.Point(587, 49);
+            this.chkEditProductPerishable.Location = new System.Drawing.Point(783, 65);
+            this.chkEditProductPerishable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkEditProductPerishable.Name = "chkEditProductPerishable";
-            this.chkEditProductPerishable.Size = new System.Drawing.Size(102, 21);
+            this.chkEditProductPerishable.Size = new System.Drawing.Size(119, 24);
             this.chkEditProductPerishable.TabIndex = 33;
             this.chkEditProductPerishable.Text = "Perishable?";
             this.chkEditProductPerishable.UseVisualStyleBackColor = true;
@@ -92,56 +96,62 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(207, 31);
+            this.label2.Location = new System.Drawing.Point(276, 41);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 17);
+            this.label2.Size = new System.Drawing.Size(121, 20);
             this.label2.TabIndex = 32;
             this.label2.Text = "Product Name:";
             // 
             // txtEditProductName
             // 
             this.txtEditProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtEditProductName.Location = new System.Drawing.Point(210, 49);
+            this.txtEditProductName.Location = new System.Drawing.Point(280, 65);
+            this.txtEditProductName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEditProductName.Name = "txtEditProductName";
-            this.txtEditProductName.Size = new System.Drawing.Size(348, 23);
+            this.txtEditProductName.Size = new System.Drawing.Size(463, 26);
             this.txtEditProductName.TabIndex = 31;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(30, 31);
+            this.label1.Location = new System.Drawing.Point(40, 41);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 17);
+            this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 30;
             this.label1.Text = "Product ID:";
             // 
             // txtEditProductID
             // 
             this.txtEditProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtEditProductID.Location = new System.Drawing.Point(33, 49);
+            this.txtEditProductID.Location = new System.Drawing.Point(44, 65);
+            this.txtEditProductID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEditProductID.Name = "txtEditProductID";
             this.txtEditProductID.ReadOnly = true;
-            this.txtEditProductID.Size = new System.Drawing.Size(139, 23);
+            this.txtEditProductID.Size = new System.Drawing.Size(184, 26);
             this.txtEditProductID.TabIndex = 29;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(224, 160);
+            this.label4.Location = new System.Drawing.Point(299, 213);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 17);
+            this.label4.Size = new System.Drawing.Size(158, 20);
             this.label4.TabIndex = 39;
             this.label4.Text = "Manager Password:";
             // 
             // txtEditProductPassword
             // 
             this.txtEditProductPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtEditProductPassword.Location = new System.Drawing.Point(363, 158);
+            this.txtEditProductPassword.Location = new System.Drawing.Point(484, 211);
+            this.txtEditProductPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEditProductPassword.Name = "txtEditProductPassword";
             this.txtEditProductPassword.PasswordChar = '*';
-            this.txtEditProductPassword.Size = new System.Drawing.Size(121, 23);
+            this.txtEditProductPassword.Size = new System.Drawing.Size(160, 26);
             this.txtEditProductPassword.TabIndex = 40;
             // 
             // txtEditProductUnitPrice
@@ -149,14 +159,15 @@
             this.txtEditProductUnitPrice.DecimalPlaces = 2;
             this.txtEditProductUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtEditProductUnitPrice.InterceptArrowKeys = false;
-            this.txtEditProductUnitPrice.Location = new System.Drawing.Point(210, 109);
+            this.txtEditProductUnitPrice.Location = new System.Drawing.Point(280, 145);
+            this.txtEditProductUnitPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEditProductUnitPrice.Maximum = new decimal(new int[] {
             9999,
             0,
             0,
             0});
             this.txtEditProductUnitPrice.Name = "txtEditProductUnitPrice";
-            this.txtEditProductUnitPrice.Size = new System.Drawing.Size(120, 23);
+            this.txtEditProductUnitPrice.Size = new System.Drawing.Size(160, 26);
             this.txtEditProductUnitPrice.TabIndex = 42;
             this.txtEditProductUnitPrice.ThousandsSeparator = true;
             // 
@@ -164,9 +175,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(207, 91);
+            this.label5.Location = new System.Drawing.Point(276, 121);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 17);
+            this.label5.Size = new System.Drawing.Size(88, 20);
             this.label5.TabIndex = 41;
             this.label5.Text = "Unit Price:";
             // 
@@ -174,9 +186,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(360, 91);
+            this.label6.Location = new System.Drawing.Point(480, 121);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 17);
+            this.label6.Size = new System.Drawing.Size(62, 20);
             this.label6.TabIndex = 43;
             this.label6.Text = "Status:";
             // 
@@ -186,10 +199,9 @@
             this.btnCancelEditProductForm.FlatAppearance.BorderSize = 0;
             this.btnCancelEditProductForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelEditProductForm.Image = global::TestForms.Properties.Resources.cancel;
-            this.btnCancelEditProductForm.Location = new System.Drawing.Point(624, 133);
-            this.btnCancelEditProductForm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelEditProductForm.Location = new System.Drawing.Point(832, 177);
             this.btnCancelEditProductForm.Name = "btnCancelEditProductForm";
-            this.btnCancelEditProductForm.Size = new System.Drawing.Size(50, 46);
+            this.btnCancelEditProductForm.Size = new System.Drawing.Size(67, 61);
             this.btnCancelEditProductForm.TabIndex = 37;
             this.btnCancelEditProductForm.UseVisualStyleBackColor = false;
             this.btnCancelEditProductForm.Click += new System.EventHandler(this.CloseButton_Click);
@@ -200,20 +212,19 @@
             this.btnSubmitEditProductForm.FlatAppearance.BorderSize = 0;
             this.btnSubmitEditProductForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitEditProductForm.Image = global::TestForms.Properties.Resources.confirm;
-            this.btnSubmitEditProductForm.Location = new System.Drawing.Point(559, 133);
-            this.btnSubmitEditProductForm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubmitEditProductForm.Location = new System.Drawing.Point(745, 177);
             this.btnSubmitEditProductForm.Name = "btnSubmitEditProductForm";
-            this.btnSubmitEditProductForm.Size = new System.Drawing.Size(50, 46);
+            this.btnSubmitEditProductForm.Size = new System.Drawing.Size(67, 61);
             this.btnSubmitEditProductForm.TabIndex = 36;
             this.btnSubmitEditProductForm.UseVisualStyleBackColor = false;
             this.btnSubmitEditProductForm.Click += new System.EventHandler(this.btnSubmitEditProductForm_Click);
             // 
             // ProductsEdit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(704, 200);
+            this.ClientSize = new System.Drawing.Size(939, 267);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtEditProductUnitPrice);
             this.Controls.Add(this.label5);
@@ -229,8 +240,9 @@
             this.Controls.Add(this.txtEditProductName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEditProductID);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ProductsEdit";
-            this.Text = "ProductsEdit";
+            this.Text = "Edit Product";
             ((System.ComponentModel.ISupportInitialize)(this.txtEditProductUnitPrice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

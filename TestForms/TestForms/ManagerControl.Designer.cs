@@ -56,7 +56,7 @@
             this.panel_details.Controls.Add(this.label_currentPass);
             this.panel_details.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_details.Location = new System.Drawing.Point(0, 0);
-            this.panel_details.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_details.Margin = new System.Windows.Forms.Padding(4);
             this.panel_details.Name = "panel_details";
             this.panel_details.Size = new System.Drawing.Size(419, 418);
             this.panel_details.TabIndex = 30;
@@ -93,7 +93,7 @@
             this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBox2.Location = new System.Drawing.Point(16, 203);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(384, 115);
@@ -114,7 +114,7 @@
             // 
             this.textBox_newPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBox_newPass.Location = new System.Drawing.Point(197, 121);
-            this.textBox_newPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_newPass.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_newPass.Name = "textBox_newPass";
             this.textBox_newPass.PasswordChar = '*';
             this.textBox_newPass.Size = new System.Drawing.Size(203, 26);
@@ -135,7 +135,7 @@
             // 
             this.textBox_reenterPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBox_reenterPass.Location = new System.Drawing.Point(197, 70);
-            this.textBox_reenterPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_reenterPass.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_reenterPass.Name = "textBox_reenterPass";
             this.textBox_reenterPass.PasswordChar = '*';
             this.textBox_reenterPass.Size = new System.Drawing.Size(203, 26);
@@ -156,7 +156,7 @@
             // 
             this.textBox_currentPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBox_currentPass.Location = new System.Drawing.Point(197, 21);
-            this.textBox_currentPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_currentPass.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_currentPass.Name = "textBox_currentPass";
             this.textBox_currentPass.PasswordChar = '*';
             this.textBox_currentPass.Size = new System.Drawing.Size(203, 26);
@@ -181,9 +181,9 @@
             this.ClientSize = new System.Drawing.Size(419, 418);
             this.Controls.Add(this.panel_details);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManagerControl";
-            this.Text = "ManagerControl";
+            this.Text = "Manager Control";
             this.panel_details.ResumeLayout(false);
             this.panel_details.PerformLayout();
             this.ResumeLayout(false);

@@ -16,5 +16,11 @@ namespace TestForms
         {
             InitializeComponent();
         }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            RefundAdd addRefund = new RefundAdd();
+            addRefund.ShowDialog();
+        }
     }
 }

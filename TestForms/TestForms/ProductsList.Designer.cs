@@ -222,7 +222,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductsList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProductsList";
+            this.Text = "Products List";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProductsList_FormClosing);
             this.Load += new System.EventHandler(this.ProductsList_Load);
             this.panel1.ResumeLayout(false);
