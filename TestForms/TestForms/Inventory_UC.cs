@@ -35,8 +35,8 @@ namespace TestForms
 
         private void button_edit_Click(object sender, EventArgs e)
         {
-            StockEdit EditStock = new StockEdit();
-            EditStock.ShowDialog();  // Shows the StockAdd page
+            //StockEdit EditStock = new StockEdit();
+            //EditStock.ShowDialog();  // Shows the StockAdd page
 
         }
 

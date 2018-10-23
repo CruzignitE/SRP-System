@@ -16,8 +16,8 @@ namespace TestForms
         private ConnectionString connString;
         private SqlDataAdapter dataAdapter;
         private DataTable table;
-        private string selectCommand = @"SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_stock_qty AS Quantity, product_arrival AS 'Arrival Date', product_expiry_date AS 'Expiry Date', product_description AS 'Description' FROM Product WHERE product_status = 1";
-        private string id, name, qty;
+        private string selectCommand = @"SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_stock_qty AS Quantity, product_arrival AS 'Arrival Date', product_expiry_date AS 'Expiry Date' FROM Product WHERE product_status = 1";
+        private string id, name, qty, arrival, expiry;
 
         public Inventory()
         {
@@ -34,8 +34,9 @@ namespace TestForms
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            StockEdit EditStock = new StockEdit();
-            EditStock.ShowDialog();  // Shows the StockAdd page
+            StockEdit EditStock = new StockEdit(id, name, qty, arrival, expiry);
+            EditStock.FormClosing += new FormClosingEventHandler(this.Inventory_FormClosing);
+            EditStock.ShowDialog();  // Shows the StockEdit page
         }
 
         private void ToSalesRecordFromInventory(object sender, EventArgs e)
@@ -103,6 +104,8 @@ namespace TestForms
                 id = row.Cells["Product ID"].Value.ToString();
                 name = row.Cells["Product Name"].Value.ToString();
                 qty = row.Cells["Quantity"].Value.ToString();
+                arrival = row.Cells["Arrival Date"].Value.ToString();
+                expiry = row.Cells["Expiry Date"].Value.ToString();
 
             }
             catch (Exception ex)

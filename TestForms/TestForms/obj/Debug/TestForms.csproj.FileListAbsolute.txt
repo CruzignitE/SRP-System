@@ -146,3 +146,11 @@ D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csprojAssemblyRefer
 D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecords_UC.resources
 D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Inventory_UC.resources
 D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsList_UC.resources
+D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\images\sales-display-graph.png
+D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\images\sales-display-pie.png
+D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Inventory_UC.resources
+D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsList_UC.resources
+D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecordsGraph.resources
+D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecordsPie.resources
+D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecords_UC.resources
+D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SRP_System.resources
