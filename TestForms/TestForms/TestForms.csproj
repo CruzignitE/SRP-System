@@ -81,6 +81,12 @@
     <Compile Include="Inventory.Designer.cs">
       <DependentUpon>Inventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventory_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Inventory_UC.Designer.cs">
+      <DependentUpon>Inventory_UC.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,12 @@
     </Compile>
     <Compile Include="ProductsList.Designer.cs">
       <DependentUpon>ProductsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsList_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductsList_UC.Designer.cs">
+      <DependentUpon>ProductsList_UC.cs</DependentUpon>
     </Compile>
     <Compile Include="RefundAdd.cs">
       <SubType>Form</SubType>
@@ -137,6 +149,18 @@
     <Compile Include="SalesRecordsPie.Designer.cs">
       <DependentUpon>SalesRecordsPie.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesRecords_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SalesRecords_UC.Designer.cs">
+      <DependentUpon>SalesRecords_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SRP_System.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRP_System.Designer.cs">
+      <DependentUpon>SRP_System.cs</DependentUpon>
+    </Compile>
     <Compile Include="StockAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +188,9 @@
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventory_UC.resx">
+      <DependentUpon>Inventory_UC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerControl.resx">
       <DependentUpon>ManagerControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductsList.resx">
       <DependentUpon>ProductsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductsList_UC.resx">
+      <DependentUpon>ProductsList_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RefundAdd.resx">
       <DependentUpon>RefundAdd.cs</DependentUpon>
@@ -200,6 +230,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesRecordsPie.resx">
       <DependentUpon>SalesRecordsPie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesRecords_uc.resx">
+      <DependentUpon>SalesRecords_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRP_System.resx">
+      <DependentUpon>SRP_System.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StockAdd.resx">
       <DependentUpon>StockAdd.cs</DependentUpon>

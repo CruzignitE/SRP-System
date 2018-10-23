@@ -16,7 +16,7 @@ namespace TestForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SalesRecords());
+            Application.Run(new SRP_System());
         }
     }
 }
