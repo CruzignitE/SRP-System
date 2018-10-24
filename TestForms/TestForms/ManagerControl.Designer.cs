@@ -29,159 +29,152 @@
         private void InitializeComponent()
         {
             this.panel_details = new System.Windows.Forms.Panel();
-            this.editButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox_newPass = new System.Windows.Forms.TextBox();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            this.btn_confirm = new System.Windows.Forms.Button();
+            this.txtBox_hint = new System.Windows.Forms.TextBox();
+            this.label_hint = new System.Windows.Forms.Label();
+            this.txtBox_newPass = new System.Windows.Forms.TextBox();
             this.label_newPass = new System.Windows.Forms.Label();
-            this.textBox_reenterPass = new System.Windows.Forms.TextBox();
+            this.txtBox_reenterPass = new System.Windows.Forms.TextBox();
             this.label_reenterPass = new System.Windows.Forms.Label();
-            this.textBox_currentPass = new System.Windows.Forms.TextBox();
+            this.txtBox_currentPass = new System.Windows.Forms.TextBox();
             this.label_currentPass = new System.Windows.Forms.Label();
             this.panel_details.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_details
             // 
-            this.panel_details.Controls.Add(this.editButton);
-            this.panel_details.Controls.Add(this.addButton);
-            this.panel_details.Controls.Add(this.textBox2);
-            this.panel_details.Controls.Add(this.label2);
-            this.panel_details.Controls.Add(this.textBox_newPass);
+            this.panel_details.Controls.Add(this.btn_cancel);
+            this.panel_details.Controls.Add(this.btn_confirm);
+            this.panel_details.Controls.Add(this.txtBox_hint);
+            this.panel_details.Controls.Add(this.label_hint);
+            this.panel_details.Controls.Add(this.txtBox_newPass);
             this.panel_details.Controls.Add(this.label_newPass);
-            this.panel_details.Controls.Add(this.textBox_reenterPass);
+            this.panel_details.Controls.Add(this.txtBox_reenterPass);
             this.panel_details.Controls.Add(this.label_reenterPass);
-            this.panel_details.Controls.Add(this.textBox_currentPass);
+            this.panel_details.Controls.Add(this.txtBox_currentPass);
             this.panel_details.Controls.Add(this.label_currentPass);
             this.panel_details.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_details.Location = new System.Drawing.Point(0, 0);
-            this.panel_details.Margin = new System.Windows.Forms.Padding(4);
             this.panel_details.Name = "panel_details";
-            this.panel_details.Size = new System.Drawing.Size(419, 418);
+            this.panel_details.Size = new System.Drawing.Size(314, 340);
             this.panel_details.TabIndex = 30;
             // 
-            // editButton
+            // btn_cancel
             // 
-            this.editButton.BackColor = System.Drawing.Color.Transparent;
-            this.editButton.FlatAppearance.BorderSize = 0;
-            this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editButton.Image = global::TestForms.Properties.Resources.cancel;
-            this.editButton.Location = new System.Drawing.Point(213, 337);
-            this.editButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(67, 62);
-            this.editButton.TabIndex = 44;
-            this.editButton.UseVisualStyleBackColor = false;
-            this.editButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.btn_cancel.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cancel.FlatAppearance.BorderSize = 0;
+            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancel.Image = global::TestForms.Properties.Resources.cancel;
+            this.btn_cancel.Location = new System.Drawing.Point(160, 274);
+            this.btn_cancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(50, 50);
+            this.btn_cancel.TabIndex = 44;
+            this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
-            // addButton
+            // btn_confirm
             // 
-            this.addButton.BackColor = System.Drawing.Color.Transparent;
-            this.addButton.FlatAppearance.BorderSize = 0;
-            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addButton.Image = global::TestForms.Properties.Resources.confirm;
-            this.addButton.Location = new System.Drawing.Point(127, 337);
-            this.addButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(67, 62);
-            this.addButton.TabIndex = 43;
-            this.addButton.UseVisualStyleBackColor = false;
+            this.btn_confirm.BackColor = System.Drawing.Color.Transparent;
+            this.btn_confirm.FlatAppearance.BorderSize = 0;
+            this.btn_confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_confirm.Image = global::TestForms.Properties.Resources.confirm;
+            this.btn_confirm.Location = new System.Drawing.Point(95, 274);
+            this.btn_confirm.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_confirm.Name = "btn_confirm";
+            this.btn_confirm.Size = new System.Drawing.Size(50, 50);
+            this.btn_confirm.TabIndex = 43;
+            this.btn_confirm.UseVisualStyleBackColor = false;
+            this.btn_confirm.Click += new System.EventHandler(this.btn_confirm_Click);
             // 
-            // textBox2
+            // txtBox_hint
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox2.Location = new System.Drawing.Point(16, 203);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(384, 115);
-            this.textBox2.TabIndex = 9;
+            this.txtBox_hint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBox_hint.Location = new System.Drawing.Point(12, 165);
+            this.txtBox_hint.Multiline = true;
+            this.txtBox_hint.Name = "txtBox_hint";
+            this.txtBox_hint.Size = new System.Drawing.Size(289, 94);
+            this.txtBox_hint.TabIndex = 9;
             // 
-            // label2
+            // label_hint
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(56, 178);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 20);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Password Hint";
+            this.label_hint.AutoSize = true;
+            this.label_hint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label_hint.Location = new System.Drawing.Point(42, 145);
+            this.label_hint.Name = "label_hint";
+            this.label_hint.Size = new System.Drawing.Size(98, 17);
+            this.label_hint.TabIndex = 8;
+            this.label_hint.Text = "Password Hint";
             // 
-            // textBox_newPass
+            // txtBox_newPass
             // 
-            this.textBox_newPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_newPass.Location = new System.Drawing.Point(197, 121);
-            this.textBox_newPass.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_newPass.Name = "textBox_newPass";
-            this.textBox_newPass.PasswordChar = '*';
-            this.textBox_newPass.Size = new System.Drawing.Size(203, 26);
-            this.textBox_newPass.TabIndex = 7;
+            this.txtBox_newPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBox_newPass.Location = new System.Drawing.Point(148, 98);
+            this.txtBox_newPass.Name = "txtBox_newPass";
+            this.txtBox_newPass.PasswordChar = '*';
+            this.txtBox_newPass.Size = new System.Drawing.Size(153, 23);
+            this.txtBox_newPass.TabIndex = 7;
+            this.txtBox_newPass.UseSystemPasswordChar = true;
             // 
             // label_newPass
             // 
             this.label_newPass.AutoSize = true;
             this.label_newPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_newPass.Location = new System.Drawing.Point(56, 124);
-            this.label_newPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_newPass.Location = new System.Drawing.Point(42, 101);
             this.label_newPass.Name = "label_newPass";
-            this.label_newPass.Size = new System.Drawing.Size(121, 20);
+            this.label_newPass.Size = new System.Drawing.Size(100, 17);
             this.label_newPass.TabIndex = 6;
             this.label_newPass.Text = "New Password";
             // 
-            // textBox_reenterPass
+            // txtBox_reenterPass
             // 
-            this.textBox_reenterPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_reenterPass.Location = new System.Drawing.Point(197, 70);
-            this.textBox_reenterPass.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_reenterPass.Name = "textBox_reenterPass";
-            this.textBox_reenterPass.PasswordChar = '*';
-            this.textBox_reenterPass.Size = new System.Drawing.Size(203, 26);
-            this.textBox_reenterPass.TabIndex = 5;
+            this.txtBox_reenterPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBox_reenterPass.Location = new System.Drawing.Point(148, 57);
+            this.txtBox_reenterPass.Name = "txtBox_reenterPass";
+            this.txtBox_reenterPass.PasswordChar = '*';
+            this.txtBox_reenterPass.Size = new System.Drawing.Size(153, 23);
+            this.txtBox_reenterPass.TabIndex = 5;
+            this.txtBox_reenterPass.UseSystemPasswordChar = true;
             // 
             // label_reenterPass
             // 
             this.label_reenterPass.AutoSize = true;
             this.label_reenterPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_reenterPass.Location = new System.Drawing.Point(24, 74);
-            this.label_reenterPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_reenterPass.Location = new System.Drawing.Point(18, 60);
             this.label_reenterPass.Name = "label_reenterPass";
-            this.label_reenterPass.Size = new System.Drawing.Size(147, 20);
+            this.label_reenterPass.Size = new System.Drawing.Size(124, 17);
             this.label_reenterPass.TabIndex = 4;
             this.label_reenterPass.Text = "Reenter Password";
             // 
-            // textBox_currentPass
+            // txtBox_currentPass
             // 
-            this.textBox_currentPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_currentPass.Location = new System.Drawing.Point(197, 21);
-            this.textBox_currentPass.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_currentPass.Name = "textBox_currentPass";
-            this.textBox_currentPass.PasswordChar = '*';
-            this.textBox_currentPass.Size = new System.Drawing.Size(203, 26);
-            this.textBox_currentPass.TabIndex = 1;
+            this.txtBox_currentPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBox_currentPass.Location = new System.Drawing.Point(148, 17);
+            this.txtBox_currentPass.Name = "txtBox_currentPass";
+            this.txtBox_currentPass.PasswordChar = '*';
+            this.txtBox_currentPass.Size = new System.Drawing.Size(153, 23);
+            this.txtBox_currentPass.TabIndex = 1;
+            this.txtBox_currentPass.UseSystemPasswordChar = true;
             // 
             // label_currentPass
             // 
             this.label_currentPass.AutoSize = true;
             this.label_currentPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_currentPass.Location = new System.Drawing.Point(29, 25);
-            this.label_currentPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_currentPass.Location = new System.Drawing.Point(22, 20);
             this.label_currentPass.Name = "label_currentPass";
-            this.label_currentPass.Size = new System.Drawing.Size(144, 20);
+            this.label_currentPass.Size = new System.Drawing.Size(120, 17);
             this.label_currentPass.TabIndex = 0;
             this.label_currentPass.Text = "Current Password";
             // 
             // ManagerControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(419, 418);
+            this.ClientSize = new System.Drawing.Size(314, 340);
             this.Controls.Add(this.panel_details);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManagerControl";
             this.Text = "Manager Control";
             this.panel_details.ResumeLayout(false);
@@ -193,15 +186,15 @@
         #endregion
 
         private System.Windows.Forms.Panel panel_details;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox_newPass;
+        private System.Windows.Forms.TextBox txtBox_hint;
+        private System.Windows.Forms.Label label_hint;
+        private System.Windows.Forms.TextBox txtBox_newPass;
         private System.Windows.Forms.Label label_newPass;
-        private System.Windows.Forms.TextBox textBox_reenterPass;
+        private System.Windows.Forms.TextBox txtBox_reenterPass;
         private System.Windows.Forms.Label label_reenterPass;
-        private System.Windows.Forms.TextBox textBox_currentPass;
+        private System.Windows.Forms.TextBox txtBox_currentPass;
         private System.Windows.Forms.Label label_currentPass;
-        private System.Windows.Forms.Button editButton;
-        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Button btn_confirm;
     }
 }
