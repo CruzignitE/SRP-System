@@ -145,7 +145,6 @@ namespace TestForms
                         command.Parameters.AddWithValue(@"sGrandTotal", txtBoxGrandTotal.Text);
                         command.Parameters.AddWithValue(@"sDescription", "");
                         lastInsertedID = (int)command.ExecuteScalar();
-                        command.ExecuteNonQuery();
                         conn.Close();
                     }
                     catch (Exception ex)

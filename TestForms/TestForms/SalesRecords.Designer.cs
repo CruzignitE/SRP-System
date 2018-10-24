@@ -72,10 +72,10 @@
             button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             button1.ForeColor = System.Drawing.Color.White;
             button1.Image = global::TestForms.Properties.Resources.sales_records;
-            button1.Location = new System.Drawing.Point(3, 76);
-            button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            button1.Location = new System.Drawing.Point(2, 57);
+            button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(182, 129);
+            button1.Size = new System.Drawing.Size(137, 96);
             button1.TabIndex = 1;
             button1.Text = "Sales Records";
             button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -88,9 +88,10 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(2, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 74);
+            this.label1.Size = new System.Drawing.Size(137, 55);
             this.label1.TabIndex = 0;
             this.label1.Text = "SRP System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -104,11 +105,11 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel_salesRecords_table, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1045, 741);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 556);
             this.tableLayoutPanel1.TabIndex = 22;
             // 
             // tableLayoutPanel2
@@ -132,7 +133,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(188, 741);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(141, 556);
             this.tableLayoutPanel2.TabIndex = 18;
             // 
             // button3
@@ -144,10 +145,10 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = global::TestForms.Properties.Resources.prediction;
-            this.button3.Location = new System.Drawing.Point(3, 475);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Location = new System.Drawing.Point(2, 357);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(182, 129);
+            this.button3.Size = new System.Drawing.Size(137, 96);
             this.button3.TabIndex = 20;
             this.button3.Text = "Sales Predictions";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -163,10 +164,10 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = global::TestForms.Properties.Resources.inventory;
-            this.button2.Location = new System.Drawing.Point(3, 342);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(2, 257);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(182, 129);
+            this.button2.Size = new System.Drawing.Size(137, 96);
             this.button2.TabIndex = 19;
             this.button2.Text = "Inventory";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -181,10 +182,10 @@
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = global::TestForms.Properties.Resources.products1;
-            this.button5.Location = new System.Drawing.Point(3, 209);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Location = new System.Drawing.Point(2, 157);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(182, 129);
+            this.button5.Size = new System.Drawing.Size(137, 96);
             this.button5.TabIndex = 21;
             this.button5.Text = "Product List";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -201,14 +202,14 @@
             this.tableLayoutPanel_salesRecords_table.Controls.Add(this.tableLayoutPanel5, 1, 2);
             this.tableLayoutPanel_salesRecords_table.Controls.Add(this.dataGridView1, 1, 1);
             this.tableLayoutPanel_salesRecords_table.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_salesRecords_table.Location = new System.Drawing.Point(191, 2);
-            this.tableLayoutPanel_salesRecords_table.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel_salesRecords_table.Location = new System.Drawing.Point(143, 2);
+            this.tableLayoutPanel_salesRecords_table.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel_salesRecords_table.Name = "tableLayoutPanel_salesRecords_table";
             this.tableLayoutPanel_salesRecords_table.RowCount = 3;
             this.tableLayoutPanel_salesRecords_table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.531773F));
             this.tableLayoutPanel_salesRecords_table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.41806F));
             this.tableLayoutPanel_salesRecords_table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel_salesRecords_table.Size = new System.Drawing.Size(851, 737);
+            this.tableLayoutPanel_salesRecords_table.Size = new System.Drawing.Size(639, 552);
             this.tableLayoutPanel_salesRecords_table.TabIndex = 19;
             // 
             // tableLayoutPanel4
@@ -218,21 +219,21 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.11628F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.02326F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.83495F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel4.Controls.Add(this.refundsPopupButton, 4, 0);
             this.tableLayoutPanel4.Controls.Add(this.popupGraphButton, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.popupPieButton, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.comboBox1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.textBox1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.CsvButton, 4, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(24, 2);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(17, 2);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(802, 65);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(602, 48);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // refundsPopupButton
@@ -243,10 +244,10 @@
             this.refundsPopupButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.refundsPopupButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refundsPopupButton.ForeColor = System.Drawing.Color.Black;
-            this.refundsPopupButton.Location = new System.Drawing.Point(699, 2);
-            this.refundsPopupButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.refundsPopupButton.Location = new System.Drawing.Point(522, 2);
+            this.refundsPopupButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.refundsPopupButton.Name = "refundsPopupButton";
-            this.refundsPopupButton.Size = new System.Drawing.Size(100, 61);
+            this.refundsPopupButton.Size = new System.Drawing.Size(78, 44);
             this.refundsPopupButton.TabIndex = 26;
             this.refundsPopupButton.Text = "Refunds";
             this.refundsPopupButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -260,10 +261,10 @@
             this.popupGraphButton.FlatAppearance.BorderSize = 0;
             this.popupGraphButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.popupGraphButton.Image = global::TestForms.Properties.Resources.sales_display_graph;
-            this.popupGraphButton.Location = new System.Drawing.Point(494, 2);
-            this.popupGraphButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.popupGraphButton.Location = new System.Drawing.Point(368, 2);
+            this.popupGraphButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.popupGraphButton.Name = "popupGraphButton";
-            this.popupGraphButton.Size = new System.Drawing.Size(72, 61);
+            this.popupGraphButton.Size = new System.Drawing.Size(55, 44);
             this.popupGraphButton.TabIndex = 25;
             this.popupGraphButton.UseVisualStyleBackColor = false;
             this.popupGraphButton.Click += new System.EventHandler(this.popupGraphButton_Click);
@@ -275,10 +276,10 @@
             this.popupPieButton.FlatAppearance.BorderSize = 0;
             this.popupPieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.popupPieButton.Image = global::TestForms.Properties.Resources.sales_display_pie;
-            this.popupPieButton.Location = new System.Drawing.Point(420, 2);
-            this.popupPieButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.popupPieButton.Location = new System.Drawing.Point(313, 2);
+            this.popupPieButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.popupPieButton.Name = "popupPieButton";
-            this.popupPieButton.Size = new System.Drawing.Size(68, 61);
+            this.popupPieButton.Size = new System.Drawing.Size(51, 44);
             this.popupPieButton.TabIndex = 24;
             this.popupPieButton.UseVisualStyleBackColor = false;
             this.popupPieButton.Click += new System.EventHandler(this.popupPieButton_Click);
@@ -289,10 +290,10 @@
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBox1.Location = new System.Drawing.Point(220, 18);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Location = new System.Drawing.Point(164, 12);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(194, 28);
+            this.comboBox1.Size = new System.Drawing.Size(145, 24);
             this.comboBox1.TabIndex = 23;
             this.comboBox1.Text = "Filter By";
             // 
@@ -300,10 +301,10 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox1.Location = new System.Drawing.Point(3, 19);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Location = new System.Drawing.Point(2, 12);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(211, 26);
+            this.textBox1.Size = new System.Drawing.Size(158, 23);
             this.textBox1.TabIndex = 22;
             this.textBox1.Text = "Search";
             // 
@@ -315,10 +316,10 @@
             this.CsvButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CsvButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CsvButton.ForeColor = System.Drawing.Color.Black;
-            this.CsvButton.Location = new System.Drawing.Point(572, 2);
-            this.CsvButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CsvButton.Location = new System.Drawing.Point(427, 2);
+            this.CsvButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CsvButton.Name = "CsvButton";
-            this.CsvButton.Size = new System.Drawing.Size(121, 61);
+            this.CsvButton.Size = new System.Drawing.Size(91, 44);
             this.CsvButton.TabIndex = 21;
             this.CsvButton.Text = "CSV Export";
             this.CsvButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -334,13 +335,13 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 2, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(24, 628);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(17, 470);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 106F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(802, 107);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(603, 80);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // tableLayoutPanel6
@@ -353,14 +354,14 @@
             this.tableLayoutPanel6.Controls.Add(this.deleteButton, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.editButton, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(236, 2);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(177, 2);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(328, 103);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 77F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 77F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(247, 76);
             this.tableLayoutPanel6.TabIndex = 8;
             // 
             // addButton
@@ -370,10 +371,10 @@
             this.addButton.FlatAppearance.BorderSize = 0;
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButton.Image = global::TestForms.Properties.Resources.add;
-            this.addButton.Location = new System.Drawing.Point(3, 2);
-            this.addButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addButton.Location = new System.Drawing.Point(2, 2);
+            this.addButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(103, 99);
+            this.addButton.Size = new System.Drawing.Size(78, 72);
             this.addButton.TabIndex = 5;
             this.addButton.UseVisualStyleBackColor = false;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
@@ -385,10 +386,10 @@
             this.deleteButton.FlatAppearance.BorderSize = 0;
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteButton.Image = global::TestForms.Properties.Resources.delete;
-            this.deleteButton.Location = new System.Drawing.Point(221, 2);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deleteButton.Location = new System.Drawing.Point(166, 2);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(104, 99);
+            this.deleteButton.Size = new System.Drawing.Size(79, 72);
             this.deleteButton.TabIndex = 7;
             this.deleteButton.UseVisualStyleBackColor = false;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
@@ -400,10 +401,10 @@
             this.editButton.FlatAppearance.BorderSize = 0;
             this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editButton.Image = global::TestForms.Properties.Resources.edit;
-            this.editButton.Location = new System.Drawing.Point(112, 2);
-            this.editButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.editButton.Location = new System.Drawing.Point(84, 2);
+            this.editButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(103, 99);
+            this.editButton.Size = new System.Drawing.Size(78, 72);
             this.editButton.TabIndex = 6;
             this.editButton.UseVisualStyleBackColor = false;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
@@ -412,24 +413,25 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 72);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 54);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(802, 552);
+            this.dataGridView1.Size = new System.Drawing.Size(603, 412);
             this.dataGridView1.TabIndex = 2;
             // 
             // SalesRecords
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1045, 741);
+            this.ClientSize = new System.Drawing.Size(784, 556);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SalesRecords";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SRP System";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SalesRecords_FormClosing);
             this.Load += new System.EventHandler(this.SalesRecords_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
