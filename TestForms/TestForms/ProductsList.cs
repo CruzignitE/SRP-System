@@ -18,6 +18,7 @@ namespace TestForms
         private SqlDataAdapter dataAdapter;
         private DataTable table;
         private string productID, productName, productUnitPrice, productStatus, productCategory;
+        private string select_product_SQL = "SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_category AS 'Product Category', product_unit AS 'Product Unit', product_price AS 'Product Price', product_description AS 'Product Description', product_status AS 'Product Status' FROM Product";
 
         public ProductsList()
         {
@@ -28,7 +29,7 @@ namespace TestForms
         private void ProductsList_Load(object sender, EventArgs e)
         {
             productGridTable.DataSource = bindingSource1;
-            GetData("SELECT * FROM Product");
+            GetData(select_product_SQL);
         }
 
         private void GetData(string cmd)
@@ -50,7 +51,7 @@ namespace TestForms
         private void RefreshPage()
         {
             productGridTable.Update();
-            GetData("SELECT * FROM Product");
+            GetData(select_product_SQL);
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -64,7 +65,7 @@ namespace TestForms
         {
             string deleteProduct = @"UPDATE Product SET product_status = 0 WHERE product_id = @Param";
             DataGridViewRow row = productGridTable.CurrentCell.OwningRow;
-            string id = row.Cells["product_id"].Value.ToString();
+            string id = row.Cells["Product ID"].Value.ToString();
             SqlCommand command;
             using (SqlConnection conn = new SqlConnection(connString.getConnString()))
             {
@@ -82,7 +83,7 @@ namespace TestForms
                 }
             }
             productGridTable.Update();
-            GetData("SELECT * FROM Product");
+            GetData(select_product_SQL);
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -92,11 +93,11 @@ namespace TestForms
 
             try
             {
-                productID = row.Cells["product_id"].Value.ToString();
-                productName = row.Cells["product_name"].Value.ToString();
-                productCategory = row.Cells["product_category"].Value.ToString();
-                productUnitPrice = row.Cells["product_price"].Value.ToString();
-                productStatus = row.Cells["product_status"].Value.ToString();
+                productID = row.Cells["Product ID"].Value.ToString();
+                productName = row.Cells["Product Name"].Value.ToString();
+                productCategory = row.Cells["Product Category"].Value.ToString();
+                productUnitPrice = row.Cells["Product Price"].Value.ToString();
+                productStatus = row.Cells["Product Status"].Value.ToString();
                 ProductsEdit EditProduct = new ProductsEdit(productID, productName, productCategory, productUnitPrice, productStatus);
                 EditProduct.FormClosing += new FormClosingEventHandler(this.ProductsList_FormClosing);
                 EditProduct.ShowDialog(); // Shows the Products Edit page

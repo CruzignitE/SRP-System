@@ -158,3 +158,11 @@ C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\Test
 C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsList_UC.resources
 C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecords_UC.resources
 C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SRP_System.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\sales-display-graph.png
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\sales-display-pie.png
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Inventory_UC.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsList_UC.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecordsGraph.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecordsPie.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecords_UC.resources
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SRP_System.resources
