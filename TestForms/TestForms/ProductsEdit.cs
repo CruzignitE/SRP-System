@@ -53,7 +53,11 @@ namespace TestForms
                     command.Parameters.AddWithValue(@"productName", txtEditProductName.Text);
                     command.Parameters.AddWithValue(@"productCategory", txtEditProductCategory.Text);
                     command.Parameters.AddWithValue(@"productPrice", txtEditProductUnitPrice.Value);
-                    command.Parameters.AddWithValue(@"productStatus", sltEditPruductStatus.SelectedIndex);
+
+                    int idx;
+                    idx = (sltEditPruductStatus.SelectedIndex == 0) ? 1 : 0; 
+
+                    command.Parameters.AddWithValue(@"productStatus", idx);
                     command.Parameters.AddWithValue(@"productID", txtEditProductID.Text);
                     command.ExecuteNonQuery();
                     conn.Close();

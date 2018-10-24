@@ -154,3 +154,7 @@ D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecordsGraph
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecordsPie.resources
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecords_UC.resources
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SRP_System.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Inventory_UC.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsList_UC.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecords_UC.resources
+C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SRP_System.resources

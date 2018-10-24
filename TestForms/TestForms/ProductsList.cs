@@ -60,6 +60,31 @@ namespace TestForms
             AddProducts.Show();  // Shows the Products Add page
         }
 
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            string deleteProduct = @"UPDATE Product SET product_status = 0 WHERE product_id = @Param";
+            DataGridViewRow row = productGridTable.CurrentCell.OwningRow;
+            string id = row.Cells["product_id"].Value.ToString();
+            SqlCommand command;
+            using (SqlConnection conn = new SqlConnection(connString.getConnString()))
+            {
+                try
+                {
+                    conn.Open();
+                    command = new SqlCommand(deleteProduct, conn);
+                    command.Parameters.AddWithValue(@"Param", id);
+                    
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            productGridTable.Update();
+            GetData("SELECT * FROM Product");
+        }
+
         private void editButton_Click(object sender, EventArgs e)
         {
             List<String> selectedRow = new List<String>();
