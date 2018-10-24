@@ -17,7 +17,7 @@ namespace TestForms
         private ConnectionString connString;
         private SqlDataAdapter dataAdapter;
         private DataTable table;
-        private String productID, productName, productUnitPrice, productStatus, productCategory;
+        private string productID, productName, productUnitPrice, productStatus, productCategory;
 
         public ProductsList()
         {

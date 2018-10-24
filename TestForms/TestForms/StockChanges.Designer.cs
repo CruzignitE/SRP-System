@@ -28,176 +28,195 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView_stockChanges = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
+            this.dataGVStockChanges = new System.Windows.Forms.DataGridView();
             this.panel_details = new System.Windows.Forms.Panel();
-            this.textBox_qty = new System.Windows.Forms.TextBox();
+            this.txtBoxQuantity = new System.Windows.Forms.TextBox();
             this.label_qty = new System.Windows.Forms.Label();
-            this.textBox_comment = new System.Windows.Forms.TextBox();
+            this.txtBoxDescription = new System.Windows.Forms.TextBox();
             this.label_comment = new System.Windows.Forms.Label();
-            this.textBox_category = new System.Windows.Forms.TextBox();
+            this.txtBoxCategory = new System.Windows.Forms.TextBox();
             this.label_category = new System.Windows.Forms.Label();
-            this.textBox_date = new System.Windows.Forms.TextBox();
+            this.txtBoxDate = new System.Windows.Forms.TextBox();
             this.label_date = new System.Windows.Forms.Label();
-            this.textBox_productID = new System.Windows.Forms.TextBox();
+            this.txtBoxProductID = new System.Windows.Forms.TextBox();
             this.label_productID = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_stockChanges)).BeginInit();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVStockChanges)).BeginInit();
             this.panel_details.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView_stockChanges
+            // dataGVStockChanges
             // 
-            this.dataGridView_stockChanges.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_stockChanges.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_stockChanges.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView_stockChanges.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView_stockChanges.Name = "dataGridView_stockChanges";
-            this.dataGridView_stockChanges.RowTemplate.Height = 24;
-            this.dataGridView_stockChanges.Size = new System.Drawing.Size(784, 561);
-            this.dataGridView_stockChanges.TabIndex = 28;
+            this.dataGVStockChanges.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGVStockChanges.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGVStockChanges.Location = new System.Drawing.Point(0, 0);
+            this.dataGVStockChanges.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGVStockChanges.Name = "dataGVStockChanges";
+            this.dataGVStockChanges.RowTemplate.Height = 24;
+            this.dataGVStockChanges.Size = new System.Drawing.Size(1171, 690);
+            this.dataGVStockChanges.TabIndex = 28;
+            this.dataGVStockChanges.SelectionChanged += new System.EventHandler(this.dataGVStockChanges_SelectionChanged);
             // 
             // panel_details
             // 
-            this.panel_details.Controls.Add(this.textBox_qty);
+            this.panel_details.Controls.Add(this.txtBoxQuantity);
             this.panel_details.Controls.Add(this.label_qty);
-            this.panel_details.Controls.Add(this.textBox_comment);
+            this.panel_details.Controls.Add(this.txtBoxDescription);
             this.panel_details.Controls.Add(this.label_comment);
-            this.panel_details.Controls.Add(this.textBox_category);
+            this.panel_details.Controls.Add(this.txtBoxCategory);
             this.panel_details.Controls.Add(this.label_category);
-            this.panel_details.Controls.Add(this.textBox_date);
+            this.panel_details.Controls.Add(this.txtBoxDate);
             this.panel_details.Controls.Add(this.label_date);
-            this.panel_details.Controls.Add(this.textBox_productID);
+            this.panel_details.Controls.Add(this.txtBoxProductID);
             this.panel_details.Controls.Add(this.label_productID);
             this.panel_details.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_details.Location = new System.Drawing.Point(0, 454);
+            this.panel_details.Location = new System.Drawing.Point(0, 558);
+            this.panel_details.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel_details.Name = "panel_details";
-            this.panel_details.Size = new System.Drawing.Size(784, 107);
+            this.panel_details.Size = new System.Drawing.Size(1171, 132);
             this.panel_details.TabIndex = 29;
             // 
-            // textBox_qty
+            // txtBoxQuantity
             // 
-            this.textBox_qty.Enabled = false;
-            this.textBox_qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_qty.Location = new System.Drawing.Point(599, 17);
-            this.textBox_qty.Name = "textBox_qty";
-            this.textBox_qty.Size = new System.Drawing.Size(153, 23);
-            this.textBox_qty.TabIndex = 9;
+            this.txtBoxQuantity.Enabled = false;
+            this.txtBoxQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBoxQuantity.Location = new System.Drawing.Point(799, 21);
+            this.txtBoxQuantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxQuantity.Name = "txtBoxQuantity";
+            this.txtBoxQuantity.Size = new System.Drawing.Size(203, 26);
+            this.txtBoxQuantity.TabIndex = 9;
             // 
             // label_qty
             // 
             this.label_qty.AutoSize = true;
             this.label_qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_qty.Location = new System.Drawing.Point(532, 20);
+            this.label_qty.Location = new System.Drawing.Point(709, 25);
+            this.label_qty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_qty.Name = "label_qty";
-            this.label_qty.Size = new System.Drawing.Size(61, 17);
+            this.label_qty.Size = new System.Drawing.Size(71, 20);
             this.label_qty.TabIndex = 8;
             this.label_qty.Text = "Quantity";
             // 
-            // textBox_comment
+            // txtBoxDescription
             // 
-            this.textBox_comment.Enabled = false;
-            this.textBox_comment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_comment.Location = new System.Drawing.Point(347, 57);
-            this.textBox_comment.Name = "textBox_comment";
-            this.textBox_comment.Size = new System.Drawing.Size(405, 23);
-            this.textBox_comment.TabIndex = 7;
+            this.txtBoxDescription.Enabled = false;
+            this.txtBoxDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBoxDescription.Location = new System.Drawing.Point(463, 70);
+            this.txtBoxDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxDescription.Name = "txtBoxDescription";
+            this.txtBoxDescription.Size = new System.Drawing.Size(539, 26);
+            this.txtBoxDescription.TabIndex = 7;
             // 
             // label_comment
             // 
             this.label_comment.AutoSize = true;
             this.label_comment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_comment.Location = new System.Drawing.Point(262, 60);
+            this.label_comment.Location = new System.Drawing.Point(349, 74);
+            this.label_comment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_comment.Name = "label_comment";
-            this.label_comment.Size = new System.Drawing.Size(79, 17);
+            this.label_comment.Size = new System.Drawing.Size(95, 20);
             this.label_comment.TabIndex = 6;
             this.label_comment.Text = "Description";
             // 
-            // textBox_category
+            // txtBoxCategory
             // 
-            this.textBox_category.Enabled = false;
-            this.textBox_category.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_category.Location = new System.Drawing.Point(102, 57);
-            this.textBox_category.Name = "textBox_category";
-            this.textBox_category.Size = new System.Drawing.Size(153, 23);
-            this.textBox_category.TabIndex = 5;
+            this.txtBoxCategory.Enabled = false;
+            this.txtBoxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBoxCategory.Location = new System.Drawing.Point(136, 70);
+            this.txtBoxCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxCategory.Name = "txtBoxCategory";
+            this.txtBoxCategory.Size = new System.Drawing.Size(203, 26);
+            this.txtBoxCategory.TabIndex = 5;
             // 
             // label_category
             // 
             this.label_category.AutoSize = true;
             this.label_category.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_category.Location = new System.Drawing.Point(31, 60);
+            this.label_category.Location = new System.Drawing.Point(41, 74);
+            this.label_category.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_category.Name = "label_category";
-            this.label_category.Size = new System.Drawing.Size(65, 17);
+            this.label_category.Size = new System.Drawing.Size(76, 20);
             this.label_category.TabIndex = 4;
             this.label_category.Text = "Category";
             // 
-            // textBox_date
+            // txtBoxDate
             // 
-            this.textBox_date.Enabled = false;
-            this.textBox_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_date.Location = new System.Drawing.Point(347, 17);
-            this.textBox_date.Name = "textBox_date";
-            this.textBox_date.Size = new System.Drawing.Size(153, 23);
-            this.textBox_date.TabIndex = 3;
+            this.txtBoxDate.Enabled = false;
+            this.txtBoxDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBoxDate.Location = new System.Drawing.Point(463, 21);
+            this.txtBoxDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxDate.Name = "txtBoxDate";
+            this.txtBoxDate.Size = new System.Drawing.Size(203, 26);
+            this.txtBoxDate.TabIndex = 3;
             // 
             // label_date
             // 
             this.label_date.AutoSize = true;
             this.label_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_date.Location = new System.Drawing.Point(303, 20);
+            this.label_date.Location = new System.Drawing.Point(404, 25);
+            this.label_date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_date.Name = "label_date";
-            this.label_date.Size = new System.Drawing.Size(38, 17);
+            this.label_date.Size = new System.Drawing.Size(45, 20);
             this.label_date.TabIndex = 2;
             this.label_date.Text = "Date";
             // 
-            // textBox_productID
+            // txtBoxProductID
             // 
-            this.textBox_productID.Enabled = false;
-            this.textBox_productID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_productID.Location = new System.Drawing.Point(102, 17);
-            this.textBox_productID.Name = "textBox_productID";
-            this.textBox_productID.Size = new System.Drawing.Size(153, 23);
-            this.textBox_productID.TabIndex = 1;
+            this.txtBoxProductID.Enabled = false;
+            this.txtBoxProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBoxProductID.Location = new System.Drawing.Point(136, 21);
+            this.txtBoxProductID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxProductID.Name = "txtBoxProductID";
+            this.txtBoxProductID.Size = new System.Drawing.Size(203, 26);
+            this.txtBoxProductID.TabIndex = 1;
             // 
             // label_productID
             // 
             this.label_productID.AutoSize = true;
             this.label_productID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_productID.Location = new System.Drawing.Point(22, 20);
+            this.label_productID.Location = new System.Drawing.Point(29, 25);
+            this.label_productID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_productID.Name = "label_productID";
-            this.label_productID.Size = new System.Drawing.Size(74, 17);
+            this.label_productID.Size = new System.Drawing.Size(89, 20);
             this.label_productID.TabIndex = 0;
             this.label_productID.Text = "Product ID";
             // 
             // StockChanges
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(1171, 690);
             this.Controls.Add(this.panel_details);
-            this.Controls.Add(this.dataGridView_stockChanges);
+            this.Controls.Add(this.dataGVStockChanges);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "StockChanges";
             this.Text = "Stock Changes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_stockChanges)).EndInit();
+            this.Load += new System.EventHandler(this.StockChanges_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVStockChanges)).EndInit();
             this.panel_details.ResumeLayout(false);
             this.panel_details.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView_stockChanges;
+        private System.Windows.Forms.DataGridView dataGVStockChanges;
         private System.Windows.Forms.Panel panel_details;
-        private System.Windows.Forms.TextBox textBox_qty;
+        private System.Windows.Forms.TextBox txtBoxQuantity;
         private System.Windows.Forms.Label label_qty;
-        private System.Windows.Forms.TextBox textBox_comment;
+        private System.Windows.Forms.TextBox txtBoxDescription;
         private System.Windows.Forms.Label label_comment;
-        private System.Windows.Forms.TextBox textBox_category;
+        private System.Windows.Forms.TextBox txtBoxCategory;
         private System.Windows.Forms.Label label_category;
-        private System.Windows.Forms.TextBox textBox_date;
+        private System.Windows.Forms.TextBox txtBoxDate;
         private System.Windows.Forms.Label label_date;
-        private System.Windows.Forms.TextBox textBox_productID;
+        private System.Windows.Forms.TextBox txtBoxProductID;
         private System.Windows.Forms.Label label_productID;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

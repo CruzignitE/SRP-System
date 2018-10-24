@@ -38,9 +38,12 @@ namespace TestForms
         {
             SqlCommand command;
             string updateState = @"UPDATE Product SET product_stock_qty = @addStockQty, product_arrival = @arrivalDate, product_expiry_date = @expiryDate WHERE product_id = @productID";
+            string addLogState = @"INSERT INTO Log_Changes (log_changes_date, log_changes_time, log_changes_info, product_id)
+                                   VALUES (@date, @time, @info, @productID)";
 
             using (SqlConnection conn = new SqlConnection(connString.getConnString()))
             {
+                //add stock 
                 try
                 {
                     conn.Open();
@@ -53,12 +56,30 @@ namespace TestForms
                     command.Parameters.AddWithValue(@"expiryDate", dateExpiry.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue(@"productID", txtBoxProductID.Text);
                     command.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                //log changes
+                try
+                {
+                    conn.Open();
+                    command = new SqlCommand(addLogState, conn);
+                    command.Parameters.AddWithValue(@"date", DateTime.Today.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue(@"time", DateTime.Now.ToString("hh:mm:ss tt"));
+                    command.Parameters.AddWithValue(@"info", "Add " + txtBoxAddQty.Text + " Stocks");
+                    command.Parameters.AddWithValue(@"productID", txtBoxProductID.Text);
+                    command.ExecuteNonQuery();
+                    conn.Close();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
+
             this.Close();
         }
     }

@@ -39,7 +39,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridInventory = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -191,26 +190,13 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.ToSalesRecordFromInventory);
             // 
-            // deleteButton
-            // 
-            this.deleteButton.BackColor = System.Drawing.Color.Transparent;
-            this.deleteButton.FlatAppearance.BorderSize = 0;
-            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteButton.Image = global::TestForms.Properties.Resources.delete;
-            this.deleteButton.Location = new System.Drawing.Point(671, 607);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(67, 62);
-            this.deleteButton.TabIndex = 26;
-            this.deleteButton.UseVisualStyleBackColor = false;
-            // 
             // editButton
             // 
             this.editButton.BackColor = System.Drawing.Color.Transparent;
             this.editButton.FlatAppearance.BorderSize = 0;
             this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editButton.Image = global::TestForms.Properties.Resources.edit;
-            this.editButton.Location = new System.Drawing.Point(556, 607);
+            this.editButton.Location = new System.Drawing.Point(628, 607);
             this.editButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(67, 62);
@@ -224,7 +210,7 @@
             this.addButton.FlatAppearance.BorderSize = 0;
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButton.Image = global::TestForms.Properties.Resources.add;
-            this.addButton.Location = new System.Drawing.Point(436, 607);
+            this.addButton.Location = new System.Drawing.Point(508, 607);
             this.addButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(67, 62);
@@ -245,7 +231,6 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridInventory);
-            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.addButton);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -274,7 +259,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridInventory;
-        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.BindingSource bindingSource1;

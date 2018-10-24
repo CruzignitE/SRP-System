@@ -34,13 +34,17 @@ namespace TestForms
         {
             SqlCommand command;
             string updateState = @"UPDATE Product SET product_stock_qty = @StockQty, product_arrival = @arrivalDate, product_expiry_date = @expiryDate WHERE product_id = @productID";
+            string editLogState = @"INSERT INTO Log_Changes (log_changes_date, log_changes_time, log_changes_info, product_id)
+                                   VALUES (@date, @time, @info, @productID)";
 
             using (SqlConnection conn = new SqlConnection(connString.getConnString()))
             {
+                //edit stock
                 try
                 {
                     conn.Open();
                     command = new SqlCommand(updateState, conn);
+                    if (txtBoxEditQty.Text == "") txtBoxEditQty.Text = "0";
                     int newQty = Convert.ToInt32(txtBoxCurrentQty.Text) + Convert.ToInt32(txtBoxEditQty.Text);
                     command.Parameters.AddWithValue(@"StockQty", newQty);
                     DateTime dateArrival = Convert.ToDateTime(txtBoxArrival.Text);
@@ -49,6 +53,26 @@ namespace TestForms
                     command.Parameters.AddWithValue(@"expiryDate", dateExpiry.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue(@"productID", txtBoxProductID.Text);
                     command.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                //log changes for edit
+                try
+                {
+                    conn.Open();
+                    command = new SqlCommand(editLogState, conn);
+                    command.Parameters.AddWithValue(@"date", DateTime.Today.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue(@"time", DateTime.Now.ToString("hh:mm:ss tt"));
+                    string action = "";
+                    int qty = Convert.ToInt32(txtBoxEditQty.Text);
+                    action = (qty < 0) ? "Deduct " : "Add ";
+                    command.Parameters.AddWithValue(@"info", action + txtBoxEditQty.Text + " Stocks");
+                    command.Parameters.AddWithValue(@"productID", txtBoxProductID.Text);
+                    command.ExecuteNonQuery();
+                    conn.Close();
                 }
                 catch (Exception ex)
                 {
