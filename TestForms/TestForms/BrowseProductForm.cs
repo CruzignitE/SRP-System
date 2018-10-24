@@ -54,10 +54,10 @@ namespace TestForms
                 DataGridViewRow row = dataGVBrowseProduct.CurrentCell.OwningRow;
                 string productID = row.Cells["product_id"].Value.ToString();
                 string productName = row.Cells["product_name"].Value.ToString();
+                double productPrice = Convert.ToDouble(row.Cells["product_price"].Value);
                 AddEditSalesRecord.ProductID = productID;
                 AddEditSalesRecord.ProductName = productName;
-
-
+                AddEditSalesRecord.ProductPrice = productPrice;
             }
             catch (Exception ex)
             {

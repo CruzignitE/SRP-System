@@ -49,6 +49,7 @@ namespace TestForms
         private void addButton_Click(object sender, EventArgs e)
         {
             AddEditSalesRecord AddRecord = new AddEditSalesRecord();
+            AddRecord.FormClosing += new FormClosingEventHandler(SalesRecords_FormClosing);
             AddRecord.ShowDialog();  // Shows the AddEditSalesRecord page
         }
 
@@ -119,6 +120,12 @@ namespace TestForms
         {
             SalesRecordsGraph generateGraph = new SalesRecordsGraph();
             generateGraph.ShowDialog(); // Shows the Graph
+        }
+
+        private void SalesRecords_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            dataGridView1.Update();
+            GetData(selectState);
         }
     }
 }
