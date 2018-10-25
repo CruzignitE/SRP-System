@@ -18,6 +18,7 @@ namespace TestForms
         private ConnectionString connString;
         private SqlDataAdapter dataAdapter;
         private DataTable table;
+        private string id, date, tPrice;
 
         private string selectState = @"SELECT sales_record_id AS 'Sales ID', sales_record_date AS 'Sales Date', sales_record_amount AS 'Sales Total Price', tax_amount AS 'Tax Amount', sales_record_description AS 'Description' FROM Sales_Record WHERE sales_status = 1";
         public SalesRecords()
@@ -48,14 +49,16 @@ namespace TestForms
     
         private void Btn_Add_Click(object sender, EventArgs e)
         {
-            AddEditSalesRecord AddRecord = new AddEditSalesRecord();
+            AddEditSalesRecord AddRecord = new AddEditSalesRecord(true);
             AddRecord.FormClosing += new FormClosingEventHandler(SalesRecords_FormClosing);
-            AddRecord.ShowDialog();  // Shows the AddEditSalesRecord page
+            AddRecord.ShowDialog();  // Shows the Add Sakes page
         }
 
         private void Btn_Edit_Click(object sender, EventArgs e)
         {
-
+            AddEditSalesRecord EditRecord = new AddEditSalesRecord(false, id, date, tPrice);
+            EditRecord.FormClosing += new FormClosingEventHandler(SalesRecords_FormClosing);
+            EditRecord.ShowDialog();  // Shows the Edit sales page
         }
 
         private void Btn_Delete_Click(object sender, EventArgs e)
@@ -66,7 +69,7 @@ namespace TestForms
         //DATABASE UDPATE 12/10/2018 BY FELIX
         private void SalesRecords_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = bindingSource1;
+            dataGridViewSalesRecord.DataSource = bindingSource1;
             GetData(selectState);
         }
 
@@ -124,7 +127,7 @@ namespace TestForms
 
         private void SalesRecords_FormClosing(object sender, FormClosingEventArgs e)
         {
-            dataGridView1.Update();
+            dataGridViewSalesRecord.Update();
             GetData(selectState);
         }
 
@@ -132,6 +135,14 @@ namespace TestForms
         {
             ManagerControl managerControl = new ManagerControl();
             managerControl.ShowDialog();
+        }
+
+        private void dataGridViewSales_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridViewSalesRecord.CurrentCell.OwningRow;
+            id = row.Cells["Sales ID"].Value.ToString();
+            date = row.Cells["Sales Date"].Value.ToString();
+            tPrice = row.Cells["Sales Total Price"].Value.ToString();
         }
     }
 }

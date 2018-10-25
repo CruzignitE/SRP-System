@@ -36,6 +36,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel_salesRecords_table = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.refundsPopupButton = new System.Windows.Forms.Button();
@@ -49,9 +50,8 @@
             this.addButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewSalesRecord = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.button4 = new System.Windows.Forms.Button();
             button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -59,7 +59,7 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalesRecord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,6 +188,18 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.ToProductListFromSalesRecord);
             // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button4.Location = new System.Drawing.Point(3, 656);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(182, 35);
+            this.button4.TabIndex = 22;
+            this.button4.Text = "Manager Control";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.ManagerControl_Click);
+            // 
             // tableLayoutPanel_salesRecords_table
             // 
             this.tableLayoutPanel_salesRecords_table.ColumnCount = 3;
@@ -196,7 +208,7 @@
             this.tableLayoutPanel_salesRecords_table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.5F));
             this.tableLayoutPanel_salesRecords_table.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel_salesRecords_table.Controls.Add(this.tableLayoutPanel5, 1, 2);
-            this.tableLayoutPanel_salesRecords_table.Controls.Add(this.dataGridView1, 1, 1);
+            this.tableLayoutPanel_salesRecords_table.Controls.Add(this.dataGridViewSalesRecord, 1, 1);
             this.tableLayoutPanel_salesRecords_table.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_salesRecords_table.Location = new System.Drawing.Point(191, 3);
             this.tableLayoutPanel_salesRecords_table.Name = "tableLayoutPanel_salesRecords_table";
@@ -215,7 +227,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.02326F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.83495F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
             this.tableLayoutPanel4.Controls.Add(this.refundsPopupButton, 4, 0);
             this.tableLayoutPanel4.Controls.Add(this.popupGraphButton, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.popupPieButton, 0, 0);
@@ -238,9 +250,9 @@
             this.refundsPopupButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.refundsPopupButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refundsPopupButton.ForeColor = System.Drawing.Color.Black;
-            this.refundsPopupButton.Location = new System.Drawing.Point(694, 3);
+            this.refundsPopupButton.Location = new System.Drawing.Point(691, 3);
             this.refundsPopupButton.Name = "refundsPopupButton";
-            this.refundsPopupButton.Size = new System.Drawing.Size(105, 58);
+            this.refundsPopupButton.Size = new System.Drawing.Size(108, 58);
             this.refundsPopupButton.TabIndex = 26;
             this.refundsPopupButton.Text = "Refunds";
             this.refundsPopupButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -254,9 +266,9 @@
             this.popupGraphButton.FlatAppearance.BorderSize = 0;
             this.popupGraphButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.popupGraphButton.Image = global::TestForms.Properties.Resources.sales_display_graph;
-            this.popupGraphButton.Location = new System.Drawing.Point(489, 3);
+            this.popupGraphButton.Location = new System.Drawing.Point(487, 3);
             this.popupGraphButton.Name = "popupGraphButton";
-            this.popupGraphButton.Size = new System.Drawing.Size(72, 58);
+            this.popupGraphButton.Size = new System.Drawing.Size(71, 58);
             this.popupGraphButton.TabIndex = 25;
             this.popupGraphButton.UseVisualStyleBackColor = false;
             this.popupGraphButton.Click += new System.EventHandler(this.PopupGraphButton_Click);
@@ -268,7 +280,7 @@
             this.popupPieButton.FlatAppearance.BorderSize = 0;
             this.popupPieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.popupPieButton.Image = global::TestForms.Properties.Resources.sales_display_pie;
-            this.popupPieButton.Location = new System.Drawing.Point(416, 3);
+            this.popupPieButton.Location = new System.Drawing.Point(414, 3);
             this.popupPieButton.Name = "popupPieButton";
             this.popupPieButton.Size = new System.Drawing.Size(67, 58);
             this.popupPieButton.TabIndex = 24;
@@ -281,9 +293,9 @@
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBox1.Location = new System.Drawing.Point(218, 18);
+            this.comboBox1.Location = new System.Drawing.Point(217, 18);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(192, 28);
+            this.comboBox1.Size = new System.Drawing.Size(191, 28);
             this.comboBox1.TabIndex = 23;
             this.comboBox1.Text = "Filter By";
             // 
@@ -293,7 +305,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBox1.Location = new System.Drawing.Point(3, 19);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 26);
+            this.textBox1.Size = new System.Drawing.Size(208, 26);
             this.textBox1.TabIndex = 22;
             this.textBox1.Text = "Search";
             // 
@@ -305,7 +317,7 @@
             this.CsvButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CsvButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CsvButton.ForeColor = System.Drawing.Color.Black;
-            this.CsvButton.Location = new System.Drawing.Point(567, 3);
+            this.CsvButton.Location = new System.Drawing.Point(564, 3);
             this.CsvButton.Name = "CsvButton";
             this.CsvButton.Size = new System.Drawing.Size(121, 58);
             this.CsvButton.TabIndex = 21;
@@ -327,7 +339,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 107F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(802, 105);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
@@ -345,8 +357,8 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 99F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(328, 99);
             this.tableLayoutPanel6.TabIndex = 8;
             // 
@@ -392,27 +404,16 @@
             this.editButton.UseVisualStyleBackColor = false;
             this.editButton.Click += new System.EventHandler(this.Btn_Edit_Click);
             // 
-            // dataGridView1
+            // dataGridViewSalesRecord
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 73);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(802, 548);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button4.Location = new System.Drawing.Point(3, 656);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(182, 35);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Manager Control";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.ManagerControl_Click);
+            this.dataGridViewSalesRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSalesRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewSalesRecord.Location = new System.Drawing.Point(24, 73);
+            this.dataGridViewSalesRecord.Name = "dataGridViewSalesRecord";
+            this.dataGridViewSalesRecord.RowTemplate.Height = 24;
+            this.dataGridViewSalesRecord.Size = new System.Drawing.Size(802, 548);
+            this.dataGridViewSalesRecord.TabIndex = 2;
+            this.dataGridViewSalesRecord.SelectionChanged += new System.EventHandler(this.dataGridViewSales_SelectionChanged);
             // 
             // SalesRecords
             // 
@@ -434,7 +435,7 @@
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalesRecord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -456,7 +457,7 @@
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button editButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewSalesRecord;
         private System.Windows.Forms.Button popupGraphButton;
         private System.Windows.Forms.Button popupPieButton;
         private System.Windows.Forms.ComboBox comboBox1;

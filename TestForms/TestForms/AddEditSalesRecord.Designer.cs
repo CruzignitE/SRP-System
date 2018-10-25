@@ -37,11 +37,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtBoxGrandTotal = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtBoxSalesID = new System.Windows.Forms.TextBox();
             this.txtBoxProductID = new System.Windows.Forms.TextBox();
             this.txtBoxProductName = new System.Windows.Forms.TextBox();
             this.txtBoxProductQty = new System.Windows.Forms.NumericUpDown();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtBoxDate = new System.Windows.Forms.DateTimePicker();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnSubmitSalesRecord = new System.Windows.Forms.Button();
@@ -125,7 +125,7 @@
             // txtBoxGrandTotal
             // 
             this.txtBoxGrandTotal.Location = new System.Drawing.Point(805, 509);
-            this.txtBoxGrandTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxGrandTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxGrandTotal.Name = "txtBoxGrandTotal";
             this.txtBoxGrandTotal.ReadOnly = true;
             this.txtBoxGrandTotal.Size = new System.Drawing.Size(132, 22);
@@ -134,25 +134,25 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(805, 548);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(132, 22);
             this.textBox4.TabIndex = 14;
             // 
-            // textBox5
+            // txtBoxSalesID
             // 
-            this.textBox5.Location = new System.Drawing.Point(349, 28);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(193, 22);
-            this.textBox5.TabIndex = 15;
+            this.txtBoxSalesID.Location = new System.Drawing.Point(349, 28);
+            this.txtBoxSalesID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxSalesID.Name = "txtBoxSalesID";
+            this.txtBoxSalesID.ReadOnly = true;
+            this.txtBoxSalesID.Size = new System.Drawing.Size(193, 22);
+            this.txtBoxSalesID.TabIndex = 15;
             // 
             // txtBoxProductID
             // 
             this.txtBoxProductID.Location = new System.Drawing.Point(207, 112);
-            this.txtBoxProductID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxProductID.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxProductID.Name = "txtBoxProductID";
             this.txtBoxProductID.ReadOnly = true;
             this.txtBoxProductID.Size = new System.Drawing.Size(165, 22);
@@ -161,7 +161,7 @@
             // txtBoxProductName
             // 
             this.txtBoxProductName.Location = new System.Drawing.Point(381, 112);
-            this.txtBoxProductName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxProductName.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxProductName.Name = "txtBoxProductName";
             this.txtBoxProductName.ReadOnly = true;
             this.txtBoxProductName.Size = new System.Drawing.Size(325, 22);
@@ -170,19 +170,20 @@
             // txtBoxProductQty
             // 
             this.txtBoxProductQty.Location = new System.Drawing.Point(716, 112);
-            this.txtBoxProductQty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxProductQty.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxProductQty.Name = "txtBoxProductQty";
             this.txtBoxProductQty.Size = new System.Drawing.Size(160, 22);
             this.txtBoxProductQty.TabIndex = 2;
             // 
-            // dateTimePicker1
+            // txtBoxDate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(648, 28);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(133, 26);
-            this.dateTimePicker1.TabIndex = 17;
+            this.txtBoxDate.Enabled = false;
+            this.txtBoxDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBoxDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtBoxDate.Location = new System.Drawing.Point(648, 28);
+            this.txtBoxDate.Name = "txtBoxDate";
+            this.txtBoxDate.Size = new System.Drawing.Size(133, 26);
+            this.txtBoxDate.TabIndex = 17;
             // 
             // btnAddProduct
             // 
@@ -191,7 +192,7 @@
             this.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddProduct.Image = global::TestForms.Properties.Resources.add;
             this.btnAddProduct.Location = new System.Drawing.Point(947, 112);
-            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(67, 61);
             this.btnAddProduct.TabIndex = 1;
@@ -205,7 +206,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = global::TestForms.Properties.Resources.cancel;
             this.button3.Location = new System.Drawing.Point(943, 603);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(67, 61);
             this.button3.TabIndex = 2;
@@ -219,7 +220,7 @@
             this.btnSubmitSalesRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitSalesRecord.Image = global::TestForms.Properties.Resources.confirm;
             this.btnSubmitSalesRecord.Location = new System.Drawing.Point(868, 603);
-            this.btnSubmitSalesRecord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubmitSalesRecord.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmitSalesRecord.Name = "btnSubmitSalesRecord";
             this.btnSubmitSalesRecord.Size = new System.Drawing.Size(67, 61);
             this.btnSubmitSalesRecord.TabIndex = 0;
@@ -238,9 +239,12 @@
             // 
             // dataGridSalesProduct
             // 
+            this.dataGridSalesProduct.AllowUserToAddRows = false;
+            this.dataGridSalesProduct.AllowUserToDeleteRows = false;
             this.dataGridSalesProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridSalesProduct.Location = new System.Drawing.Point(171, 208);
             this.dataGridSalesProduct.Name = "dataGridSalesProduct";
+            this.dataGridSalesProduct.ReadOnly = true;
             this.dataGridSalesProduct.RowTemplate.Height = 24;
             this.dataGridSalesProduct.Size = new System.Drawing.Size(767, 283);
             this.dataGridSalesProduct.TabIndex = 19;
@@ -252,7 +256,7 @@
             this.button4.BackgroundImage = global::TestForms.Properties.Resources.delete;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button4.Location = new System.Drawing.Point(884, 112);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(32, 28);
             this.button4.TabIndex = 3;
@@ -261,7 +265,7 @@
             // txtBoxProductPrice
             // 
             this.txtBoxProductPrice.Location = new System.Drawing.Point(207, 169);
-            this.txtBoxProductPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxProductPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxProductPrice.Name = "txtBoxProductPrice";
             this.txtBoxProductPrice.ReadOnly = true;
             this.txtBoxProductPrice.Size = new System.Drawing.Size(165, 22);
@@ -292,9 +296,9 @@
             this.Controls.Add(this.txtBoxProductID);
             this.Controls.Add(this.dataGridSalesProduct);
             this.Controls.Add(this.btnBrowseProduct);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.txtBoxDate);
             this.Controls.Add(this.btnAddProduct);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtBoxSalesID);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.txtBoxGrandTotal);
             this.Controls.Add(this.label7);
@@ -305,7 +309,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnSubmitSalesRecord);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddEditSalesRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product Check-out";
@@ -332,11 +336,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtBoxGrandTotal;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtBoxSalesID;
         private System.Windows.Forms.TextBox txtBoxProductID;
         private System.Windows.Forms.TextBox txtBoxProductName;
         private System.Windows.Forms.NumericUpDown txtBoxProductQty;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker txtBoxDate;
         private System.Windows.Forms.Button btnBrowseProduct;
         private System.Windows.Forms.DataGridView dataGridSalesProduct;
         private System.Windows.Forms.BindingSource bindingSource1;

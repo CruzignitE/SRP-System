@@ -28,7 +28,7 @@ namespace TestForms
 
         private void button_sr_add_Click(object sender, EventArgs e)
         {
-            AddEditSalesRecord AddRecord = new AddEditSalesRecord();
+            AddEditSalesRecord AddRecord = new AddEditSalesRecord(true);
             AddRecord.ShowDialog();  // Shows the AddEditSalesRecord page
         }
 

@@ -17,6 +17,7 @@ namespace TestForms
         private ConnectionString connString;
         private SqlDataAdapter dataAdapter;
         private DataTable table;
+        private string selectState = @"SELECT Product.product_id AS 'Product ID', Product.product_name AS 'Product Name', Sales_Record_Details.quantity_order AS 'Product Qty', Product.product_price AS 'Unit Price', (Sales_Record_Details.quantity_order * Product.product_price) AS 'Total Price' FROM Sales_Record_Details JOIN Product ON Product.product_id = Sales_Record_Details.product_id WHERE sales_record_id = SalesID";
 
         private static string productID;
         private static string productName;
@@ -24,16 +25,30 @@ namespace TestForms
         private double grandTotal = 0.0;
         private double tempPrice = 0.0;
         private int lastInsertedID = 0;
-
+        private bool isAdd;
+        
 
         public static string ProductID { get => productID; set => productID = value; }
         public new static string ProductName { get => productName; set => productName = value; }
         public static double ProductPrice { get => productPrice; set => productPrice = value; }
 
-        public AddEditSalesRecord()
+        public AddEditSalesRecord(bool isAdd)
         {
             InitializeComponent();
             connString = new ConnectionString();
+            this.isAdd = isAdd;
+        }
+
+        public AddEditSalesRecord(bool isAdd, string id, string date, string tPrice)
+        {
+            InitializeComponent();
+            connString = new ConnectionString();
+            this.isAdd = isAdd;
+            
+            txtBoxSalesID.Text = id;
+            txtBoxDate.Text = date;
+            txtBoxGrandTotal.Text = tPrice;
+            grandTotal = Convert.ToDouble(tPrice);
         }
 
         private void Btn_Cancel_Click(object sender, EventArgs e)
@@ -50,28 +65,35 @@ namespace TestForms
 
         private void AddEditSalesRecord_Load(object sender, EventArgs e)
         {
-            //dataGridSalesProduct.DataSource = bindingSource1;
-            //GetData("SELECT * FROM Sales_Record_Details");
-            table = new DataTable();
-            table.Columns.AddRange(new DataColumn[5] {
-                new DataColumn("Product ID", typeof(int)),
-                new DataColumn("Product Name", typeof(string)),
-                new DataColumn("Product Qty", typeof(int)),
-                new DataColumn("Unit Price", typeof(double)),
-                new DataColumn("Total Price", typeof(double))
-            });
-
-            dataGridSalesProduct.DataSource = table;
+            if (isAdd)
+            {
+                table = new DataTable();
+                table.Columns.AddRange(new DataColumn[5] {
+                    new DataColumn("Product ID", typeof(int)),
+                    new DataColumn("Product Name", typeof(string)),
+                    new DataColumn("Product Qty", typeof(int)),
+                    new DataColumn("Unit Price", typeof(double)),
+                    new DataColumn("Total Price", typeof(double))
+                });
+                dataGridSalesProduct.DataSource = table;
+            } else
+            {
+                dataGridSalesProduct.DataSource = bindingSource1;
+                GetData(selectState);
+            }
         }
 
         private void GetData(string cmd)
         {
             try
             {
+                cmd = cmd.Replace("SalesID", txtBoxSalesID.Text);
                 dataAdapter = new SqlDataAdapter(cmd, connString.getConnString());
+               
+
                 table = new DataTable();
                 dataAdapter.Fill(table);
-
+                
                 bindingSource1.DataSource = table;
 
             }
@@ -101,7 +123,7 @@ namespace TestForms
                 txtBoxProductPrice.Text = "";
                 txtBoxGrandTotal.Text = grandTotal.ToString();
             }
-            catch (Exception ex) {
+            catch {
                 MessageBox.Show("Please select a product!");
             }
         }
@@ -114,8 +136,11 @@ namespace TestForms
 
         private void dataGridSalesProduct_SelectionChanged(object sender, EventArgs e)
         {
-            DataGridViewRow row = dataGridSalesProduct.CurrentCell.OwningRow;
-            tempPrice = Convert.ToDouble(row.Cells["Total Price"].Value);
+            if (isAdd)
+            {
+                DataGridViewRow row = dataGridSalesProduct.CurrentCell.OwningRow;
+                tempPrice = Convert.ToDouble(row.Cells["Total Price"].Value);
+            }
         }
 
         private void btnSubmitSalesRecord_Click(object sender, EventArgs e)
@@ -133,7 +158,7 @@ namespace TestForms
                 quantities.Add((int)row["Product Qty"]);
             }
 
-            if (true)
+            if (table.Rows.Count == 0)
             {
                 using (SqlConnection conn = new SqlConnection(connString.getConnString()))
                 {
