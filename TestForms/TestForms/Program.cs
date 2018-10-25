@@ -39,12 +39,18 @@ namespace TestForms
 
                 if (srpKey.GetValue("SRPvalue1") == null)
                 {
-                    srpKey.SetValue("SRPvalue1", "admin", RegistryValueKind.String);
+                    srpKey.SetValue("SRPvalue1", Encrypt("admin"), RegistryValueKind.String);
                     srpKey.SetValue("SRPvalue2", "admin", RegistryValueKind.String);
                 }
             }
 
             Application.Run(new SalesRecords());
+        }
+
+        public static string Encrypt(string text)
+        {
+            return Convert.ToBase64String(
+                ProtectedData.Protect(Encoding.Unicode.GetBytes(text), null, DataProtectionScope.CurrentUser));
         }
     }
 }

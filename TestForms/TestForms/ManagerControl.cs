@@ -39,21 +39,23 @@ namespace TestForms
 
         private void Btn_Confirm_Click(object sender, EventArgs e)
         {
+            // Validates manager password
             if (txtBox_currentPass.Text == txtBox_reenterPass.Text)
             {
-                if (txtBox_currentPass.Text == (string)srpKey.GetValue("SRPvalue1"))
+                if (txtBox_currentPass.Text == Decrypt((string)srpKey.GetValue("SRPvalue1")))
                 {
                     // Writes new password and hint to registry
                     //srpKey.SetValue("SRPvalue1", Encrypt(txtBox_newPass.Text), RegistryValueKind.String);
-                    srpKey.SetValue("SRPvalue1", txtBox_newPass.Text, RegistryValueKind.String);
+                    srpKey.SetValue("SRPvalue1", Encrypt(txtBox_newPass.Text), RegistryValueKind.String);
                     srpKey.SetValue("SRPvalue2", txtBox_hint.Text, RegistryValueKind.String);
+
 
                     // Notifies user of successful password change
                     MessageBox.Show("Manager password changed.", "Password changed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
-                    MessageBox.Show("Current password " + txtBox_currentPass.Text + "does not match saved password " + (string)srpKey.GetValue("SRPvalue1"), "Wrong password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Current password does not match saved password", "Wrong password", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -61,24 +63,16 @@ namespace TestForms
             }
         }
 
-        private string Encrypt(string str)
+        public static string Encrypt(string text)
         {
-            var data = Encoding.Unicode.GetBytes(str);
-
-            // Encrypt data
-            byte[] encrypted = ProtectedData.Protect(data, null, scope);
-
-            return Convert.ToBase64String(encrypted);
+            return Convert.ToBase64String(
+                ProtectedData.Protect(Encoding.Unicode.GetBytes(text), null, DataProtectionScope.CurrentUser));
         }
 
-        private string Decrypt(string cipher)
+        public static string Decrypt(string text)
         {
-            // Parse base64 string
-            byte[] data = Convert.FromBase64String(cipher);
-
-            // Decrypt data
-            byte[] decrypted = ProtectedData.Unprotect(data, null, scope);
-            return Encoding.Unicode.GetString(decrypted);
+            return Encoding.Unicode.GetString(
+                ProtectedData.Unprotect(Convert.FromBase64String(text), null, DataProtectionScope.CurrentUser));
         }
     }
 }
