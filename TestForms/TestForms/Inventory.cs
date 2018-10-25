@@ -25,14 +25,14 @@ namespace TestForms
             connString = new ConnectionString();
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        private void Btn_Add_Click(object sender, EventArgs e)
         {
             StockAdd AddStock = new StockAdd(id, name, qty);
             AddStock.FormClosing += new FormClosingEventHandler(this.Inventory_FormClosing);
             AddStock.ShowDialog();  // Shows the StockAdd page
         }
 
-        private void editButton_Click(object sender, EventArgs e)
+        private void Btn_Edit_Click(object sender, EventArgs e)
         {
             StockEdit EditStock = new StockEdit(id, name, qty, arrival, expiry);
             EditStock.FormClosing += new FormClosingEventHandler(this.Inventory_FormClosing);
@@ -74,7 +74,7 @@ namespace TestForms
             GetData(selectCommand);
         }
 
-        private void showStockLog(object sender, EventArgs e)
+        private void ShowStockLog(object sender, EventArgs e)
         {
             StockChanges stockChanged = new StockChanges();
             stockChanged.ShowDialog();
@@ -96,7 +96,7 @@ namespace TestForms
             }
         }
 
-        private void dataGridInventory_SelectionChanged(object sender, EventArgs e)
+        private void DataGridInventory_SelectionChanged(object sender, EventArgs e)
         {
             try
             {

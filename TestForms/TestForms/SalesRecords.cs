@@ -46,19 +46,19 @@ namespace TestForms
 
         }
     
-        private void addButton_Click(object sender, EventArgs e)
+        private void Btn_Add_Click(object sender, EventArgs e)
         {
             AddEditSalesRecord AddRecord = new AddEditSalesRecord();
             AddRecord.FormClosing += new FormClosingEventHandler(SalesRecords_FormClosing);
             AddRecord.ShowDialog();  // Shows the AddEditSalesRecord page
         }
 
-        private void editButton_Click(object sender, EventArgs e)
+        private void Btn_Edit_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
+        private void Btn_Delete_Click(object sender, EventArgs e)
         {
 
         }
@@ -104,19 +104,19 @@ namespace TestForms
             goProductList.Focus();
         }
 
-        private void refundsPopupButton_Click(object sender, EventArgs e)
+        private void RefundsPopupButton_Click(object sender, EventArgs e)
         {
             Refunds AddRefund = new Refunds();
             AddRefund.ShowDialog();  // Shows the Refund page
         }
 
-        private void popupPieButton_Click(object sender, EventArgs e)
+        private void PopupPieButton_Click(object sender, EventArgs e)
         {
             SalesRecordsPie generatePieChart = new SalesRecordsPie();
             generatePieChart.ShowDialog(); // Shows the Pie chart
         }
 
-        private void popupGraphButton_Click(object sender, EventArgs e)
+        private void PopupGraphButton_Click(object sender, EventArgs e)
         {
             SalesRecordsGraph generateGraph = new SalesRecordsGraph();
             generateGraph.ShowDialog(); // Shows the Graph
@@ -126,6 +126,12 @@ namespace TestForms
         {
             dataGridView1.Update();
             GetData(selectState);
+        }
+
+        private void ManagerControl_Click(object sender, EventArgs e)
+        {
+            ManagerControl managerControl = new ManagerControl();
+            managerControl.ShowDialog();
         }
     }
 }

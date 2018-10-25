@@ -204,7 +204,7 @@
             this.btnCancelEditProductForm.Size = new System.Drawing.Size(67, 61);
             this.btnCancelEditProductForm.TabIndex = 37;
             this.btnCancelEditProductForm.UseVisualStyleBackColor = false;
-            this.btnCancelEditProductForm.Click += new System.EventHandler(this.CloseButton_Click);
+            this.btnCancelEditProductForm.Click += new System.EventHandler(this.Btn_Close_Click);
             // 
             // btnSubmitEditProductForm
             // 
@@ -217,7 +217,7 @@
             this.btnSubmitEditProductForm.Size = new System.Drawing.Size(67, 61);
             this.btnSubmitEditProductForm.TabIndex = 36;
             this.btnSubmitEditProductForm.UseVisualStyleBackColor = false;
-            this.btnSubmitEditProductForm.Click += new System.EventHandler(this.btnSubmitEditProductForm_Click);
+            this.btnSubmitEditProductForm.Click += new System.EventHandler(this.SubmitEditProductFormButton_Click);
             // 
             // ProductsEdit
             // 

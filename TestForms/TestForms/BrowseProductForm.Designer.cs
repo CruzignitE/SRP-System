@@ -101,7 +101,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "BrowseProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BrowseProductForm";
+            this.Text = "Browse Product Form";
             this.Load += new System.EventHandler(this.BrowseProductForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

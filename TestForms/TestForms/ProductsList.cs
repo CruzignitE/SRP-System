@@ -54,14 +54,14 @@ namespace TestForms
             GetData(select_product_SQL);
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        private void Btn_Add_Click(object sender, EventArgs e)
         {
             ProductsAdd AddProducts = new ProductsAdd();
             AddProducts.FormClosing += new FormClosingEventHandler(this.ProductsList_FormClosing);
             AddProducts.Show();  // Shows the Products Add page
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
+        private void Btn_Delete_Click(object sender, EventArgs e)
         {
             string deleteProduct = @"UPDATE Product SET product_status = 0 WHERE product_id = @Param";
             DataGridViewRow row = productGridTable.CurrentCell.OwningRow;
@@ -86,7 +86,7 @@ namespace TestForms
             GetData(select_product_SQL);
         }
 
-        private void editButton_Click(object sender, EventArgs e)
+        private void Btn_Edit_Click(object sender, EventArgs e)
         {
             List<String> selectedRow = new List<String>();
             DataGridViewRow row = productGridTable.CurrentCell.OwningRow;

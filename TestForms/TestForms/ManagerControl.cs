@@ -32,12 +32,12 @@ namespace TestForms
             txtBox_hint.Text = (string)srpKey.GetValue("SRPvalue2");
         }
 
-        private void btn_cancel_Click(object sender, EventArgs e)
+        private void Btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btn_confirm_Click(object sender, EventArgs e)
+        private void Btn_Confirm_Click(object sender, EventArgs e)
         {
             if (txtBox_currentPass.Text == txtBox_reenterPass.Text)
             {

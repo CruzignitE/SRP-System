@@ -72,7 +72,7 @@
             this.btn_cancel.Size = new System.Drawing.Size(50, 50);
             this.btn_cancel.TabIndex = 44;
             this.btn_cancel.UseVisualStyleBackColor = false;
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            this.btn_cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
             // 
             // btn_confirm
             // 
@@ -86,7 +86,7 @@
             this.btn_confirm.Size = new System.Drawing.Size(50, 50);
             this.btn_confirm.TabIndex = 43;
             this.btn_confirm.UseVisualStyleBackColor = false;
-            this.btn_confirm.Click += new System.EventHandler(this.btn_confirm_Click);
+            this.btn_confirm.Click += new System.EventHandler(this.Btn_Confirm_Click);
             // 
             // txtBox_hint
             // 

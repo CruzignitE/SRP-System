@@ -22,7 +22,7 @@ namespace TestForms
             connString = new ConnectionString();
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        private void Btn_Add_Click(object sender, EventArgs e)
         {
             SqlCommand command;
             string insertCmd = @"INSERT INTO Product (product_name, product_stock_qty, product_category, product_price, product_status)
@@ -54,7 +54,7 @@ namespace TestForms
                 MessageBox.Show("The required form must be filled.");
         }
 
-        private void CloseButton_Click(object sender, EventArgs e)
+        private void Btn_Close_Click(object sender, EventArgs e)
         {
             this.Close();
         }

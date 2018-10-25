@@ -22,7 +22,7 @@ namespace TestForms
             PutValueToForm(productID, productName, productCategory, productUnitPrice, productStatus);
         }
 
-        private void CloseButton_Click(object sender, EventArgs e)
+        private void Btn_Close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -39,7 +39,7 @@ namespace TestForms
                 sltEditPruductStatus.SelectedIndex = 1;
         }
 
-        private void btnSubmitEditProductForm_Click(object sender, EventArgs e)
+        private void SubmitEditProductFormButton_Click(object sender, EventArgs e)
         {
             connString = new ConnectionString();
             String updateProduct_SQL = @"UPDATE Product SET product_name = @productName, product_category = @productCategory, product_price = @productPrice, product_status = @productStatus WHERE product_id = @productID"; ;

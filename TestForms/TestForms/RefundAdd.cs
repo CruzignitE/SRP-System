@@ -17,7 +17,7 @@ namespace TestForms
             InitializeComponent();
         }
 
-        private void CloseButton_Click(object sender, EventArgs e)
+        private void Btn_Close_Click(object sender, EventArgs e)
         {
             this.Close();
         }

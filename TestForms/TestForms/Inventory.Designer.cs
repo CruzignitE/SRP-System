@@ -137,7 +137,7 @@
             this.button4.Text = "Logs";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.showStockLog);
+            this.button4.Click += new System.EventHandler(this.ShowStockLog);
             // 
             // comboBox1
             // 
@@ -170,7 +170,7 @@
             this.dataGridInventory.RowTemplate.Height = 24;
             this.dataGridInventory.Size = new System.Drawing.Size(848, 521);
             this.dataGridInventory.TabIndex = 27;
-            this.dataGridInventory.SelectionChanged += new System.EventHandler(this.dataGridInventory_SelectionChanged);
+            this.dataGridInventory.SelectionChanged += new System.EventHandler(this.DataGridInventory_SelectionChanged);
             // 
             // button1
             // 
@@ -202,7 +202,7 @@
             this.editButton.Size = new System.Drawing.Size(67, 62);
             this.editButton.TabIndex = 25;
             this.editButton.UseVisualStyleBackColor = false;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            this.editButton.Click += new System.EventHandler(this.Btn_Edit_Click);
             // 
             // addButton
             // 
@@ -216,7 +216,7 @@
             this.addButton.Size = new System.Drawing.Size(67, 62);
             this.addButton.TabIndex = 24;
             this.addButton.UseVisualStyleBackColor = false;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.addButton.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
             // Inventory
             // 

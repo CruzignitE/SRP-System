@@ -25,12 +25,12 @@ namespace TestForms
             txtBoxExpiry.Text = expiry;
         }
 
-        private void CloseButton_Click(object sender, EventArgs e)
+        private void Btn_Close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        private void Btn_Add_Click(object sender, EventArgs e)
         {
             SqlCommand command;
             string updateState = @"UPDATE Product SET product_stock_qty = @StockQty, product_arrival = @arrivalDate, product_expiry_date = @expiryDate WHERE product_id = @productID";

@@ -161,7 +161,7 @@
             this.editButton.Size = new System.Drawing.Size(67, 62);
             this.editButton.TabIndex = 42;
             this.editButton.UseVisualStyleBackColor = false;
-            this.editButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.editButton.Click += new System.EventHandler(this.Btn_Close_Click);
             // 
             // addButton
             // 
@@ -175,7 +175,7 @@
             this.addButton.Size = new System.Drawing.Size(67, 62);
             this.addButton.TabIndex = 41;
             this.addButton.UseVisualStyleBackColor = false;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.addButton.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
             // label6
             // 

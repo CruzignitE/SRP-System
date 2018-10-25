@@ -36,9 +36,9 @@ namespace TestForms
             connString = new ConnectionString();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Btn_Cancel_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
 
         private void btnBrowseProduct_Click(object sender, EventArgs e)
