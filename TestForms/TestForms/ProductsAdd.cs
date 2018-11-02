@@ -28,7 +28,7 @@ namespace TestForms
             string insertCmd = @"INSERT INTO Product (product_name, product_stock_qty, product_category, product_price, product_status)
                                     VALUES(@product_name, 0, @product_category, @product_price, @product_status)";
 
-            if (txtBoxName.Text != "" && txtBoxCategory.Text != "")
+            if (txtBoxName.Text != "" && sltCategory.SelectedItem.ToString() != "")
             {
                 using (SqlConnection conn = new SqlConnection(connString.getConnString()))
                 {
@@ -37,7 +37,7 @@ namespace TestForms
                         conn.Open();
                         command = new SqlCommand(insertCmd, conn);
                         command.Parameters.AddWithValue(@"product_name", txtBoxName.Text);
-                        command.Parameters.AddWithValue(@"product_category", txtBoxCategory.Text);
+                        command.Parameters.AddWithValue(@"product_category", sltCategory.SelectedItem.ToString());
                         double price = Convert.ToDouble(txtBoxPrice.Text);
                         command.Parameters.AddWithValue(@"product_price", price);
                         command.Parameters.AddWithValue(@"product_status", 1);

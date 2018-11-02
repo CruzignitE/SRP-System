@@ -42,7 +42,7 @@ namespace TestForms
         {
             txtEditProductID.Text = productID;
             txtEditProductName.Text = productName;
-            txtEditProductCategory.Text = productCategory;
+            sltEditProductCategory.SelectedItem = productCategory;
             txtEditProductUnitPrice.Value = Int32.Parse(productUnitPrice);
             if (Int32.Parse(productStatus) == 1)
                 sltEditPruductStatus.SelectedIndex = 0;
@@ -64,7 +64,7 @@ namespace TestForms
                         conn.Open();
                         command = new SqlCommand(updateProduct_SQL, conn);
                         command.Parameters.AddWithValue(@"productName", txtEditProductName.Text);
-                        command.Parameters.AddWithValue(@"productCategory", txtEditProductCategory.Text);
+                        command.Parameters.AddWithValue(@"productCategory", sltEditProductCategory.SelectedItem.ToString());
                         command.Parameters.AddWithValue(@"productPrice", txtEditProductUnitPrice.Value);
 
                         int idx;
