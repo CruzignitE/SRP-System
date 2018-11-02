@@ -26,26 +26,6 @@ namespace TestForms
             InitializeComponent();
             connString = new ConnectionString();
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     
         private void Btn_Add_Click(object sender, EventArgs e)
         {
@@ -63,7 +43,31 @@ namespace TestForms
 
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
-
+            DialogResult dialogResult = MessageBox.Show("Do you want to delete this sales record?", "Delete Sales", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string deleteStatement = @"UPDATE Sales_Record SET sales_status = 0 WHERE sales_record_id = @salesID";
+                DataGridViewRow row = dataGridViewSalesRecord.CurrentCell.OwningRow;
+                string id = row.Cells["Sales ID"].Value.ToString();
+                SqlCommand command;
+                using (SqlConnection conn = new SqlConnection(connString.getConnString()))
+                {
+                    try
+                    {
+                        conn.Open();
+                        command = new SqlCommand(deleteStatement, conn);
+                        command.Parameters.AddWithValue(@"salesID", id);
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                dataGridViewSalesRecord.Update();
+                GetData(selectState);
+            }
+            
         }
 
         //DATABASE UDPATE 12/10/2018 BY FELIX

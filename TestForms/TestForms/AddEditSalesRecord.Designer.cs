@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtBoxGrandTotal = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.txtBoxSalesID = new System.Windows.Forms.TextBox();
             this.txtBoxProductID = new System.Windows.Forms.TextBox();
             this.txtBoxProductName = new System.Windows.Forms.TextBox();
@@ -48,24 +46,12 @@
             this.btnBrowseProduct = new System.Windows.Forms.Button();
             this.dataGridSalesProduct = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.button4 = new System.Windows.Forms.Button();
             this.txtBoxProductPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtBoxProductQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSalesProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(763, 548);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Tax:";
             // 
             // label2
             // 
@@ -130,15 +116,6 @@
             this.txtBoxGrandTotal.ReadOnly = true;
             this.txtBoxGrandTotal.Size = new System.Drawing.Size(132, 22);
             this.txtBoxGrandTotal.TabIndex = 13;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(805, 548);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(132, 22);
-            this.textBox4.TabIndex = 14;
             // 
             // txtBoxSalesID
             // 
@@ -240,7 +217,6 @@
             // dataGridSalesProduct
             // 
             this.dataGridSalesProduct.AllowUserToAddRows = false;
-            this.dataGridSalesProduct.AllowUserToDeleteRows = false;
             this.dataGridSalesProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridSalesProduct.Location = new System.Drawing.Point(171, 208);
             this.dataGridSalesProduct.Name = "dataGridSalesProduct";
@@ -248,19 +224,9 @@
             this.dataGridSalesProduct.RowTemplate.Height = 24;
             this.dataGridSalesProduct.Size = new System.Drawing.Size(767, 283);
             this.dataGridSalesProduct.TabIndex = 19;
-            this.dataGridSalesProduct.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridSalesProduct_RowsRemoved);
+            this.dataGridSalesProduct.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSalesProduct_CellDoubleClick);
             this.dataGridSalesProduct.SelectionChanged += new System.EventHandler(this.dataGridSalesProduct_SelectionChanged);
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = global::TestForms.Properties.Resources.delete;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Location = new System.Drawing.Point(884, 112);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(32, 28);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
+            this.dataGridSalesProduct.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridSalesProduct_UserDeletingRow);
             // 
             // txtBoxProductPrice
             // 
@@ -290,7 +256,6 @@
             this.ClientSize = new System.Drawing.Size(1045, 691);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtBoxProductPrice);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.txtBoxProductQty);
             this.Controls.Add(this.txtBoxProductName);
             this.Controls.Add(this.txtBoxProductID);
@@ -299,14 +264,12 @@
             this.Controls.Add(this.txtBoxDate);
             this.Controls.Add(this.btnAddProduct);
             this.Controls.Add(this.txtBoxSalesID);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.txtBoxGrandTotal);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnSubmitSalesRecord);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -328,14 +291,12 @@
         private System.Windows.Forms.Button btnSubmitSalesRecord;
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtBoxGrandTotal;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox txtBoxSalesID;
         private System.Windows.Forms.TextBox txtBoxProductID;
         private System.Windows.Forms.TextBox txtBoxProductName;
@@ -344,7 +305,6 @@
         private System.Windows.Forms.Button btnBrowseProduct;
         private System.Windows.Forms.DataGridView dataGridSalesProduct;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtBoxProductPrice;
         private System.Windows.Forms.Label label4;
     }

@@ -63,6 +63,22 @@ namespace TestForms
             GetData(selectCommand);
         }
 
+        private void GetData(string cmd)
+        {
+            try
+            {
+                dataAdapter = new SqlDataAdapter(cmd, connString.getConnString());
+                table = new DataTable();
+                dataAdapter.Fill(table);
+
+                bindingSource1.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void Inventory_FormClosing(object sender, FormClosingEventArgs e)
         {
             RefreshInventoryPage();
@@ -80,21 +96,7 @@ namespace TestForms
             stockChanged.ShowDialog();
         }
 
-        private void GetData(string cmd)
-        {
-            try
-            {
-                dataAdapter = new SqlDataAdapter(cmd, connString.getConnString());
-                table = new DataTable();
-                dataAdapter.Fill(table);
-
-                bindingSource1.DataSource = table;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
 
         private void DataGridInventory_SelectionChanged(object sender, EventArgs e)
         {
