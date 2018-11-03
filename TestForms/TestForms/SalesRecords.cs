@@ -20,7 +20,8 @@ namespace TestForms
         private DataTable table;
         private string id, date, tPrice;
 
-        private string selectState = @"SELECT sales_record_id AS 'Sales ID', sales_record_date AS 'Sales Date', sales_record_amount AS 'Sales Total Price', tax_amount AS 'Tax Amount', sales_record_description AS 'Description' FROM Sales_Record WHERE sales_status = 1";
+        //private string selectState = @"SELECT sales_record_id AS 'Sales ID', sales_record_date AS 'Sales Date', sales_record_amount AS 'Sales Total Price', tax_amount AS 'Tax Amount', sales_record_description AS 'Description' FROM Sales_Record WHERE sales_status = 1";
+        private string selectState = @"SELECT * FROM Sales_Record";
         public SalesRecords()
         {
             InitializeComponent();
