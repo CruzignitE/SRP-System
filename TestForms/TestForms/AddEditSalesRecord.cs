@@ -164,6 +164,7 @@ namespace TestForms
         private void btnSubmitSalesRecord_Click(object sender, EventArgs e)
         {
             SqlCommand command;
+            string getMaxID_CMD = "SELECT MAX(id) AS maxID FROM Sales_Record";
             string insertCmd = @"INSERT INTO Sales_Record (sales_record_date, sales_record_amount, sales_record_description, sales_status)
                                     OUTPUT INSERTED.sales_record_id VALUES(@sDate, @sGrandTotal, @sDescription, 1)";
             string insertSalesDetail = @"INSERT INTO Sales_Record_Details (sales_record_id, product_id, quantity_order)
@@ -192,11 +193,17 @@ namespace TestForms
                         try
                         {
                             conn.Open();
-                            command = new SqlCommand(cmd, conn);
-                            command.Parameters.AddWithValue(@"sDate", DateTime.Today.ToString("yyyy-MM-dd"));
-                            command.Parameters.AddWithValue(@"sDescription", "");
-                            command.Parameters.AddWithValue(@"sGrandTotal", txtBoxGrandTotal.Text);
-                            lastInsertedID = (int)command.ExecuteScalar();
+                            command = new SqlCommand(getMaxID_CMD, conn);
+                            using (SqlDataReader reader = command.ExecuteReader()) {
+                                if (reader.Read()) {
+                                    MessageBox.Show(reader["maxID"].ToString());
+                                }
+                            }
+                                //command = new SqlCommand(cmd, conn);
+                            //command.Parameters.AddWithValue(@"sDate", DateTime.Today.ToString("yyyy-MM-dd"));
+                            //.Parameters.AddWithValue(@"sDescription", "");
+                            //command.Parameters.AddWithValue(@"sGrandTotal", txtBoxGrandTotal.Text);
+                            //lastInsertedID = (int)command.ExecuteScalar();
                             conn.Close();
                         }
                         catch (Exception ex)
