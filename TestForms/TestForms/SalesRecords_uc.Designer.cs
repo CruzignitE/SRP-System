@@ -40,11 +40,11 @@ namespace TestForms
             this.textBox_sr_search = new System.Windows.Forms.TextBox();
             this.button_csvExport = new System.Windows.Forms.Button();
             this.panel_bottomBar = new System.Windows.Forms.TableLayoutPanel();
+            this.button_edit = new System.Windows.Forms.Button();
+            this.button_add = new System.Windows.Forms.Button();
+            this.button_delete = new System.Windows.Forms.Button();
             this.dataGridView_salesRecords = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.button_delete = new System.Windows.Forms.Button();
-            this.button_add = new System.Windows.Forms.Button();
-            this.button_edit = new System.Windows.Forms.Button();
             this.panel_salesRecords.SuspendLayout();
             this.panel_sr_topBar.SuspendLayout();
             this.panel_bottomBar.SuspendLayout();
@@ -63,7 +63,6 @@ namespace TestForms
             this.panel_salesRecords.Controls.Add(this.dataGridView_salesRecords, 1, 1);
             this.panel_salesRecords.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_salesRecords.Location = new System.Drawing.Point(0, 0);
-            this.panel_salesRecords.Margin = new System.Windows.Forms.Padding(2);
             this.panel_salesRecords.Name = "panel_salesRecords";
             this.panel_salesRecords.RowCount = 3;
             this.panel_salesRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
@@ -81,7 +80,7 @@ namespace TestForms
             this.panel_sr_topBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.panel_sr_topBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.panel_sr_topBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.panel_sr_topBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.panel_sr_topBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
             this.panel_sr_topBar.Controls.Add(this.button_refunds, 4, 0);
             this.panel_sr_topBar.Controls.Add(this.button_popupGraph, 0, 0);
             this.panel_sr_topBar.Controls.Add(this.button_popupPie, 0, 0);
@@ -150,7 +149,7 @@ namespace TestForms
             this.comboBox_sr_filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBox_sr_filter.FormattingEnabled = true;
             this.comboBox_sr_filter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBox_sr_filter.Location = new System.Drawing.Point(185, 21);
+            this.comboBox_sr_filter.Location = new System.Drawing.Point(185, 20);
             this.comboBox_sr_filter.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_sr_filter.Name = "comboBox_sr_filter";
             this.comboBox_sr_filter.Size = new System.Drawing.Size(179, 24);
@@ -205,30 +204,20 @@ namespace TestForms
             this.panel_bottomBar.Size = new System.Drawing.Size(616, 82);
             this.panel_bottomBar.TabIndex = 1;
             // 
-            // dataGridView_salesRecords
+            // button_edit
             // 
-            this.dataGridView_salesRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_salesRecords.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_salesRecords.Location = new System.Drawing.Point(22, 72);
-            this.dataGridView_salesRecords.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView_salesRecords.Name = "dataGridView_salesRecords";
-            this.dataGridView_salesRecords.RowTemplate.Height = 24;
-            this.dataGridView_salesRecords.Size = new System.Drawing.Size(616, 440);
-            this.dataGridView_salesRecords.TabIndex = 2;
-            // 
-            // button_delete
-            // 
-            this.button_delete.BackColor = System.Drawing.Color.Transparent;
-            this.button_delete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_delete.FlatAppearance.BorderSize = 0;
-            this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_delete.Image = global::TestForms.Properties.Resources.delete;
-            this.button_delete.Location = new System.Drawing.Point(350, 2);
-            this.button_delete.Margin = new System.Windows.Forms.Padding(2);
-            this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(76, 78);
-            this.button_delete.TabIndex = 9;
-            this.button_delete.UseVisualStyleBackColor = false;
+            this.button_edit.BackColor = System.Drawing.Color.Transparent;
+            this.button_edit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_edit.FlatAppearance.BorderSize = 0;
+            this.button_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_edit.Image = global::TestForms.Properties.Resources.edit;
+            this.button_edit.Location = new System.Drawing.Point(270, 2);
+            this.button_edit.Margin = new System.Windows.Forms.Padding(2);
+            this.button_edit.Name = "button_edit";
+            this.button_edit.Size = new System.Drawing.Size(76, 78);
+            this.button_edit.TabIndex = 11;
+            this.button_edit.UseVisualStyleBackColor = false;
+            this.button_edit.Click += new System.EventHandler(this.Btn_Edit_Click);
             // 
             // button_add
             // 
@@ -244,19 +233,31 @@ namespace TestForms
             this.button_add.TabIndex = 10;
             this.button_add.UseVisualStyleBackColor = false;
             // 
-            // button_edit
+            // button_delete
             // 
-            this.button_edit.BackColor = System.Drawing.Color.Transparent;
-            this.button_edit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_edit.FlatAppearance.BorderSize = 0;
-            this.button_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_edit.Image = global::TestForms.Properties.Resources.edit;
-            this.button_edit.Location = new System.Drawing.Point(270, 2);
-            this.button_edit.Margin = new System.Windows.Forms.Padding(2);
-            this.button_edit.Name = "button_edit";
-            this.button_edit.Size = new System.Drawing.Size(76, 78);
-            this.button_edit.TabIndex = 11;
-            this.button_edit.UseVisualStyleBackColor = false;
+            this.button_delete.BackColor = System.Drawing.Color.Transparent;
+            this.button_delete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_delete.FlatAppearance.BorderSize = 0;
+            this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_delete.Image = global::TestForms.Properties.Resources.delete;
+            this.button_delete.Location = new System.Drawing.Point(350, 2);
+            this.button_delete.Margin = new System.Windows.Forms.Padding(2);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(76, 78);
+            this.button_delete.TabIndex = 9;
+            this.button_delete.UseVisualStyleBackColor = false;
+            this.button_delete.Click += new System.EventHandler(this.Btn_Del_Click);
+            // 
+            // dataGridView_salesRecords
+            // 
+            this.dataGridView_salesRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_salesRecords.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_salesRecords.Location = new System.Drawing.Point(22, 72);
+            this.dataGridView_salesRecords.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView_salesRecords.Name = "dataGridView_salesRecords";
+            this.dataGridView_salesRecords.RowTemplate.Height = 24;
+            this.dataGridView_salesRecords.Size = new System.Drawing.Size(616, 440);
+            this.dataGridView_salesRecords.TabIndex = 2;
             // 
             // SalesRecords_UC
             // 
@@ -266,6 +267,7 @@ namespace TestForms
             this.Controls.Add(this.panel_salesRecords);
             this.Name = "SalesRecords_UC";
             this.Size = new System.Drawing.Size(660, 600);
+            this.Load += new System.EventHandler(this.SalesRecords_Load);
             this.panel_salesRecords.ResumeLayout(false);
             this.panel_salesRecords.PerformLayout();
             this.panel_sr_topBar.ResumeLayout(false);

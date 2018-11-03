@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel_inv = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridInventory = new System.Windows.Forms.DataGridView();
             this.panel_topBar = new System.Windows.Forms.TableLayoutPanel();
@@ -35,13 +36,14 @@
             this.comboBox_filter = new System.Windows.Forms.ComboBox();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.panel_bottomBar = new System.Windows.Forms.TableLayoutPanel();
-            this.button_delete = new System.Windows.Forms.Button();
             this.button_edit = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel_inv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridInventory)).BeginInit();
             this.panel_topBar.SuspendLayout();
             this.panel_bottomBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_inv
@@ -107,7 +109,7 @@
             this.button_logs.Text = "Logs";
             this.button_logs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button_logs.UseVisualStyleBackColor = false;
-            this.button_logs.Click += new System.EventHandler(this.button_logs_Click);
+            this.button_logs.Click += new System.EventHandler(this.ShowStockLog);
             // 
             // comboBox_filter
             // 
@@ -115,7 +117,7 @@
             this.comboBox_filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBox_filter.FormattingEnabled = true;
             this.comboBox_filter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBox_filter.Location = new System.Drawing.Point(279, 5);
+            this.comboBox_filter.Location = new System.Drawing.Point(279, 4);
             this.comboBox_filter.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_filter.Name = "comboBox_filter";
             this.comboBox_filter.Size = new System.Drawing.Size(273, 24);
@@ -135,13 +137,12 @@
             // 
             // panel_bottomBar
             // 
-            this.panel_bottomBar.ColumnCount = 5;
+            this.panel_bottomBar.ColumnCount = 4;
             this.panel_bottomBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panel_bottomBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.panel_bottomBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.panel_bottomBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.panel_bottomBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panel_bottomBar.Controls.Add(this.button_delete, 3, 0);
+            this.panel_bottomBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.panel_bottomBar.Controls.Add(this.button_edit, 2, 0);
             this.panel_bottomBar.Controls.Add(this.button_add, 1, 0);
             this.panel_bottomBar.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -152,21 +153,6 @@
             this.panel_bottomBar.Size = new System.Drawing.Size(614, 80);
             this.panel_bottomBar.TabIndex = 1;
             // 
-            // button_delete
-            // 
-            this.button_delete.BackColor = System.Drawing.Color.Transparent;
-            this.button_delete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_delete.FlatAppearance.BorderSize = 0;
-            this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_delete.Image = global::TestForms.Properties.Resources.delete;
-            this.button_delete.Location = new System.Drawing.Point(349, 2);
-            this.button_delete.Margin = new System.Windows.Forms.Padding(2);
-            this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(76, 76);
-            this.button_delete.TabIndex = 27;
-            this.button_delete.UseVisualStyleBackColor = false;
-            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
-            // 
             // button_edit
             // 
             this.button_edit.BackColor = System.Drawing.Color.Transparent;
@@ -174,13 +160,13 @@
             this.button_edit.FlatAppearance.BorderSize = 0;
             this.button_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_edit.Image = global::TestForms.Properties.Resources.edit;
-            this.button_edit.Location = new System.Drawing.Point(269, 2);
+            this.button_edit.Location = new System.Drawing.Point(309, 2);
             this.button_edit.Margin = new System.Windows.Forms.Padding(2);
             this.button_edit.Name = "button_edit";
             this.button_edit.Size = new System.Drawing.Size(76, 76);
             this.button_edit.TabIndex = 26;
             this.button_edit.UseVisualStyleBackColor = false;
-            this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
+            this.button_edit.Click += new System.EventHandler(this.Btn_Edit_Click);
             // 
             // button_add
             // 
@@ -189,13 +175,13 @@
             this.button_add.FlatAppearance.BorderSize = 0;
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add.Image = global::TestForms.Properties.Resources.add;
-            this.button_add.Location = new System.Drawing.Point(189, 2);
+            this.button_add.Location = new System.Drawing.Point(229, 2);
             this.button_add.Margin = new System.Windows.Forms.Padding(2);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(76, 76);
             this.button_add.TabIndex = 25;
             this.button_add.UseVisualStyleBackColor = false;
-            this.button_add.Click += new System.EventHandler(this.button_add_Click);
+            this.button_add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
             // Inventory_UC
             // 
@@ -207,11 +193,13 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Inventory_UC";
             this.Size = new System.Drawing.Size(660, 600);
+            this.Load += new System.EventHandler(this.Inventory_Load);
             this.panel_inv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridInventory)).EndInit();
             this.panel_topBar.ResumeLayout(false);
             this.panel_topBar.PerformLayout();
             this.panel_bottomBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -226,7 +214,6 @@
         private System.Windows.Forms.TableLayoutPanel panel_bottomBar;
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.Button button_edit;
-        private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.DataGridView dataGridInventory;
         private System.Windows.Forms.BindingSource bindingSource1;
     }

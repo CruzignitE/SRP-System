@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel_inv = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView_inventory = new System.Windows.Forms.DataGridView();
             this.panel_topBar = new System.Windows.Forms.TableLayoutPanel();
@@ -37,10 +38,12 @@
             this.button_delete = new System.Windows.Forms.Button();
             this.button_edit = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel_inv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_inventory)).BeginInit();
             this.panel_topBar.SuspendLayout();
             this.panel_bottomBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_inv
@@ -145,7 +148,7 @@
             this.button_delete.Size = new System.Drawing.Size(76, 76);
             this.button_delete.TabIndex = 27;
             this.button_delete.UseVisualStyleBackColor = false;
-            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
+            this.button_delete.Click += new System.EventHandler(this.Btn_Del_Click);
             // 
             // button_edit
             // 
@@ -160,7 +163,7 @@
             this.button_edit.Size = new System.Drawing.Size(76, 76);
             this.button_edit.TabIndex = 26;
             this.button_edit.UseVisualStyleBackColor = false;
-            this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
+            this.button_edit.Click += new System.EventHandler(this.Btn_Edit_Click);
             // 
             // button_add
             // 
@@ -175,7 +178,7 @@
             this.button_add.Size = new System.Drawing.Size(76, 76);
             this.button_add.TabIndex = 25;
             this.button_add.UseVisualStyleBackColor = false;
-            this.button_add.Click += new System.EventHandler(this.button_add_Click);
+            this.button_add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
             // ProductsList_UC
             // 
@@ -187,11 +190,13 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductsList_UC";
             this.Size = new System.Drawing.Size(660, 600);
+            this.Load += new System.EventHandler(this.ProductsList_Load);
             this.panel_inv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_inventory)).EndInit();
             this.panel_topBar.ResumeLayout(false);
             this.panel_topBar.PerformLayout();
             this.panel_bottomBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

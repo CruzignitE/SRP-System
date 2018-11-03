@@ -16,8 +16,8 @@ namespace TestForms
         private ConnectionString connString;
         private SqlDataAdapter dataAdapter;
         private DataTable table;
-        private string selectCommand = @"SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_stock_qty AS Quantity, product_arrival AS 'Arrival Date', product_expiry_date AS 'Expiry Date', product_description AS 'Description' FROM Product WHERE product_status = 1";
-        private string id, name, qty;
+        private string selectQuery_Inv = @"SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_stock_qty AS Quantity, product_arrival AS 'Arrival Date', product_expiry_date AS 'Expiry Date' FROM Product WHERE product_status = 1";
+        private string id, name, qty, arrival, expiry;
 
         public Inventory_UC()
         {
@@ -25,46 +25,24 @@ namespace TestForms
             connString = new ConnectionString();
         }
 
-        private void button_add_Click(object sender, EventArgs e)
+        private void Btn_Add_Click(object sender, EventArgs e)
         {
             StockAdd AddStock = new StockAdd(id, name, qty);
             AddStock.FormClosing += new FormClosingEventHandler(this.Inventory_FormClosing);
             AddStock.ShowDialog();  // Shows the StockAdd page
-
         }
 
-        private void button_edit_Click(object sender, EventArgs e)
+        private void Btn_Edit_Click(object sender, EventArgs e)
         {
-            //StockEdit EditStock = new StockEdit();
-            //EditStock.ShowDialog();  // Shows the StockAdd page
-
-        }
-
-        private void button_delete_Click(object sender, EventArgs e)
-        {
-
+            StockEdit EditStock = new StockEdit(id, name, qty, arrival, expiry);
+            EditStock.FormClosing += new FormClosingEventHandler(this.Inventory_FormClosing);
+            EditStock.ShowDialog();  // Shows the StockEdit page
         }
 
         private void Inventory_Load(object sender, EventArgs e)
         {
             dataGridInventory.DataSource = bindingSource1;
-            GetData(selectCommand);
-        }
-
-        private void Inventory_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            RefreshInventoryPage();
-        }
-
-        private void RefreshInventoryPage()
-        {
-            dataGridInventory.Update();
-            GetData(selectCommand);
-        }
-        private void button_logs_Click(object sender, EventArgs e)
-        {
-            StockChanges stockChanged = new StockChanges();
-            stockChanged.ShowDialog();
+            GetData(selectQuery_Inv);
         }
 
         private void GetData(string cmd)
@@ -83,7 +61,24 @@ namespace TestForms
             }
         }
 
-        private void dataGridInventory_SelectionChanged(object sender, EventArgs e)
+        private void Inventory_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            RefreshInventoryPage();
+        }
+
+        private void RefreshInventoryPage()
+        {
+            dataGridInventory.Update();
+            GetData(selectQuery_Inv);
+        }
+
+        private void ShowStockLog(object sender, EventArgs e)
+        {
+            StockChanges stockChanged = new StockChanges();
+            stockChanged.ShowDialog();
+        }
+
+        private void DataGridInventory_SelectionChanged(object sender, EventArgs e)
         {
             try
             {
@@ -91,6 +86,8 @@ namespace TestForms
                 id = row.Cells["Product ID"].Value.ToString();
                 name = row.Cells["Product Name"].Value.ToString();
                 qty = row.Cells["Quantity"].Value.ToString();
+                arrival = row.Cells["Arrival Date"].Value.ToString();
+                expiry = row.Cells["Expiry Date"].Value.ToString();
 
             }
             catch (Exception ex)

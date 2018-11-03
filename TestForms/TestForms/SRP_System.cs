@@ -32,12 +32,10 @@ namespace TestForms
             tabs.Add(uc_inventory);
         }
 
-        private void button_sidebar_Click(object sender, EventArgs e)
+        private void Btn_Sidebar_Click(object sender, EventArgs e)
         {
             foreach (UserControl uc in tabs)
-            {
                 uc.Visible = false;
-            }
 
             foreach (Button b in buttons_sidebar)
             {
@@ -45,7 +43,6 @@ namespace TestForms
                 if (sender == b)
                 {
                     b.BackColor = Color.FromArgb(30, 35, 56);
-                    b.Enabled = false;
 
                     if (b == button_side_salesRecords)
                         tabs[0].Visible = true;
@@ -60,10 +57,7 @@ namespace TestForms
                         
                 }
                 else
-                {
                     b.BackColor = Color.Transparent;
-                    b.Enabled = true;
-                }
             }
         }
     }

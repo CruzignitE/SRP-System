@@ -44,7 +44,7 @@ namespace TestForms
                 }
             }
 
-            Application.Run(new SalesRecords());
+            Application.Run(new SRP_System());
         }
 
         public static string Encrypt(string text)
