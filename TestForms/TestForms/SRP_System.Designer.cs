@@ -31,12 +31,12 @@ namespace TestForms
         private void InitializeComponent()
         {
             this.panel_sidebar = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_ManagerControl = new System.Windows.Forms.Button();
             this.label_logo = new System.Windows.Forms.Label();
             this.button_side_salesRecords = new System.Windows.Forms.Button();
             this.button_side_products = new System.Windows.Forms.Button();
             this.button_side_inventory = new System.Windows.Forms.Button();
             this.button_side_salesPrediction = new System.Windows.Forms.Button();
-            this.btn_ManagerControl = new System.Windows.Forms.Button();
             this.uc_salesRecords = new TestForms.SalesRecords_UC();
             this.uc_products = new TestForms.ProductsList_UC();
             this.uc_inventory = new TestForms.Inventory_UC();
@@ -69,6 +69,20 @@ namespace TestForms
             this.panel_sidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.panel_sidebar.Size = new System.Drawing.Size(123, 561);
             this.panel_sidebar.TabIndex = 23;
+            // 
+            // btn_ManagerControl
+            // 
+            this.btn_ManagerControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_ManagerControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btn_ManagerControl.ForeColor = System.Drawing.Color.Black;
+            this.btn_ManagerControl.Location = new System.Drawing.Point(2, 492);
+            this.btn_ManagerControl.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_ManagerControl.Name = "btn_ManagerControl";
+            this.btn_ManagerControl.Size = new System.Drawing.Size(119, 46);
+            this.btn_ManagerControl.TabIndex = 23;
+            this.btn_ManagerControl.Text = "Manager Control";
+            this.btn_ManagerControl.UseVisualStyleBackColor = true;
+            this.btn_ManagerControl.Click += new System.EventHandler(this.Btn_ManagerControl_Click);
             // 
             // label_logo
             // 
@@ -160,19 +174,6 @@ namespace TestForms
             this.button_side_salesPrediction.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button_side_salesPrediction.UseVisualStyleBackColor = false;
             this.button_side_salesPrediction.Click += new System.EventHandler(this.Btn_Sidebar_Click);
-            // 
-            // btn_ManagerControl
-            // 
-            this.btn_ManagerControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_ManagerControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btn_ManagerControl.ForeColor = System.Drawing.Color.Black;
-            this.btn_ManagerControl.Location = new System.Drawing.Point(2, 492);
-            this.btn_ManagerControl.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_ManagerControl.Name = "btn_ManagerControl";
-            this.btn_ManagerControl.Size = new System.Drawing.Size(119, 46);
-            this.btn_ManagerControl.TabIndex = 23;
-            this.btn_ManagerControl.Text = "Manager Control";
-            this.btn_ManagerControl.UseVisualStyleBackColor = true;
             // 
             // uc_salesRecords
             // 

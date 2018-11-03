@@ -60,5 +60,19 @@ namespace TestForms
                     b.BackColor = Color.Transparent;
             }
         }
+
+        private void Btn_ManagerControl_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ManagerControl managerControl = new ManagerControl();
+                managerControl.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please run program as administrator to access manager controls.", "Administrator Permissions Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
     }
 }
