@@ -18,6 +18,9 @@ namespace TestForms
         private SqlDataAdapter dataAdapter;
         private DataTable table;
         private string selectState = @"SELECT Product.product_id AS 'Product ID', Product.product_name AS 'Product Name', Sales_Record_Details.quantity_order AS 'Product Qty', Product.product_price AS 'Unit Price', (Sales_Record_Details.quantity_order * Product.product_price) AS 'Total Price' FROM Sales_Record_Details JOIN Product ON Product.product_id = Sales_Record_Details.product_id WHERE sales_record_id = SalesID";
+        private int maxID = 0;
+        private String strMaxID = "";
+        private String zeroCode = "";
 
         private static string productID;
         private static string productName;
@@ -25,7 +28,7 @@ namespace TestForms
         private int productQty;
         private double grandTotal = 0.0;
         private double tempPrice = 0.0;
-        private int lastInsertedID = 0;
+        private string lastInsertedID = "";
         private bool isAdd;
         private int tableRowIndex = -1;
 
@@ -71,7 +74,7 @@ namespace TestForms
             {
                 table = new DataTable();
                 table.Columns.AddRange(new DataColumn[5] {
-                    new DataColumn("Product ID", typeof(int)),
+                    new DataColumn("Product ID", typeof(string)),
                     new DataColumn("Product Name", typeof(string)),
                     new DataColumn("Product Qty", typeof(int)),
                     new DataColumn("Unit Price", typeof(double)),
@@ -138,7 +141,8 @@ namespace TestForms
                 txtBoxProductPrice.Text = "";
 
             }
-            catch {
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
                 MessageBox.Show("Please select a product!");
             }
         }
@@ -165,18 +169,18 @@ namespace TestForms
         {
             SqlCommand command;
             string getMaxID_CMD = "SELECT MAX(id) AS maxID FROM Sales_Record";
-            string insertCmd = @"INSERT INTO Sales_Record (sales_record_date, sales_record_amount, sales_record_description, sales_status)
-                                    OUTPUT INSERTED.sales_record_id VALUES(@sDate, @sGrandTotal, @sDescription, 1)";
+            string insertCmd = @"INSERT INTO Sales_Record (sales_record_id, sales_record_date, sales_record_amount, sales_record_remark, sales_status)
+                                    OUTPUT INSERTED.sales_record_id VALUES(@srID, @sDate, @sGrandTotal, @sRemark, 1)";
             string insertSalesDetail = @"INSERT INTO Sales_Record_Details (sales_record_id, product_id, quantity_order)
                                         VALUES(@srID, @pID, @qtyOrder)";
             string resetSalesDetail = @"DELETE FROM Sales_Record_Details WHERE sales_record_id = @sSalesID";
             string updateCommand = @"UPDATE Sales_Record SET sales_record_amount = @sGrandTotal WHERE sales_record_id = @sSalesID";
 
-            List<int> ids = new List<int>(table.Rows.Count);
+            List<string> ids = new List<string>(table.Rows.Count);
             List<int> quantities = new List<int>(table.Rows.Count);
 
             foreach (DataRow row in table.Rows) {
-                ids.Add((int)row["Product ID"]);
+                ids.Add((string)row["Product ID"]);
                 quantities.Add((int)row["Product Qty"]);
             }
 
@@ -196,14 +200,29 @@ namespace TestForms
                             command = new SqlCommand(getMaxID_CMD, conn);
                             using (SqlDataReader reader = command.ExecuteReader()) {
                                 if (reader.Read()) {
-                                    MessageBox.Show(reader["maxID"].ToString());
+                                    if (reader["maxID"].ToString().Equals(""))
+                                    {
+                                        maxID = 1;
+                                    }
+                                    else
+                                    {
+                                        maxID = Int32.Parse(reader["maxID"].ToString());
+                                        maxID++;
+                                    }
+                                    strMaxID = maxID.ToString();
+                                    for (int i = 0; i < (7 - strMaxID.Length); i++)
+                                    {
+                                        zeroCode += "0";
+                                    }
+                                    strMaxID = "SR-" + zeroCode + maxID.ToString();
                                 }
                             }
-                                //command = new SqlCommand(cmd, conn);
-                            //command.Parameters.AddWithValue(@"sDate", DateTime.Today.ToString("yyyy-MM-dd"));
-                            //.Parameters.AddWithValue(@"sDescription", "");
-                            //command.Parameters.AddWithValue(@"sGrandTotal", txtBoxGrandTotal.Text);
-                            //lastInsertedID = (int)command.ExecuteScalar();
+                            command = new SqlCommand(cmd, conn);
+                            command.Parameters.AddWithValue(@"srID", strMaxID);
+                            command.Parameters.AddWithValue(@"sDate", DateTime.Today.ToString("yyyy-MM-dd"));
+                            command.Parameters.AddWithValue(@"sRemark", "");
+                            command.Parameters.AddWithValue(@"sGrandTotal", txtBoxGrandTotal.Text);
+                            lastInsertedID = (string)command.ExecuteScalar();
                             conn.Close();
                         }
                         catch (Exception ex)
