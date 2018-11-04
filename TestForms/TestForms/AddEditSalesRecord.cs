@@ -17,7 +17,7 @@ namespace TestForms
         private ConnectionString connString;
         private SqlDataAdapter dataAdapter;
         private DataTable table;
-        private string selectState = @"SELECT Product.product_id AS 'Product ID', Product.product_name AS 'Product Name', Sales_Record_Details.quantity_order AS 'Product Qty', Product.product_price AS 'Unit Price', (Sales_Record_Details.quantity_order * Product.product_price) AS 'Total Price' FROM Sales_Record_Details JOIN Product ON Product.product_id = Sales_Record_Details.product_id WHERE sales_record_id = SalesID";
+        private string selectState = @"SELECT Sales_Record_Details.product_id AS 'Product ID', Sales_Record_Details.quantity_order AS 'Product Qty', Product.product_name AS 'Product Name', Product.product_price AS 'Unit Price', (Sales_Record_Details.quantity_order * Product.product_price) AS 'Total Price' FROM Sales_Record_Details JOIN Product ON Sales_Record_Details.product_id = Product.product_id WHERE Sales_Record_Details.sales_record_id = 'SalesID'";
         private int maxID = 0;
         private String strMaxID = "";
         private String zeroCode = "";
@@ -49,7 +49,7 @@ namespace TestForms
             InitializeComponent();
             connString = new ConnectionString();
             this.isAdd = isAdd;
-            
+
             txtBoxSalesID.Text = id;
             txtBoxDate.Text = date;
             txtBoxGrandTotal.Text = tPrice;
@@ -95,12 +95,10 @@ namespace TestForms
                 cmd = cmd.Replace("SalesID", txtBoxSalesID.Text);
                 dataAdapter = new SqlDataAdapter(cmd, connString.getConnString());
                
-
                 table = new DataTable();
                 dataAdapter.Fill(table);
                 
                 bindingSource1.DataSource = table;
-
             }
             catch (Exception ex)
             {
@@ -142,7 +140,6 @@ namespace TestForms
 
             }
             catch (Exception ex) {
-                MessageBox.Show(ex.Message);
                 MessageBox.Show("Please select a product!");
             }
         }

@@ -32,7 +32,7 @@ namespace TestForms
         {
             AddEditSalesRecord AddRecord = new AddEditSalesRecord(true);
             AddRecord.FormClosing += new FormClosingEventHandler(SalesRecords_FormClosing);
-            AddRecord.ShowDialog();  // Shows the Add Sakes page
+            AddRecord.ShowDialog();  // Shows the Add Sales page
         }
 
         private void Btn_Edit_Click(object sender, EventArgs e)

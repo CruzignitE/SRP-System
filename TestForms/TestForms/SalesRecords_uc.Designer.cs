@@ -65,10 +65,10 @@ namespace TestForms
             this.panel_salesRecords.Location = new System.Drawing.Point(0, 0);
             this.panel_salesRecords.Name = "panel_salesRecords";
             this.panel_salesRecords.RowCount = 3;
-            this.panel_salesRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.panel_salesRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.panel_salesRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panel_salesRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 86F));
-            this.panel_salesRecords.Size = new System.Drawing.Size(660, 600);
+            this.panel_salesRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 79F));
+            this.panel_salesRecords.Size = new System.Drawing.Size(660, 554);
             this.panel_salesRecords.TabIndex = 21;
             // 
             // panel_sr_topBar
@@ -93,7 +93,7 @@ namespace TestForms
             this.panel_sr_topBar.Name = "panel_sr_topBar";
             this.panel_sr_topBar.RowCount = 1;
             this.panel_sr_topBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panel_sr_topBar.Size = new System.Drawing.Size(616, 66);
+            this.panel_sr_topBar.Size = new System.Drawing.Size(616, 61);
             this.panel_sr_topBar.TabIndex = 0;
             // 
             // button_refunds
@@ -107,7 +107,7 @@ namespace TestForms
             this.button_refunds.Location = new System.Drawing.Point(544, 2);
             this.button_refunds.Margin = new System.Windows.Forms.Padding(2);
             this.button_refunds.Name = "button_refunds";
-            this.button_refunds.Size = new System.Drawing.Size(70, 62);
+            this.button_refunds.Size = new System.Drawing.Size(70, 57);
             this.button_refunds.TabIndex = 26;
             this.button_refunds.Text = "Refunds";
             this.button_refunds.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -124,7 +124,7 @@ namespace TestForms
             this.button_popupGraph.Location = new System.Drawing.Point(423, 2);
             this.button_popupGraph.Margin = new System.Windows.Forms.Padding(2);
             this.button_popupGraph.Name = "button_popupGraph";
-            this.button_popupGraph.Size = new System.Drawing.Size(51, 62);
+            this.button_popupGraph.Size = new System.Drawing.Size(51, 57);
             this.button_popupGraph.TabIndex = 25;
             this.button_popupGraph.UseVisualStyleBackColor = false;
             // 
@@ -139,7 +139,7 @@ namespace TestForms
             this.button_popupPie.Location = new System.Drawing.Point(368, 2);
             this.button_popupPie.Margin = new System.Windows.Forms.Padding(2);
             this.button_popupPie.Name = "button_popupPie";
-            this.button_popupPie.Size = new System.Drawing.Size(51, 62);
+            this.button_popupPie.Size = new System.Drawing.Size(51, 57);
             this.button_popupPie.TabIndex = 24;
             this.button_popupPie.UseVisualStyleBackColor = false;
             // 
@@ -149,7 +149,7 @@ namespace TestForms
             this.comboBox_sr_filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBox_sr_filter.FormattingEnabled = true;
             this.comboBox_sr_filter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBox_sr_filter.Location = new System.Drawing.Point(185, 20);
+            this.comboBox_sr_filter.Location = new System.Drawing.Point(185, 18);
             this.comboBox_sr_filter.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_sr_filter.Name = "comboBox_sr_filter";
             this.comboBox_sr_filter.Size = new System.Drawing.Size(179, 24);
@@ -160,7 +160,7 @@ namespace TestForms
             // 
             this.textBox_sr_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_sr_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_sr_search.Location = new System.Drawing.Point(2, 21);
+            this.textBox_sr_search.Location = new System.Drawing.Point(2, 19);
             this.textBox_sr_search.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_sr_search.Name = "textBox_sr_search";
             this.textBox_sr_search.Size = new System.Drawing.Size(179, 23);
@@ -178,7 +178,7 @@ namespace TestForms
             this.button_csvExport.Location = new System.Drawing.Point(478, 2);
             this.button_csvExport.Margin = new System.Windows.Forms.Padding(2);
             this.button_csvExport.Name = "button_csvExport";
-            this.button_csvExport.Size = new System.Drawing.Size(62, 62);
+            this.button_csvExport.Size = new System.Drawing.Size(62, 57);
             this.button_csvExport.TabIndex = 21;
             this.button_csvExport.Text = "CSV Export";
             this.button_csvExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -196,12 +196,12 @@ namespace TestForms
             this.panel_bottomBar.Controls.Add(this.button_add, 1, 0);
             this.panel_bottomBar.Controls.Add(this.button_delete, 3, 0);
             this.panel_bottomBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_bottomBar.Location = new System.Drawing.Point(22, 516);
+            this.panel_bottomBar.Location = new System.Drawing.Point(22, 477);
             this.panel_bottomBar.Margin = new System.Windows.Forms.Padding(2);
             this.panel_bottomBar.Name = "panel_bottomBar";
             this.panel_bottomBar.RowCount = 1;
             this.panel_bottomBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panel_bottomBar.Size = new System.Drawing.Size(616, 82);
+            this.panel_bottomBar.Size = new System.Drawing.Size(616, 75);
             this.panel_bottomBar.TabIndex = 1;
             // 
             // button_edit
@@ -214,7 +214,7 @@ namespace TestForms
             this.button_edit.Location = new System.Drawing.Point(270, 2);
             this.button_edit.Margin = new System.Windows.Forms.Padding(2);
             this.button_edit.Name = "button_edit";
-            this.button_edit.Size = new System.Drawing.Size(76, 78);
+            this.button_edit.Size = new System.Drawing.Size(76, 71);
             this.button_edit.TabIndex = 11;
             this.button_edit.UseVisualStyleBackColor = false;
             this.button_edit.Click += new System.EventHandler(this.Btn_Edit_Click);
@@ -229,9 +229,10 @@ namespace TestForms
             this.button_add.Location = new System.Drawing.Point(190, 2);
             this.button_add.Margin = new System.Windows.Forms.Padding(2);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(76, 78);
+            this.button_add.Size = new System.Drawing.Size(76, 71);
             this.button_add.TabIndex = 10;
             this.button_add.UseVisualStyleBackColor = false;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
             // button_delete
             // 
@@ -243,7 +244,7 @@ namespace TestForms
             this.button_delete.Location = new System.Drawing.Point(350, 2);
             this.button_delete.Margin = new System.Windows.Forms.Padding(2);
             this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(76, 78);
+            this.button_delete.Size = new System.Drawing.Size(76, 71);
             this.button_delete.TabIndex = 9;
             this.button_delete.UseVisualStyleBackColor = false;
             this.button_delete.Click += new System.EventHandler(this.Btn_Del_Click);
@@ -252,21 +253,22 @@ namespace TestForms
             // 
             this.dataGridView_salesRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_salesRecords.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_salesRecords.Location = new System.Drawing.Point(22, 72);
+            this.dataGridView_salesRecords.Location = new System.Drawing.Point(22, 67);
             this.dataGridView_salesRecords.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView_salesRecords.Name = "dataGridView_salesRecords";
             this.dataGridView_salesRecords.RowTemplate.Height = 24;
-            this.dataGridView_salesRecords.Size = new System.Drawing.Size(616, 440);
+            this.dataGridView_salesRecords.Size = new System.Drawing.Size(616, 406);
             this.dataGridView_salesRecords.TabIndex = 2;
+            this.dataGridView_salesRecords.SelectionChanged += new System.EventHandler(this.DataGridViewSales_SelectionChanged);
             // 
             // SalesRecords_UC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel_salesRecords);
             this.Name = "SalesRecords_UC";
-            this.Size = new System.Drawing.Size(660, 600);
+            this.Size = new System.Drawing.Size(660, 554);
             this.Load += new System.EventHandler(this.SalesRecords_Load);
             this.panel_salesRecords.ResumeLayout(false);
             this.panel_salesRecords.PerformLayout();

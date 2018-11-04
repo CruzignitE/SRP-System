@@ -28,13 +28,6 @@ namespace TestForms
             connString = new ConnectionString();
         }
 
-        private void Btn_Add_Click(object sender, EventArgs e)
-        {
-            AddEditSalesRecord AddRecord = new AddEditSalesRecord(true);
-            AddRecord.FormClosing += new FormClosingEventHandler(SalesRecords_FormClosing);
-            AddRecord.ShowDialog();  // Shows the Add Sakes page
-        }
-
         private void Btn_Edit_Click(object sender, EventArgs e)
         {
             AddEditSalesRecord EditRecord = new AddEditSalesRecord(false, id, date, tPrice);
@@ -110,6 +103,13 @@ namespace TestForms
         {
             SalesRecordsGraph generateGraph = new SalesRecordsGraph();
             generateGraph.ShowDialog(); // Shows the Graph
+        }
+
+        private void button_add_Click(object sender, EventArgs e)
+        {
+            AddEditSalesRecord AddRecord = new AddEditSalesRecord(true);
+            AddRecord.FormClosing += new FormClosingEventHandler(SalesRecords_FormClosing);
+            AddRecord.ShowDialog();  // Shows the Add Sakes page
         }
 
         private void SalesRecords_FormClosing(object sender, FormClosingEventArgs e)
