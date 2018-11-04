@@ -19,7 +19,6 @@ namespace TestForms
         private DataTable table;
         private string id, date, tPrice;
 
-        //private string selectQuery_SR = @"SELECT sales_record_id AS 'Sales ID', sales_record_date AS 'Sales Date', sales_record_amount AS 'Sales Total Price', tax_amount AS 'Tax Amount', sales_record_description AS 'Description' FROM Sales_Record WHERE sales_status = 1";
         private string selectQuery_SR = @"SELECT sales_record_id AS 'Sales ID', sales_record_date AS 'Sales Date', sales_record_amount AS 'Sales Total Price', sales_record_remark AS 'Remark' FROM Sales_Record WHERE sales_status = 1";
 
         public SalesRecords_UC()
@@ -30,6 +29,12 @@ namespace TestForms
 
         private void Btn_Edit_Click(object sender, EventArgs e)
         {
+
+            DataGridViewRow row = dataGridView_salesRecords.CurrentCell.OwningRow;
+            id = row.Cells["Sales ID"].Value.ToString();
+            date = row.Cells["Sales Date"].Value.ToString();
+            tPrice = row.Cells["Sales Total Price"].Value.ToString();
+
             AddEditSalesRecord EditRecord = new AddEditSalesRecord(false, id, date, tPrice);
             EditRecord.FormClosing += new FormClosingEventHandler(SalesRecords_FormClosing);
             EditRecord.ShowDialog();  // Shows the Edit sales page
@@ -116,14 +121,6 @@ namespace TestForms
         {
             dataGridView_salesRecords.Update();
             GetData(selectQuery_SR);
-        }
-
-        private void DataGridViewSales_SelectionChanged(object sender, EventArgs e)
-        {
-            DataGridViewRow row = dataGridView_salesRecords.CurrentCell.OwningRow;
-            id = row.Cells["Sales ID"].Value.ToString();
-            date = row.Cells["Sales Date"].Value.ToString();
-            tPrice = row.Cells["Sales Total Price"].Value.ToString();
         }
     }
 }

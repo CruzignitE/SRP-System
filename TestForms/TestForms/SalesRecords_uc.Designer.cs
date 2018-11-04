@@ -259,7 +259,6 @@ namespace TestForms
             this.dataGridView_salesRecords.RowTemplate.Height = 24;
             this.dataGridView_salesRecords.Size = new System.Drawing.Size(616, 406);
             this.dataGridView_salesRecords.TabIndex = 2;
-            this.dataGridView_salesRecords.SelectionChanged += new System.EventHandler(this.DataGridViewSales_SelectionChanged);
             // 
             // SalesRecords_UC
             // 

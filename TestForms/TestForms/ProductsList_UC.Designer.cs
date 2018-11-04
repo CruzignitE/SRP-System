@@ -115,6 +115,9 @@
             this.textBox_search.Size = new System.Drawing.Size(303, 23);
             this.textBox_search.TabIndex = 29;
             this.textBox_search.Text = "Search";
+            this.textBox_search.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FilterProductList_OnKeyUp);
+            this.textBox_search.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // panel_bottomBar
             // 
