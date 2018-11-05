@@ -17,8 +17,8 @@ namespace TestForms
         private ConnectionString connString;
         private SqlDataAdapter dataAdapter;
         private DataTable table;
-        private string productID, productName, productUnitPrice, productStatus, productCategory;
-        private string selectQuery_Products = "SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_category AS 'Product Category', product_unit AS 'Product Unit', product_price AS 'Product Price', product_description AS 'Product Description', product_status AS 'Product Status' FROM Product";
+        private String productID, productName, productUnitPrice, productStatus, productCategory;
+        private String selectQuery_Products = "SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_category AS 'Product Category', product_unit AS 'Product Unit', product_price AS 'Product Price', product_description AS 'Product Description', product_status AS 'Product Status' FROM Product";
 
         public ProductsList_UC()
         {
