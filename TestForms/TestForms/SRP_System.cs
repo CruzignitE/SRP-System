@@ -20,16 +20,8 @@ namespace TestForms
         {
             InitializeComponent();
 
-            buttons_sidebar = new List<Button>();
-            buttons_sidebar.Add(button_side_salesRecords);
-            buttons_sidebar.Add(button_side_products);
-            buttons_sidebar.Add(button_side_inventory);
-            buttons_sidebar.Add(button_side_salesPrediction);
-
-            tabs = new List<UserControl>();
-            tabs.Add(uc_salesRecords);
-            tabs.Add(uc_products);
-            tabs.Add(uc_inventory);
+            buttons_sidebar = new List<Button> { button_side_salesRecords, button_side_products , button_side_inventory, button_side_salesPrediction };
+            tabs = new List<UserControl> { uc_salesRecords, uc_products, uc_inventory, uc_salesPrediction };
         }
 
         private void Btn_Sidebar_Click(object sender, EventArgs e)
@@ -51,8 +43,7 @@ namespace TestForms
                     else if (b == button_side_inventory)
                         tabs[2].Visible = true;
                     else if (b == button_side_salesPrediction)
-                        //not implemented yet
-                        //tabs[3].Visible = true; 
+                        tabs[3].Visible = true; 
                         break;
                         
                 }
@@ -68,7 +59,7 @@ namespace TestForms
                 ManagerControl managerControl = new ManagerControl();
                 managerControl.ShowDialog();
             }
-            catch 
+            catch
             {
                 MessageBox.Show("Please run program as administrator to access manager controls.", "Administrator Permissions Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

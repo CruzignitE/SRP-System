@@ -130,6 +130,12 @@
     <Compile Include="Refunds.Designer.cs">
       <DependentUpon>Refunds.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesPrediction_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SalesPrediction_UC.Designer.cs">
+      <DependentUpon>SalesPrediction_UC.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalesRecords.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Refunds.resx">
       <DependentUpon>Refunds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesPrediction_UC.resx">
+      <DependentUpon>SalesPrediction_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesRecords.resx">
       <DependentUpon>SalesRecords.cs</DependentUpon>

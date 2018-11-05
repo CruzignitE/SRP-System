@@ -40,6 +40,7 @@ namespace TestForms
             this.uc_salesRecords = new TestForms.SalesRecords_UC();
             this.uc_products = new TestForms.ProductsList_UC();
             this.uc_inventory = new TestForms.Inventory_UC();
+            this.uc_salesPrediction = new TestForms.SalesPrediction_UC();
             this.panel_sidebar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -209,6 +210,17 @@ namespace TestForms
             this.uc_inventory.TabIndex = 24;
             this.uc_inventory.Visible = false;
             // 
+            // uc_salesPrediction
+            // 
+            this.uc_salesPrediction.BackColor = System.Drawing.Color.White;
+            this.uc_salesPrediction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_salesPrediction.Location = new System.Drawing.Point(123, 0);
+            this.uc_salesPrediction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uc_salesPrediction.Name = "uc_salesPrediction";
+            this.uc_salesPrediction.Size = new System.Drawing.Size(661, 561);
+            this.uc_salesPrediction.TabIndex = 26;
+            this.uc_salesPrediction.Visible = false;
+            // 
             // SRP_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -218,6 +230,7 @@ namespace TestForms
             this.Controls.Add(this.uc_salesRecords);
             this.Controls.Add(this.uc_products);
             this.Controls.Add(this.uc_inventory);
+            this.Controls.Add(this.uc_salesPrediction);
             this.Controls.Add(this.panel_sidebar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -241,5 +254,6 @@ namespace TestForms
         private Inventory_UC uc_inventory;
         private ProductsList_UC uc_products;
         private Button btn_ManagerControl;
+        private SalesPrediction_UC uc_salesPrediction;
     }
 }

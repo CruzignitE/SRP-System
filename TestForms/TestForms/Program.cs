@@ -30,17 +30,19 @@ namespace TestForms
             Application.SetCompatibleTextRenderingDefault(false);
             if (myKey.OpenSubKey(@"SOFTWARE\SRPsystem") == null)
             {
-                RegistryKey srpKey = myKey.CreateSubKey(@"SOFTWARE\SRPsystem");
-                
-                //var data = Encoding.Unicode.GetBytes("admin");
-
-                // Encrypt data
-                //byte[] encrypted = ProtectedData.Protect(data, null, scope);
-
-                if (srpKey.GetValue("SRPvalue1") == null)
+                try
                 {
-                    srpKey.SetValue("SRPvalue1", Encrypt("admin"), RegistryValueKind.String);
-                    srpKey.SetValue("SRPvalue2", "admin", RegistryValueKind.String);
+                    RegistryKey srpKey = myKey.CreateSubKey(@"SOFTWARE\SRPsystem");
+
+                    if (srpKey.GetValue("SRPvalue1") == null)
+                    {
+                        srpKey.SetValue("SRPvalue1", Encrypt("admin"), RegistryValueKind.String);
+                        srpKey.SetValue("SRPvalue2", "admin", RegistryValueKind.String);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Run program as administrator to generate manager password", "Administrator Permissions Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
