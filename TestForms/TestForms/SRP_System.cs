@@ -68,7 +68,7 @@ namespace TestForms
                 ManagerControl managerControl = new ManagerControl();
                 managerControl.ShowDialog();
             }
-            catch (Exception ex)
+            catch 
             {
                 MessageBox.Show("Please run program as administrator to access manager controls.", "Administrator Permissions Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

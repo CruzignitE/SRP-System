@@ -28,7 +28,7 @@ namespace TestForms
         private void BrowseProductForm_Load(object sender, EventArgs e)
         {
             dataGVBrowseProduct.DataSource = bindingSource1;
-            GetData("SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_stock_qty AS 'Product Stock', product_expiry_date AS 'Expiry Date', product_price AS 'Product Price' FROM Product");
+            GetData("SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_stock_qty AS 'Product Stock', product_expiry_date AS 'Expiry Date', product_price AS 'Product Price' FROM Product WHERE product_status = 1");
         }
 
         private void GetData(string cmd)

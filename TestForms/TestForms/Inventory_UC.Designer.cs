@@ -75,6 +75,7 @@
             this.dataGridInventory.RowTemplate.Height = 24;
             this.dataGridInventory.Size = new System.Drawing.Size(616, 470);
             this.dataGridInventory.TabIndex = 28;
+            this.dataGridInventory.SelectionChanged += new System.EventHandler(this.dataGridInventory_SelectionChanged_1);
             // 
             // panel_topBar
             // 
@@ -117,10 +118,10 @@
             this.comboBox_filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBox_filter.FormattingEnabled = true;
             this.comboBox_filter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBox_filter.Location = new System.Drawing.Point(279, 4);
+            this.comboBox_filter.Location = new System.Drawing.Point(279, 3);
             this.comboBox_filter.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_filter.Name = "comboBox_filter";
-            this.comboBox_filter.Size = new System.Drawing.Size(273, 24);
+            this.comboBox_filter.Size = new System.Drawing.Size(273, 28);
             this.comboBox_filter.TabIndex = 30;
             this.comboBox_filter.Text = "Filter By";
             // 
@@ -128,10 +129,10 @@
             // 
             this.textBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_search.Location = new System.Drawing.Point(2, 5);
+            this.textBox_search.Location = new System.Drawing.Point(2, 4);
             this.textBox_search.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(273, 23);
+            this.textBox_search.Size = new System.Drawing.Size(273, 26);
             this.textBox_search.TabIndex = 29;
             this.textBox_search.Text = "Search";
             // 
@@ -185,7 +186,7 @@
             // 
             // Inventory_UC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel_inv);

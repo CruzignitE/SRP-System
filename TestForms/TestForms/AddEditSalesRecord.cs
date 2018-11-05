@@ -139,7 +139,7 @@ namespace TestForms
                 txtBoxProductPrice.Text = "";
 
             }
-            catch (Exception ex) {
+            catch {
                 MessageBox.Show("Please select a product!");
             }
         }

@@ -16,8 +16,11 @@ namespace TestForms
     public partial class StockEdit : Form
     {
         RegistryKey myKey, srpKey;
-
         private ConnectionString connString;
+        private int maxID = 0;
+        private string strMaxID = "";
+        private string zeroCode = "";
+
         public StockEdit(string id, string name, string qty, string arrival, string expiry)
         {
             InitializeComponent();
@@ -48,9 +51,10 @@ namespace TestForms
             if (textBox4.Text == Decrypt((string)srpKey.GetValue("SRPvalue1")))
             {
                 SqlCommand command;
+                string getMaxID_CMD = "SELECT MAX(id) AS 'maxID' FROM Log_Changes";
                 string updateState = @"UPDATE Product SET product_stock_qty = @StockQty, product_arrival = @arrivalDate, product_expiry_date = @expiryDate WHERE product_id = @productID";
-                string editLogState = @"INSERT INTO Log_Changes (log_changes_date, log_changes_time, log_changes_info, product_id)
-                                       VALUES (@date, @time, @info, @productID)";
+                string editLogState = @"INSERT INTO Log_Changes (log_changes_id, log_changes_date, log_changes_time, log_changes_info, product_id)
+                                       VALUES (@logID, @date, @time, @info, @productID)";
 
                 using (SqlConnection conn = new SqlConnection(connString.getConnString()))
                 {
@@ -78,7 +82,30 @@ namespace TestForms
                     try
                     {
                         conn.Open();
+                        command = new SqlCommand(getMaxID_CMD, conn);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                if (reader["maxID"].ToString().Equals(""))
+                                {
+                                    maxID = 1;
+                                }
+                                else
+                                {
+                                    maxID = Int32.Parse(reader["maxID"].ToString());
+                                    maxID++;
+                                }
+                                strMaxID = maxID.ToString();
+                                for (int i = 0; i < (7 - strMaxID.Length); i++)
+                                {
+                                    zeroCode += "0";
+                                }
+                                strMaxID = "LS-" + zeroCode + maxID.ToString();
+                            }
+                        }
                         command = new SqlCommand(editLogState, conn);
+                        command.Parameters.AddWithValue(@"logID", strMaxID);
                         command.Parameters.AddWithValue(@"date", DateTime.Today.ToString("yyyy-MM-dd"));
                         command.Parameters.AddWithValue(@"time", DateTime.Now.ToString("hh:mm:ss tt"));
                         string action = "";

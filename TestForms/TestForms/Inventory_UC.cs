@@ -61,24 +61,7 @@ namespace TestForms
             }
         }
 
-        private void Inventory_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            RefreshInventoryPage();
-        }
-
-        private void RefreshInventoryPage()
-        {
-            dataGridInventory.Update();
-            GetData(selectQuery_Inv);
-        }
-
-        private void ShowStockLog(object sender, EventArgs e)
-        {
-            StockChanges stockChanged = new StockChanges();
-            stockChanged.ShowDialog();
-        }
-
-        private void DataGridInventory_SelectionChanged(object sender, EventArgs e)
+        private void dataGridInventory_SelectionChanged_1(object sender, EventArgs e)
         {
             try
             {
@@ -94,6 +77,23 @@ namespace TestForms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Inventory_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            RefreshInventoryPage();
+        }
+
+        private void RefreshInventoryPage()
+        {
+            dataGridInventory.Update();
+            GetData(selectQuery_Inv);
+        }
+
+        private void ShowStockLog(object sender, EventArgs e)
+        {
+            StockChanges stockChanged = new StockChanges();
+            stockChanged.ShowDialog();
         }
     }
 }

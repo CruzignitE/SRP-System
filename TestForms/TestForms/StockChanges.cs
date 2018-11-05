@@ -17,6 +17,7 @@ namespace TestForms
         private SqlDataAdapter dataAdapter;
         private DataTable table;
         string selectStatement = @"SELECT log_changes_id AS 'Log Changes ID', log_changes.product_id AS 'Product ID', product_name AS 'Product Name', product_category AS 'Product Category', log_changes_date AS 'Changes Date', log_changes_time AS 'Changes Time', log_changes_info AS 'Changes Info', product_stock_qty AS 'Current Quantity' FROM Log_Changes JOIN Product ON Log_Changes.product_id = Product.product_id";
+        //string selectStatement = @"SELECT * FROM Log_Changes";
 
         public StockChanges()
         {
