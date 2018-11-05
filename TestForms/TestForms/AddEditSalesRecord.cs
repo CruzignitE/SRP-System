@@ -218,7 +218,7 @@ namespace TestForms
                             command.Parameters.AddWithValue(@"srID", strMaxID);
                             command.Parameters.AddWithValue(@"sDate", DateTime.Today.ToString("yyyy-MM-dd"));
                             command.Parameters.AddWithValue(@"sRemark", "");
-                            command.Parameters.AddWithValue(@"sGrandTotal", txtBoxGrandTotal.Text);
+                            command.Parameters.AddWithValue(@"sGrandTotal", Math.Round(Double.Parse(txtBoxGrandTotal.Text), 2));
                             lastInsertedID = (string)command.ExecuteScalar();
                             conn.Close();
                         }
@@ -233,7 +233,7 @@ namespace TestForms
                         {
                             conn.Open();
                             command = new SqlCommand(cmd, conn);
-                            command.Parameters.AddWithValue(@"sGrandTotal", txtBoxGrandTotal.Text);
+                            command.Parameters.AddWithValue(@"sGrandTotal", Math.Round(Double.Parse(txtBoxGrandTotal.Text), 2));
                             command.Parameters.AddWithValue(@"sSalesID", txtBoxSalesID.Text);
                             command.ExecuteNonQuery();
                             conn.Close();
