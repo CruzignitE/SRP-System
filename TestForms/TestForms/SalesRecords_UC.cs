@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+using System.Diagnostics;
 
 namespace TestForms
 {
@@ -109,6 +111,56 @@ namespace TestForms
             SalesRecordsGraph generateGraph = new SalesRecordsGraph();
             generateGraph.ShowDialog(); // Shows the Graph
         }
+
+        private void button_csvExport_Click(object sender, EventArgs e)
+        {
+
+            string selectStateForCSV = @"SELECT Sales_Record.sales_record_id AS 'Sales ID', CONVERT(VARCHAR(10), sales_record_date) AS 'Sales Date', product_name AS 'Product Name', quantity_order AS 'Quantity Order' FROM Sales_Record JOIN Sales_Record_Details ON Sales_Record.sales_record_id = Sales_Record_Details.sales_record_id JOIN Product ON Product.product_id = Sales_Record_Details.product_id";
+            SqlDataAdapter adapter = new SqlDataAdapter(selectStateForCSV, connString.getConnString());
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            try
+            {
+                StreamWriter streamWriter = new StreamWriter("D:\\csvData.csv", false);
+
+                int colCount = dt.Columns.Count;
+                for (int i = 0; i < colCount; i++)
+                {
+                    streamWriter.Write(dt.Columns[i]);
+                    if (i < colCount - 1)
+                    {
+                        streamWriter.Write(",");
+                    }
+                }
+                streamWriter.Write(streamWriter.NewLine);
+                //write all the rows
+                foreach (DataRow dr in dt.Rows)
+                {
+                    for (int i = 0; i < colCount; i++)
+                    {
+                        if (!Convert.IsDBNull(dr[i]))
+                        {
+                            streamWriter.Write(dr[i].ToString());
+                        }
+                        if (i < colCount - 1)
+                        {
+                            streamWriter.Write(",");
+                        }
+                    }
+                    streamWriter.Write(streamWriter.NewLine);
+                }
+                streamWriter.Close();
+                MessageBox.Show("Successfully Exported");
+                Process.Start(@"D:\\csvData.csv");
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        
 
         private void button_add_Click(object sender, EventArgs e)
         {
