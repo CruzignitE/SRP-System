@@ -216,7 +216,9 @@ namespace TestForms
                             }
                             command = new SqlCommand(cmd, conn);
                             command.Parameters.AddWithValue(@"srID", strMaxID);
+                            //DateTime salesDate = Convert.ToDateTime(txtBoxDate.Text);
                             command.Parameters.AddWithValue(@"sDate", DateTime.Today.ToString("yyyy-MM-dd"));
+                            //command.Parameters.AddWithValue(@"sDate", salesDate.ToString("yyyy-MM-dd"));
                             command.Parameters.AddWithValue(@"sRemark", "");
                             command.Parameters.AddWithValue(@"sGrandTotal", Math.Round(Double.Parse(txtBoxGrandTotal.Text), 2));
                             lastInsertedID = (string)command.ExecuteScalar();
