@@ -48,12 +48,13 @@
             this.tableLayoutPanel1.Controls.Add(this.btnSelect, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(919, 461);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(689, 375);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -61,10 +62,11 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(2, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(913, 46);
+            this.label1.Size = new System.Drawing.Size(685, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Browse Product";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -73,11 +75,13 @@
             // 
             this.dataGVBrowseProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGVBrowseProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGVBrowseProduct.Location = new System.Drawing.Point(3, 49);
+            this.dataGVBrowseProduct.Location = new System.Drawing.Point(2, 39);
+            this.dataGVBrowseProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGVBrowseProduct.Name = "dataGVBrowseProduct";
             this.dataGVBrowseProduct.RowTemplate.Height = 24;
-            this.dataGVBrowseProduct.Size = new System.Drawing.Size(913, 362);
+            this.dataGVBrowseProduct.Size = new System.Drawing.Size(685, 296);
             this.dataGVBrowseProduct.TabIndex = 1;
+            this.dataGVBrowseProduct.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellDoubleClick);
             this.dataGVBrowseProduct.SelectionChanged += new System.EventHandler(this.dataGVBrowseProduct_SelectionChanged);
             // 
             // btnSelect
@@ -85,9 +89,10 @@
             this.btnSelect.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelect.Location = new System.Drawing.Point(3, 417);
+            this.btnSelect.Location = new System.Drawing.Point(2, 339);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(913, 41);
+            this.btnSelect.Size = new System.Drawing.Size(685, 34);
             this.btnSelect.TabIndex = 2;
             this.btnSelect.Text = "SELECT";
             this.btnSelect.UseVisualStyleBackColor = true;
@@ -95,10 +100,11 @@
             // 
             // BrowseProductForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 461);
+            this.ClientSize = new System.Drawing.Size(689, 375);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BrowseProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Browse Product Form";

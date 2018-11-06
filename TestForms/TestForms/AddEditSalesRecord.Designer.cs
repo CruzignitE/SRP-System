@@ -30,25 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label_saleID = new System.Windows.Forms.Label();
+            this.label_productID = new System.Windows.Forms.Label();
+            this.label_productName = new System.Windows.Forms.Label();
+            this.label_productQty = new System.Windows.Forms.Label();
             this.txtBoxGrandTotal = new System.Windows.Forms.TextBox();
-            this.txtBoxSalesID = new System.Windows.Forms.TextBox();
-            this.txtBoxProductID = new System.Windows.Forms.TextBox();
-            this.txtBoxProductName = new System.Windows.Forms.TextBox();
-            this.txtBoxProductQty = new System.Windows.Forms.NumericUpDown();
-            this.txtBoxDate = new System.Windows.Forms.DateTimePicker();
-            this.btnAddProduct = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnSubmitSalesRecord = new System.Windows.Forms.Button();
-            this.btnBrowseProduct = new System.Windows.Forms.Button();
+            this.txtBox_saleID = new System.Windows.Forms.TextBox();
+            this.txtBox_productID = new System.Windows.Forms.TextBox();
+            this.txtBox_productName = new System.Windows.Forms.TextBox();
+            this.txtBox_productQty = new System.Windows.Forms.NumericUpDown();
+            this.txtBox_date = new System.Windows.Forms.DateTimePicker();
+            this.btn_addProduct = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            this.btn_confirm = new System.Windows.Forms.Button();
+            this.btn_browseProduct = new System.Windows.Forms.Button();
             this.dataGridSalesProduct = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.txtBoxProductPrice = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBoxProductQty)).BeginInit();
+            this.txtBox_productPrice = new System.Windows.Forms.TextBox();
+            this.label_productPrice = new System.Windows.Forms.Label();
+            this.label_discount = new System.Windows.Forms.Label();
+            this.label_finalPrice = new System.Windows.Forms.Label();
+            this.txtBox_finalPrice = new System.Windows.Forms.TextBox();
+            this.txtBox_discount = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBox_productQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSalesProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -57,228 +61,259 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(692, 509);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(519, 414);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 20);
+            this.label2.Size = new System.Drawing.Size(88, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Grand Total:";
             // 
-            // label3
+            // label_saleID
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(261, 28);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Sale ID:";
+            this.label_saleID.AutoSize = true;
+            this.label_saleID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_saleID.Location = new System.Drawing.Point(196, 23);
+            this.label_saleID.Name = "label_saleID";
+            this.label_saleID.Size = new System.Drawing.Size(65, 17);
+            this.label_saleID.TabIndex = 5;
+            this.label_saleID.Text = "Sale ID:";
             // 
-            // label5
+            // label_productID
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(216, 87);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 20);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Product ID";
+            this.label_productID.AutoSize = true;
+            this.label_productID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_productID.Location = new System.Drawing.Point(158, 71);
+            this.label_productID.Name = "label_productID";
+            this.label_productID.Size = new System.Drawing.Size(84, 17);
+            this.label_productID.TabIndex = 7;
+            this.label_productID.Text = "Product ID";
             // 
-            // label6
+            // label_productName
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(493, 87);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 20);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Product";
+            this.label_productName.AutoSize = true;
+            this.label_productName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_productName.Location = new System.Drawing.Point(370, 71);
+            this.label_productName.Name = "label_productName";
+            this.label_productName.Size = new System.Drawing.Size(64, 17);
+            this.label_productName.TabIndex = 8;
+            this.label_productName.Text = "Product";
             // 
-            // label7
+            // label_productQty
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(739, 87);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 20);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Qty";
+            this.label_productQty.AutoSize = true;
+            this.label_productQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_productQty.Location = new System.Drawing.Point(557, 71);
+            this.label_productQty.Name = "label_productQty";
+            this.label_productQty.Size = new System.Drawing.Size(33, 17);
+            this.label_productQty.TabIndex = 9;
+            this.label_productQty.Text = "Qty";
             // 
             // txtBoxGrandTotal
             // 
-            this.txtBoxGrandTotal.Location = new System.Drawing.Point(805, 509);
-            this.txtBoxGrandTotal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxGrandTotal.Location = new System.Drawing.Point(604, 414);
             this.txtBoxGrandTotal.Name = "txtBoxGrandTotal";
             this.txtBoxGrandTotal.ReadOnly = true;
-            this.txtBoxGrandTotal.Size = new System.Drawing.Size(132, 22);
+            this.txtBoxGrandTotal.Size = new System.Drawing.Size(100, 20);
             this.txtBoxGrandTotal.TabIndex = 13;
             // 
-            // txtBoxSalesID
+            // txtBox_saleID
             // 
-            this.txtBoxSalesID.Location = new System.Drawing.Point(349, 28);
-            this.txtBoxSalesID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxSalesID.Name = "txtBoxSalesID";
-            this.txtBoxSalesID.ReadOnly = true;
-            this.txtBoxSalesID.Size = new System.Drawing.Size(193, 22);
-            this.txtBoxSalesID.TabIndex = 15;
+            this.txtBox_saleID.Location = new System.Drawing.Point(262, 23);
+            this.txtBox_saleID.Name = "txtBox_saleID";
+            this.txtBox_saleID.ReadOnly = true;
+            this.txtBox_saleID.Size = new System.Drawing.Size(146, 20);
+            this.txtBox_saleID.TabIndex = 15;
             // 
-            // txtBoxProductID
+            // txtBox_productID
             // 
-            this.txtBoxProductID.Location = new System.Drawing.Point(207, 112);
-            this.txtBoxProductID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxProductID.Name = "txtBoxProductID";
-            this.txtBoxProductID.ReadOnly = true;
-            this.txtBoxProductID.Size = new System.Drawing.Size(165, 22);
-            this.txtBoxProductID.TabIndex = 0;
+            this.txtBox_productID.Location = new System.Drawing.Point(151, 91);
+            this.txtBox_productID.Name = "txtBox_productID";
+            this.txtBox_productID.ReadOnly = true;
+            this.txtBox_productID.Size = new System.Drawing.Size(125, 20);
+            this.txtBox_productID.TabIndex = 0;
             // 
-            // txtBoxProductName
+            // txtBox_productName
             // 
-            this.txtBoxProductName.Location = new System.Drawing.Point(381, 112);
-            this.txtBoxProductName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxProductName.Name = "txtBoxProductName";
-            this.txtBoxProductName.ReadOnly = true;
-            this.txtBoxProductName.Size = new System.Drawing.Size(325, 22);
-            this.txtBoxProductName.TabIndex = 1;
+            this.txtBox_productName.Location = new System.Drawing.Point(286, 91);
+            this.txtBox_productName.Name = "txtBox_productName";
+            this.txtBox_productName.ReadOnly = true;
+            this.txtBox_productName.Size = new System.Drawing.Size(245, 20);
+            this.txtBox_productName.TabIndex = 1;
             // 
-            // txtBoxProductQty
+            // txtBox_productQty
             // 
-            this.txtBoxProductQty.Location = new System.Drawing.Point(716, 112);
-            this.txtBoxProductQty.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxProductQty.Name = "txtBoxProductQty";
-            this.txtBoxProductQty.Size = new System.Drawing.Size(160, 22);
-            this.txtBoxProductQty.TabIndex = 2;
+            this.txtBox_productQty.Location = new System.Drawing.Point(540, 91);
+            this.txtBox_productQty.Name = "txtBox_productQty";
+            this.txtBox_productQty.Size = new System.Drawing.Size(120, 20);
+            this.txtBox_productQty.TabIndex = 2;
             // 
-            // txtBoxDate
+            // txtBox_date
             // 
-            this.txtBoxDate.Enabled = false;
-            this.txtBoxDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtBoxDate.Location = new System.Drawing.Point(648, 28);
-            this.txtBoxDate.Name = "txtBoxDate";
-            this.txtBoxDate.Size = new System.Drawing.Size(133, 26);
-            this.txtBoxDate.TabIndex = 17;
+            this.txtBox_date.Enabled = false;
+            this.txtBox_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBox_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtBox_date.Location = new System.Drawing.Point(486, 23);
+            this.txtBox_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBox_date.Name = "txtBox_date";
+            this.txtBox_date.Size = new System.Drawing.Size(101, 23);
+            this.txtBox_date.TabIndex = 17;
             // 
-            // btnAddProduct
+            // btn_addProduct
             // 
-            this.btnAddProduct.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddProduct.FlatAppearance.BorderSize = 0;
-            this.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddProduct.Image = global::TestForms.Properties.Resources.add;
-            this.btnAddProduct.Location = new System.Drawing.Point(947, 112);
-            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(67, 61);
-            this.btnAddProduct.TabIndex = 1;
-            this.btnAddProduct.UseVisualStyleBackColor = false;
-            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
+            this.btn_addProduct.BackColor = System.Drawing.Color.Transparent;
+            this.btn_addProduct.FlatAppearance.BorderSize = 0;
+            this.btn_addProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_addProduct.Image = global::TestForms.Properties.Resources.add;
+            this.btn_addProduct.Location = new System.Drawing.Point(710, 91);
+            this.btn_addProduct.Name = "btn_addProduct";
+            this.btn_addProduct.Size = new System.Drawing.Size(50, 50);
+            this.btn_addProduct.TabIndex = 1;
+            this.btn_addProduct.UseVisualStyleBackColor = false;
+            this.btn_addProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
-            // button3
+            // btn_cancel
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::TestForms.Properties.Resources.cancel;
-            this.button3.Location = new System.Drawing.Point(943, 603);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(67, 61);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.Btn_Cancel_Click);
+            this.btn_cancel.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cancel.FlatAppearance.BorderSize = 0;
+            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancel.Image = global::TestForms.Properties.Resources.cancel;
+            this.btn_cancel.Location = new System.Drawing.Point(707, 490);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(50, 50);
+            this.btn_cancel.TabIndex = 2;
+            this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
             // 
-            // btnSubmitSalesRecord
+            // btn_confirm
             // 
-            this.btnSubmitSalesRecord.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubmitSalesRecord.FlatAppearance.BorderSize = 0;
-            this.btnSubmitSalesRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmitSalesRecord.Image = global::TestForms.Properties.Resources.confirm;
-            this.btnSubmitSalesRecord.Location = new System.Drawing.Point(868, 603);
-            this.btnSubmitSalesRecord.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSubmitSalesRecord.Name = "btnSubmitSalesRecord";
-            this.btnSubmitSalesRecord.Size = new System.Drawing.Size(67, 61);
-            this.btnSubmitSalesRecord.TabIndex = 0;
-            this.btnSubmitSalesRecord.UseVisualStyleBackColor = false;
-            this.btnSubmitSalesRecord.Click += new System.EventHandler(this.btnSubmitSalesRecord_Click);
+            this.btn_confirm.BackColor = System.Drawing.Color.Transparent;
+            this.btn_confirm.FlatAppearance.BorderSize = 0;
+            this.btn_confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_confirm.Image = global::TestForms.Properties.Resources.confirm;
+            this.btn_confirm.Location = new System.Drawing.Point(651, 490);
+            this.btn_confirm.Name = "btn_confirm";
+            this.btn_confirm.Size = new System.Drawing.Size(50, 50);
+            this.btn_confirm.TabIndex = 0;
+            this.btn_confirm.UseVisualStyleBackColor = false;
+            this.btn_confirm.Click += new System.EventHandler(this.btnSubmitSalesRecord_Click);
             // 
-            // btnBrowseProduct
+            // btn_browseProduct
             // 
-            this.btnBrowseProduct.Location = new System.Drawing.Point(29, 112);
-            this.btnBrowseProduct.Name = "btnBrowseProduct";
-            this.btnBrowseProduct.Size = new System.Drawing.Size(139, 29);
-            this.btnBrowseProduct.TabIndex = 18;
-            this.btnBrowseProduct.Text = "browse product";
-            this.btnBrowseProduct.UseVisualStyleBackColor = true;
-            this.btnBrowseProduct.Click += new System.EventHandler(this.btnBrowseProduct_Click);
+            this.btn_browseProduct.Location = new System.Drawing.Point(22, 91);
+            this.btn_browseProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_browseProduct.Name = "btn_browseProduct";
+            this.btn_browseProduct.Size = new System.Drawing.Size(104, 24);
+            this.btn_browseProduct.TabIndex = 18;
+            this.btn_browseProduct.Text = "Browse Products";
+            this.btn_browseProduct.UseVisualStyleBackColor = true;
+            this.btn_browseProduct.Click += new System.EventHandler(this.btnBrowseProduct_Click);
             // 
             // dataGridSalesProduct
             // 
             this.dataGridSalesProduct.AllowUserToAddRows = false;
             this.dataGridSalesProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridSalesProduct.Location = new System.Drawing.Point(171, 208);
+            this.dataGridSalesProduct.Location = new System.Drawing.Point(128, 169);
+            this.dataGridSalesProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridSalesProduct.Name = "dataGridSalesProduct";
             this.dataGridSalesProduct.ReadOnly = true;
             this.dataGridSalesProduct.RowTemplate.Height = 24;
-            this.dataGridSalesProduct.Size = new System.Drawing.Size(767, 283);
+            this.dataGridSalesProduct.Size = new System.Drawing.Size(575, 230);
             this.dataGridSalesProduct.TabIndex = 19;
             this.dataGridSalesProduct.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSalesProduct_CellDoubleClick);
             this.dataGridSalesProduct.SelectionChanged += new System.EventHandler(this.dataGridSalesProduct_SelectionChanged);
             this.dataGridSalesProduct.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridSalesProduct_UserDeletingRow);
             // 
-            // txtBoxProductPrice
+            // txtBox_productPrice
             // 
-            this.txtBoxProductPrice.Location = new System.Drawing.Point(207, 169);
-            this.txtBoxProductPrice.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxProductPrice.Name = "txtBoxProductPrice";
-            this.txtBoxProductPrice.ReadOnly = true;
-            this.txtBoxProductPrice.Size = new System.Drawing.Size(165, 22);
-            this.txtBoxProductPrice.TabIndex = 20;
+            this.txtBox_productPrice.Location = new System.Drawing.Point(151, 137);
+            this.txtBox_productPrice.Name = "txtBox_productPrice";
+            this.txtBox_productPrice.ReadOnly = true;
+            this.txtBox_productPrice.Size = new System.Drawing.Size(125, 20);
+            this.txtBox_productPrice.TabIndex = 20;
             // 
-            // label4
+            // label_productPrice
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(216, 144);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 20);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Product Price";
+            this.label_productPrice.AutoSize = true;
+            this.label_productPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_productPrice.Location = new System.Drawing.Point(158, 117);
+            this.label_productPrice.Name = "label_productPrice";
+            this.label_productPrice.Size = new System.Drawing.Size(106, 17);
+            this.label_productPrice.TabIndex = 21;
+            this.label_productPrice.Text = "Product Price";
+            // 
+            // label_discount
+            // 
+            this.label_discount.AutoSize = true;
+            this.label_discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_discount.Location = new System.Drawing.Point(297, 117);
+            this.label_discount.Name = "label_discount";
+            this.label_discount.Size = new System.Drawing.Size(101, 17);
+            this.label_discount.TabIndex = 23;
+            this.label_discount.Text = "Discount (%)";
+            // 
+            // label_finalPrice
+            // 
+            this.label_finalPrice.AutoSize = true;
+            this.label_finalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_finalPrice.Location = new System.Drawing.Point(446, 117);
+            this.label_finalPrice.Name = "label_finalPrice";
+            this.label_finalPrice.Size = new System.Drawing.Size(85, 17);
+            this.label_finalPrice.TabIndex = 25;
+            this.label_finalPrice.Text = "Final Price";
+            // 
+            // txtBox_finalPrice
+            // 
+            this.txtBox_finalPrice.Enabled = false;
+            this.txtBox_finalPrice.Location = new System.Drawing.Point(420, 137);
+            this.txtBox_finalPrice.Name = "txtBox_finalPrice";
+            this.txtBox_finalPrice.ReadOnly = true;
+            this.txtBox_finalPrice.Size = new System.Drawing.Size(125, 20);
+            this.txtBox_finalPrice.TabIndex = 24;
+            // 
+            // txtBox_discount
+            // 
+            this.txtBox_discount.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBox_discount.Location = new System.Drawing.Point(286, 137);
+            this.txtBox_discount.MaxLength = 2;
+            this.txtBox_discount.Name = "txtBox_discount";
+            this.txtBox_discount.ShortcutsEnabled = false;
+            this.txtBox_discount.Size = new System.Drawing.Size(125, 20);
+            this.txtBox_discount.TabIndex = 22;
+            this.txtBox_discount.TextChanged += new System.EventHandler(this.PriceCalculate);
             // 
             // AddEditSalesRecord
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1045, 691);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtBoxProductPrice);
-            this.Controls.Add(this.txtBoxProductQty);
-            this.Controls.Add(this.txtBoxProductName);
-            this.Controls.Add(this.txtBoxProductID);
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.label_finalPrice);
+            this.Controls.Add(this.txtBox_finalPrice);
+            this.Controls.Add(this.label_discount);
+            this.Controls.Add(this.txtBox_discount);
+            this.Controls.Add(this.label_productPrice);
+            this.Controls.Add(this.txtBox_productPrice);
+            this.Controls.Add(this.txtBox_productQty);
+            this.Controls.Add(this.txtBox_productName);
+            this.Controls.Add(this.txtBox_productID);
             this.Controls.Add(this.dataGridSalesProduct);
-            this.Controls.Add(this.btnBrowseProduct);
-            this.Controls.Add(this.txtBoxDate);
-            this.Controls.Add(this.btnAddProduct);
-            this.Controls.Add(this.txtBoxSalesID);
+            this.Controls.Add(this.btn_browseProduct);
+            this.Controls.Add(this.txtBox_date);
+            this.Controls.Add(this.btn_addProduct);
+            this.Controls.Add(this.txtBox_saleID);
             this.Controls.Add(this.txtBoxGrandTotal);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label_productQty);
+            this.Controls.Add(this.label_productName);
+            this.Controls.Add(this.label_productID);
+            this.Controls.Add(this.label_saleID);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.btnSubmitSalesRecord);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.btn_confirm);
             this.Name = "AddEditSalesRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product Check-out";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddEditSalesRecord_FormClosing);
             this.Load += new System.EventHandler(this.AddEditSalesRecord_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.txtBoxProductQty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBox_productQty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSalesProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -288,24 +323,28 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSubmitSalesRecord;
-        private System.Windows.Forms.Button btnAddProduct;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_confirm;
+        private System.Windows.Forms.Button btn_addProduct;
+        private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label_saleID;
+        private System.Windows.Forms.Label label_productID;
+        private System.Windows.Forms.Label label_productName;
+        private System.Windows.Forms.Label label_productQty;
         private System.Windows.Forms.TextBox txtBoxGrandTotal;
-        private System.Windows.Forms.TextBox txtBoxSalesID;
-        private System.Windows.Forms.TextBox txtBoxProductID;
-        private System.Windows.Forms.TextBox txtBoxProductName;
-        private System.Windows.Forms.NumericUpDown txtBoxProductQty;
-        private System.Windows.Forms.DateTimePicker txtBoxDate;
-        private System.Windows.Forms.Button btnBrowseProduct;
+        private System.Windows.Forms.TextBox txtBox_saleID;
+        private System.Windows.Forms.TextBox txtBox_productID;
+        private System.Windows.Forms.TextBox txtBox_productName;
+        private System.Windows.Forms.NumericUpDown txtBox_productQty;
+        private System.Windows.Forms.DateTimePicker txtBox_date;
+        private System.Windows.Forms.Button btn_browseProduct;
         private System.Windows.Forms.DataGridView dataGridSalesProduct;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.TextBox txtBoxProductPrice;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtBox_productPrice;
+        private System.Windows.Forms.Label label_productPrice;
+        private System.Windows.Forms.Label label_discount;
+        private System.Windows.Forms.Label label_finalPrice;
+        private System.Windows.Forms.TextBox txtBox_finalPrice;
+        private System.Windows.Forms.TextBox txtBox_discount;
     }
 }

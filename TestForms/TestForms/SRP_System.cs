@@ -44,8 +44,6 @@ namespace TestForms
                         tabs[2].Visible = true;
                     else if (b == button_side_salesPrediction)
                         tabs[3].Visible = true; 
-                        break;
-                        
                 }
                 else
                     b.BackColor = Color.Transparent;

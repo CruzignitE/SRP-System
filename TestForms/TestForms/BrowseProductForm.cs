@@ -51,13 +51,7 @@ namespace TestForms
         {
             try
             {
-                DataGridViewRow row = dataGVBrowseProduct.CurrentCell.OwningRow;
-                string productID = row.Cells["Product ID"].Value.ToString();
-                string productName = row.Cells["Product Name"].Value.ToString();
-                double productPrice = Convert.ToDouble(row.Cells["Product Price"].Value);
-                AddEditSalesRecord.ProductID = productID;
-                AddEditSalesRecord.ProductName = productName;
-                AddEditSalesRecord.ProductPrice = productPrice;
+                SelectCell();
             }
             catch (Exception ex)
             {
@@ -68,6 +62,30 @@ namespace TestForms
         private void btnSelect_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                SelectCell();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void SelectCell()
+        {
+            DataGridViewRow row = dataGVBrowseProduct.CurrentCell.OwningRow;
+            string productID = row.Cells["Product ID"].Value.ToString();
+            string productName = row.Cells["Product Name"].Value.ToString();
+            double productPrice = Convert.ToDouble(row.Cells["Product Price"].Value);
+            AddEditSalesRecord.ProductID = productID;
+            AddEditSalesRecord.ProductName = productName;
+            AddEditSalesRecord.ProductPrice = productPrice;
         }
     }
 }

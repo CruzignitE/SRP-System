@@ -50,8 +50,8 @@ namespace TestForms
             connString = new ConnectionString();
             this.isAdd = isAdd;
 
-            txtBoxSalesID.Text = id;
-            txtBoxDate.Text = date;
+            txtBox_saleID.Text = id;
+            txtBox_date.Text = date;
             txtBoxGrandTotal.Text = tPrice;
             grandTotal = Convert.ToDouble(tPrice);
         }
@@ -92,7 +92,7 @@ namespace TestForms
         {
             try
             {
-                cmd = cmd.Replace("SalesID", txtBoxSalesID.Text);
+                cmd = cmd.Replace("SalesID", txtBox_saleID.Text);
                 dataAdapter = new SqlDataAdapter(cmd, connString.getConnString());
                
                 table = new DataTable();
@@ -108,35 +108,37 @@ namespace TestForms
 
         private void AddEditSalesRecord_FormClosing(object sender, FormClosingEventArgs e)
         {
-            txtBoxProductID.Text = ProductID;
-            txtBoxProductName.Text = ProductName;
-            txtBoxProductPrice.Text = ProductPrice.ToString();
+            txtBox_productID.Text = ProductID;
+            txtBox_productName.Text = ProductName;
+            txtBox_productPrice.Text = ProductPrice.ToString();
+            txtBox_discount.Text = "0";
+            txtBox_finalPrice.Text = ProductPrice.ToString();
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
             try
             {
-                double totalPrice = (Convert.ToDouble(txtBoxProductPrice.Text) * Convert.ToDouble(txtBoxProductQty.Text));
+                double totalPrice = (Convert.ToDouble(txtBox_productPrice.Text) * Convert.ToDouble(txtBox_productQty.Text));
                 if(tableRowIndex != -1)
                 {
-                    table.Rows[tableRowIndex]["Product ID"] = txtBoxProductID.Text;
-                    table.Rows[tableRowIndex]["Product Name"] = txtBoxProductName.Text;
-                    table.Rows[tableRowIndex]["Product Qty"] = txtBoxProductQty.Text;
-                    table.Rows[tableRowIndex]["Unit Price"] = txtBoxProductPrice.Text;
+                    table.Rows[tableRowIndex]["Product ID"] = txtBox_productID.Text;
+                    table.Rows[tableRowIndex]["Product Name"] = txtBox_productName.Text;
+                    table.Rows[tableRowIndex]["Product Qty"] = txtBox_productQty.Text;
+                    table.Rows[tableRowIndex]["Unit Price"] = txtBox_productPrice.Text;
                     table.Rows[tableRowIndex]["Total Price"] = totalPrice;
                     tableRowIndex = -1;
                 }
                 else
                 {
-                    table.Rows.Add(txtBoxProductID.Text, txtBoxProductName.Text, txtBoxProductQty.Text, txtBoxProductPrice.Text, totalPrice);
+                    table.Rows.Add(txtBox_productID.Text, txtBox_productName.Text, txtBox_productQty.Text, txtBox_productPrice.Text, totalPrice);
                 }
                 grandTotal += totalPrice;
                 txtBoxGrandTotal.Text = grandTotal.ToString();
-                txtBoxProductID.Text = "";
-                txtBoxProductName.Text = "";
-                txtBoxProductQty.Value = 0;
-                txtBoxProductPrice.Text = "";
+                txtBox_productID.Text = "";
+                txtBox_productName.Text = "";
+                txtBox_productQty.Value = 0;
+                txtBox_productPrice.Text = "";
 
             }
             catch {
@@ -216,9 +218,7 @@ namespace TestForms
                             }
                             command = new SqlCommand(cmd, conn);
                             command.Parameters.AddWithValue(@"srID", strMaxID);
-                            //DateTime salesDate = Convert.ToDateTime(txtBoxDate.Text);
                             command.Parameters.AddWithValue(@"sDate", DateTime.Today.ToString("yyyy-MM-dd"));
-                            //command.Parameters.AddWithValue(@"sDate", salesDate.ToString("yyyy-MM-dd"));
                             command.Parameters.AddWithValue(@"sRemark", "");
                             command.Parameters.AddWithValue(@"sGrandTotal", Math.Round(Double.Parse(txtBoxGrandTotal.Text), 2));
                             lastInsertedID = (string)command.ExecuteScalar();
@@ -236,7 +236,7 @@ namespace TestForms
                             conn.Open();
                             command = new SqlCommand(cmd, conn);
                             command.Parameters.AddWithValue(@"sGrandTotal", Math.Round(Double.Parse(txtBoxGrandTotal.Text), 2));
-                            command.Parameters.AddWithValue(@"sSalesID", txtBoxSalesID.Text);
+                            command.Parameters.AddWithValue(@"sSalesID", txtBox_saleID.Text);
                             command.ExecuteNonQuery();
                             conn.Close();
                                 
@@ -258,7 +258,7 @@ namespace TestForms
                             conn.Open();
                             
                             command = new SqlCommand(resetSalesDetail, conn);
-                            command.Parameters.AddWithValue(@"sSalesID", txtBoxSalesID.Text);
+                            command.Parameters.AddWithValue(@"sSalesID", txtBox_saleID.Text);
                             command.ExecuteNonQuery();
                             
                             conn.Close();
@@ -282,7 +282,7 @@ namespace TestForms
                             {
                                 command.Parameters.AddWithValue(@"srID", lastInsertedID);
                             }else
-                                command.Parameters.AddWithValue(@"srID", txtBoxSalesID.Text);
+                                command.Parameters.AddWithValue(@"srID", txtBox_saleID.Text);
                             command.Parameters.AddWithValue(@"pID", ids[i]);
                             command.Parameters.AddWithValue(@"qtyOrder", quantities[i]);
                             command.ExecuteNonQuery();
@@ -307,10 +307,10 @@ namespace TestForms
             DialogResult dialogResult = MessageBox.Show("Do you want to edit this item?", "Edit Item", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                txtBoxProductID.Text = productID;
-                txtBoxProductName.Text = productName;
-                txtBoxProductQty.Value = productQty;
-                txtBoxProductPrice.Text = productPrice.ToString();
+                txtBox_productID.Text = productID;
+                txtBox_productName.Text = productName;
+                txtBox_productQty.Value = productQty;
+                txtBox_productPrice.Text = productPrice.ToString();
                 tableRowIndex = dataGridSalesProduct.CurrentCell.RowIndex;
                 double totalPrice = Convert.ToDouble(table.Rows[tableRowIndex]["Total Price"]);
                 grandTotal -= totalPrice; //decrease the value
@@ -322,6 +322,15 @@ namespace TestForms
             grandTotal -= tempPrice;
             txtBoxGrandTotal.Text = grandTotal.ToString();
             TrimTableRow();
+        }
+
+        private void PriceCalculate(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtBox_discount.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                txtBox_discount.Text = txtBox_discount.Text.Remove(txtBox_discount.Text.Length - 1);
+            }
         }
     }
 }

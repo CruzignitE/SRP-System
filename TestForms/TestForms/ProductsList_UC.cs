@@ -18,20 +18,18 @@ namespace TestForms
         private SqlDataAdapter dataAdapter;
         private DataTable table;
         private String productID, productName, productUnitPrice, productStatus, productCategory;
-        private String selectQuery_Products = "SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_category AS 'Product Category', product_unit AS 'Product Unit', product_price AS 'Product Price', product_description AS 'Product Description', product_status AS 'Product Status' FROM Product";
+        private String selectQuery_Products = "SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_category AS 'Product Category', product_unit AS 'Product Unit', product_price AS 'Product Price', product_description AS 'Product Description', CASE WHEN product_status=1 THEN 'Active' ELSE 'Inactive' END AS 'Product Status' FROM Product";
 
         public ProductsList_UC()
         {
             InitializeComponent();
             connString = new ConnectionString();
-            //comboBox_filter.SelectedIndex = 0;
         }
 
         private void ProductsList_Load(object sender, EventArgs e)
         {
             dataGridView_inventory.DataSource = bindingSource1;
             GetData(selectQuery_Products);
-            ChangeStatusValue();
         }
 
         private void RemovePlaceholder(object sender, EventArgs e) {
@@ -41,16 +39,6 @@ namespace TestForms
         private void AddPlaceholder(object sender, EventArgs e) {
             if (string.IsNullOrWhiteSpace(textBox_search.Text))
                 textBox_search.Text = "Search";
-        }
-
-        private void ChangeStatusValue() {
-            int row = dataGridView_inventory.RowCount;
-            string data;
-
-            for (int i = 0; i < (row - 1); i++) {
-                data = dataGridView_inventory.Rows[i].Cells["Product Status"].Value.ToString();
-                data.Replace("0", "Retired").Replace("1", "Active");
-            }
         }
 
         private void GetData(string cmd)
@@ -78,17 +66,8 @@ namespace TestForms
 
         private void FilterProductList_OnKeyUp(object sender, KeyEventArgs e)
         {
-            string keyword = textBox_search.Text;
-            string options = "";
-            string filter_cmd = "";
-
-            if (comboBox_filter.SelectedItem != null) {
-                options = comboBox_filter.SelectedItem.ToString();
-            }
-            if (options.Equals("Category"))
-                filter_cmd = @"SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_category AS 'Product Category', product_unit AS 'Product Unit', product_price AS 'Product Price', product_description AS 'Product Description', product_status AS 'Product Status' FROM Product WHERE product_category LIKE '%" + keyword + "%'";
-            else if (options.Equals("Name"))
-                filter_cmd = @"SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_category AS 'Product Category', product_unit AS 'Product Unit', product_price AS 'Product Price', product_description AS 'Product Description', product_status AS 'Product Status' FROM Product WHERE product_name LIKE '%" + keyword + "%'";
+            String keyword = textBox_search.Text;
+            String filter_cmd = @"SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_category AS 'Product Category', product_unit AS 'Product Unit', product_price AS 'Product Price', product_description AS 'Product Description', product_status AS 'Product Status' FROM Product WHERE product_name LIKE '%" + keyword + "%'";
             if (!keyword.Equals(""))
                 GetData(filter_cmd);
             else
