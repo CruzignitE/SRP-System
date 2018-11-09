@@ -101,7 +101,7 @@
             this.comboBox_filter.Items.AddRange(new object[] {
             "Name",
             "Category"});
-            this.comboBox_filter.Location = new System.Drawing.Point(309, 5);
+            this.comboBox_filter.Location = new System.Drawing.Point(309, 4);
             this.comboBox_filter.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_filter.Name = "comboBox_filter";
             this.comboBox_filter.Size = new System.Drawing.Size(303, 24);

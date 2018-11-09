@@ -82,6 +82,7 @@
       <DependentUpon>BrowseProductForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="Date.cs" />
     <Compile Include="Inventory.cs">
       <SubType>Form</SubType>
     </Compile>

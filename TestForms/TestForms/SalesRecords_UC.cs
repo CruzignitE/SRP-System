@@ -160,7 +160,26 @@ namespace TestForms
             
         }
 
-        
+        private void FilterSalesList_OnKeyUp(object sender, KeyEventArgs e)
+        {
+            //string keyword = textBox_sr_search.Text;
+            //Date shortDate = Date.Today;
+            //string options = "";
+            //string filter_cmd = "";
+
+            //if (comboBox_sr_filter.SelectedItem != null)
+            //{
+                //options = comboBox_sr_filter.SelectedItem.ToString();
+            //}
+            //if (options.Equals("Date"))
+                //filter_cmd = @"SELECT sales_record_id AS 'Sales ID', sales_record_date AS 'Sales Date', sales_record_amount AS 'Sales Total Price', sales_record_remark AS 'Remark' FROM Sales_Record WHERE sales_record_date = '"+ shortDate.ToShortString() +"' AND sales_status = 1";
+
+
+            //if (!keyword.Equals(""))
+                //GetData(filter_cmd);
+            //else
+                //GetData(selectQuery_SR);
+        }
 
         private void button_add_Click(object sender, EventArgs e)
         {
