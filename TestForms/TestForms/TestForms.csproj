@@ -48,6 +48,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IronPython">
+      <HintPath>..\..\..\Framework\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting">
+      <HintPath>..\..\..\Framework\Microsoft.Scripting.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Security" />
@@ -118,6 +124,7 @@
     <Compile Include="ProductsList_UC.Designer.cs">
       <DependentUpon>ProductsList_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="PythonInstance.cs" />
     <Compile Include="RefundAdd.cs">
       <SubType>Form</SubType>
     </Compile>
