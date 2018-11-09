@@ -114,7 +114,7 @@ namespace TestForms
 
         private void button_csvExport_Click(object sender, EventArgs e)
         {
-
+            string userName = Environment.UserName;
             string selectStateForCSV = @"SELECT Sales_Record.sales_record_id AS 'Sales ID', CONVERT(VARCHAR(10), sales_record_date) AS 'Sales Date', product_name AS 'Product Name', quantity_order AS 'Quantity Order' FROM Sales_Record JOIN Sales_Record_Details ON Sales_Record.sales_record_id = Sales_Record_Details.sales_record_id JOIN Product ON Product.product_id = Sales_Record_Details.product_id WHERE sales_status = 1";
             SqlDataAdapter adapter = new SqlDataAdapter(selectStateForCSV, connString.getConnString());
             DataTable dt = new DataTable();
@@ -122,7 +122,7 @@ namespace TestForms
 
             try
             {
-                StreamWriter streamWriter = new StreamWriter("D:\\csvData.csv", false);
+                StreamWriter streamWriter = new StreamWriter(@"C:\Users\" + userName + @"\Documents\csvData.csv", false);
 
                 int colCount = dt.Columns.Count;
                 for (int i = 0; i < colCount; i++)
@@ -152,7 +152,7 @@ namespace TestForms
                 }
                 streamWriter.Close();
                 MessageBox.Show("Successfully Exported");
-                Process.Start(@"D:\\csvData.csv");
+                Process.Start(@"C:\Users\" + userName + @"\Documents\csvData.csv");
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);

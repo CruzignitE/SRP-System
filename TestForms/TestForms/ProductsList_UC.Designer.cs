@@ -98,12 +98,15 @@
             this.comboBox_filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBox_filter.FormattingEnabled = true;
             this.comboBox_filter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBox_filter.Location = new System.Drawing.Point(309, 4);
+            this.comboBox_filter.Items.AddRange(new object[] {
+            "Name",
+            "Category"});
+            this.comboBox_filter.Location = new System.Drawing.Point(309, 5);
             this.comboBox_filter.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_filter.Name = "comboBox_filter";
             this.comboBox_filter.Size = new System.Drawing.Size(303, 24);
             this.comboBox_filter.TabIndex = 30;
-            this.comboBox_filter.Text = "Filter By";
+            this.comboBox_filter.Text = "Name";
             // 
             // textBox_search
             // 

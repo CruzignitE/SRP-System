@@ -174,3 +174,5 @@ D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\IronPython.dll
 D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\Microsoft.Scripting.dll
 D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\Microsoft.Dynamic.dll
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.CopyComplete
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\Microsoft.Dynamic.dll
+C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.CopyComplete

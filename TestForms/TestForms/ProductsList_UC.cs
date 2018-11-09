@@ -66,8 +66,20 @@ namespace TestForms
 
         private void FilterProductList_OnKeyUp(object sender, KeyEventArgs e)
         {
-            String keyword = textBox_search.Text;
-            String filter_cmd = @"SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_category AS 'Product Category', product_unit AS 'Product Unit', product_price AS 'Product Price', product_description AS 'Product Description', product_status AS 'Product Status' FROM Product WHERE product_name LIKE '%" + keyword + "%'";
+            string keyword = textBox_search.Text;
+            string options = "";
+            string filter_cmd = "";
+
+            if (comboBox_filter.SelectedItem != null)
+            {
+                options = comboBox_filter.SelectedItem.ToString();
+            }
+            if (options.Equals("Category"))
+                filter_cmd = @"SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_category AS 'Product Category', product_unit AS 'Product Unit', product_price AS 'Product Price', product_description AS 'Product Description', product_status AS 'Product Status' FROM Product WHERE product_category LIKE '%" + keyword + "%'";
+            else if (options.Equals("Name"))
+                filter_cmd = @"SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_category AS 'Product Category', product_unit AS 'Product Unit', product_price AS 'Product Price', product_description AS 'Product Description', product_status AS 'Product Status' FROM Product WHERE product_name LIKE '%" + keyword + "%'";
+
+
             if (!keyword.Equals(""))
                 GetData(filter_cmd);
             else
