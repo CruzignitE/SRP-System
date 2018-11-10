@@ -23,6 +23,8 @@ namespace TestForms
         private String strMaxID = "";
         private String zeroCode = "";
 
+        private double productFinalPrice = 0.0;
+
         private static string productID;
         private static string productName;
         private static double productPrice;
@@ -127,19 +129,20 @@ namespace TestForms
                     table.Rows[tableRowIndex]["Product Name"] = txtBox_productName.Text;
                     table.Rows[tableRowIndex]["Product Qty"] = txtBox_productQty.Text;
                     table.Rows[tableRowIndex]["Unit Price"] = txtBox_productPrice.Text;
-                    table.Rows[tableRowIndex]["Total Price"] = totalPrice;
+                    table.Rows[tableRowIndex]["Total Price"] = productFinalPrice;
                     tableRowIndex = -1;
                 }
                 else
                 {
-                    table.Rows.Add(txtBox_productID.Text, txtBox_productName.Text, txtBox_productQty.Text, txtBox_productPrice.Text, totalPrice);
+                    table.Rows.Add(txtBox_productID.Text, txtBox_productName.Text, txtBox_productQty.Text, txtBox_productPrice.Text, productFinalPrice);
                 }
-                grandTotal += totalPrice;
+                grandTotal += productFinalPrice;
                 txtBoxGrandTotal.Text = grandTotal.ToString();
                 txtBox_productID.Text = "";
                 txtBox_productName.Text = "";
                 txtBox_productQty.Value = 0;
                 txtBox_productPrice.Text = "";
+                txtBox_discount.Text = "";
 
             }
             catch {
@@ -349,12 +352,16 @@ namespace TestForms
 
         private void CalculateFinalPrice() {
             double DiscountPercent = Double.Parse(txtBox_discount.Text);
+            double DiscountPrice;
             int productQty = Int32.Parse(txtBox_productQty.Value.ToString());
             double productPrice = Double.Parse(txtBox_productPrice.Text);
-            double productFinalPrice = (productQty * productPrice);
+            productFinalPrice = (productQty * productPrice);
 
             if (DiscountPercent > 0)
-                productFinalPrice = (productQty * ProductPrice * (100 - (DiscountPercent / 100)));
+            {
+                DiscountPrice = (productQty * ProductPrice * (DiscountPercent / 100));
+                productFinalPrice = productFinalPrice - DiscountPrice;
+            }
 
             txtBox_finalPrice.Text = productFinalPrice.ToString();
         }
