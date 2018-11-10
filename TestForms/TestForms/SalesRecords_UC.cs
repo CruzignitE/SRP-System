@@ -75,6 +75,9 @@ namespace TestForms
         {
             dataGridView_salesRecords.DataSource = bindingSource1;
             GetData(selectQuery_SR);
+
+            dateTimePicker_from.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            dateTimePicker_until.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month + 1, 1);
         }
 
         private void GetData(String cmd)
@@ -100,17 +103,29 @@ namespace TestForms
             AddRefund.ShowDialog();  // Shows the Refund page
         }
 
+        private void PopupPieButton_Click(object sender, EventArgs e)
+        {
+            SalesRecordsPie generatePieChart = new SalesRecordsPie();
+            generatePieChart.ShowDialog(); // Shows the Pie chart
+        }
+
+        private void PopupGraphButton_Click(object sender, EventArgs e)
+        {
+            SalesRecordsGraph generateGraph = new SalesRecordsGraph();
+            generateGraph.ShowDialog(); // Shows the Graph
+        }
+
         private void button_csvExport_Click(object sender, EventArgs e)
         {
-            string userName = Environment.UserName;
-            string selectStateForCSV = @"SELECT Sales_Record.sales_record_id AS 'Sales ID', CONVERT(VARCHAR(10), sales_record_date) AS 'Sales Date', product_name AS 'Product Name', quantity_order AS 'Quantity Order' FROM Sales_Record JOIN Sales_Record_Details ON Sales_Record.sales_record_id = Sales_Record_Details.sales_record_id JOIN Product ON Product.product_id = Sales_Record_Details.product_id WHERE sales_status = 1";
+
+            string selectStateForCSV = @"SELECT Sales_Record.sales_record_id AS 'Sales ID', CONVERT(VARCHAR(10), sales_record_date) AS 'Sales Date', product_name AS 'Product Name', quantity_order AS 'Quantity Order' FROM Sales_Record JOIN Sales_Record_Details ON Sales_Record.sales_record_id = Sales_Record_Details.sales_record_id JOIN Product ON Product.product_id = Sales_Record_Details.product_id";
             SqlDataAdapter adapter = new SqlDataAdapter(selectStateForCSV, connString.getConnString());
             DataTable dt = new DataTable();
             adapter.Fill(dt);
 
             try
             {
-                StreamWriter streamWriter = new StreamWriter(@"C:\Users\" + userName + @"\Documents\csvData.csv", false);
+                StreamWriter streamWriter = new StreamWriter("D:\\csvData.csv", false);
 
                 int colCount = dt.Columns.Count;
                 for (int i = 0; i < colCount; i++)
@@ -140,7 +155,7 @@ namespace TestForms
                 }
                 streamWriter.Close();
                 MessageBox.Show("Successfully Exported");
-                Process.Start(@"C:\Users\" + userName + @"\Documents\csvData.csv");
+                Process.Start(@"D:\\csvData.csv");
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -148,40 +163,7 @@ namespace TestForms
             
         }
 
-        private void FilterSalesList_OnKeyUp(object sender, KeyEventArgs e)
-        {
-            //string keyword = textBox_sr_search.Text;
-            //Date shortDate = Date.Today;
-            //string options = "";
-            //string filter_cmd = "";
-
-            //if (comboBox_sr_filter.SelectedItem != null)
-            //{
-                //options = comboBox_sr_filter.SelectedItem.ToString();
-            //}
-            //if (options.Equals("Date"))
-                //filter_cmd = @"SELECT sales_record_id AS 'Sales ID', sales_record_date AS 'Sales Date', sales_record_amount AS 'Sales Total Price', sales_record_remark AS 'Remark' FROM Sales_Record WHERE sales_record_date = '"+ shortDate.ToShortString() +"' AND sales_status = 1";
-
-
-            //if (!keyword.Equals(""))
-                //GetData(filter_cmd);
-            //else
-                //GetData(selectQuery_SR);
-        }
-
-        private void Btn_popupPie_Click(object sender, EventArgs e)
-        {
-            SalesRecordsPie generatePieChart = new SalesRecordsPie();
-            generatePieChart.ShowDialog(); // Shows the Pie chart
-        }
-
-        private void Btn_popupGraph_Click(object sender, EventArgs e)
-        {
-            SalesRecordsGraph generateGraph = new SalesRecordsGraph();
-            generateGraph.ShowDialog(); // Shows the Graph
-        }
-
-        private void Btn_add_Click(object sender, EventArgs e)
+        private void button_add_Click(object sender, EventArgs e)
         {
             AddEditSalesRecord AddRecord = new AddEditSalesRecord(true);
             AddRecord.FormClosing += new FormClosingEventHandler(SalesRecords_FormClosing);
