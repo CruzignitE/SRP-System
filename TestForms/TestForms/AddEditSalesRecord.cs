@@ -337,6 +337,26 @@ namespace TestForms
                 MessageBox.Show("Please enter only numbers.");
                 txtBox_discount.Text = txtBox_discount.Text.Remove(txtBox_discount.Text.Length - 1);
             }
+            else if (txtBox_discount.Text != "") {
+                CalculateFinalPrice();
+            }
+        }
+
+        private void ValueChanged(object sender, EventArgs e)
+        {
+            CalculateFinalPrice();
+        }
+
+        private void CalculateFinalPrice() {
+            double DiscountPercent = Double.Parse(txtBox_discount.Text);
+            int productQty = Int32.Parse(txtBox_productQty.Value.ToString());
+            double productPrice = Double.Parse(txtBox_productPrice.Text);
+            double productFinalPrice = (productQty * productPrice);
+
+            if (DiscountPercent > 0)
+                productFinalPrice = (productQty * ProductPrice * (100 - (DiscountPercent / 100)));
+
+            txtBox_finalPrice.Text = productFinalPrice.ToString();
         }
     }
 }
