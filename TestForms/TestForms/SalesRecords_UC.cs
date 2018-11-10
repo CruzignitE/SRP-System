@@ -100,18 +100,6 @@ namespace TestForms
             AddRefund.ShowDialog();  // Shows the Refund page
         }
 
-        private void PopupPieButton_Click(object sender, EventArgs e)
-        {
-            SalesRecordsPie generatePieChart = new SalesRecordsPie();
-            generatePieChart.ShowDialog(); // Shows the Pie chart
-        }
-
-        private void PopupGraphButton_Click(object sender, EventArgs e)
-        {
-            SalesRecordsGraph generateGraph = new SalesRecordsGraph();
-            generateGraph.ShowDialog(); // Shows the Graph
-        }
-
         private void button_csvExport_Click(object sender, EventArgs e)
         {
             string userName = Environment.UserName;
@@ -181,7 +169,19 @@ namespace TestForms
                 //GetData(selectQuery_SR);
         }
 
-        private void button_add_Click(object sender, EventArgs e)
+        private void Btn_popupPie_Click(object sender, EventArgs e)
+        {
+            SalesRecordsPie generatePieChart = new SalesRecordsPie();
+            generatePieChart.ShowDialog(); // Shows the Pie chart
+        }
+
+        private void Btn_popupGraph_Click(object sender, EventArgs e)
+        {
+            SalesRecordsGraph generateGraph = new SalesRecordsGraph();
+            generateGraph.ShowDialog(); // Shows the Graph
+        }
+
+        private void Btn_add_Click(object sender, EventArgs e)
         {
             AddEditSalesRecord AddRecord = new AddEditSalesRecord(true);
             AddRecord.FormClosing += new FormClosingEventHandler(SalesRecords_FormClosing);
