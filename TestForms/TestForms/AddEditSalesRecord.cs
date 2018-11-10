@@ -18,6 +18,7 @@ namespace TestForms
         private SqlDataAdapter dataAdapter;
         private DataTable table;
         private string selectState = @"SELECT Sales_Record_Details.product_id AS 'Product ID', Sales_Record_Details.quantity_order AS 'Product Qty', Product.product_name AS 'Product Name', Product.product_price AS 'Unit Price', (Sales_Record_Details.quantity_order * Product.product_price) AS 'Total Price' FROM Sales_Record_Details JOIN Product ON Sales_Record_Details.product_id = Product.product_id WHERE Sales_Record_Details.sales_record_id = 'SalesID'";
+     
         private int maxID = 0;
         private String strMaxID = "";
         private String zeroCode = "";

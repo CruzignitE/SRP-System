@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel_salesPredictions = new System.Windows.Forms.TableLayoutPanel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel_date = new System.Windows.Forms.TableLayoutPanel();
@@ -41,6 +41,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label_category = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnMakeCSV = new System.Windows.Forms.Button();
             this.panel_salesPredictions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel_date.SuspendLayout();
@@ -56,7 +57,7 @@
             this.panel_salesPredictions.Controls.Add(this.tableLayoutPanel1, 0, 1);
             this.panel_salesPredictions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_salesPredictions.Location = new System.Drawing.Point(0, 0);
-            this.panel_salesPredictions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_salesPredictions.Margin = new System.Windows.Forms.Padding(4);
             this.panel_salesPredictions.Name = "panel_salesPredictions";
             this.panel_salesPredictions.RowCount = 3;
             this.panel_salesPredictions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -67,22 +68,22 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Top;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(5, 5);
-            this.chart1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.chart1.Margin = new System.Windows.Forms.Padding(5);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea;
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.YValuesPerPoint = 6;
-            this.chart1.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea;
+            series4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            series4.YValuesPerPoint = 6;
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(870, 581);
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
@@ -100,9 +101,10 @@
             this.panel_date.Controls.Add(this.dateTimePicker_until, 3, 1);
             this.panel_date.Controls.Add(this.dateTimePicker_from, 1, 1);
             this.panel_date.Controls.Add(this.label_from, 1, 0);
+            this.panel_date.Controls.Add(this.btnMakeCSV, 4, 0);
             this.panel_date.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_date.Location = new System.Drawing.Point(4, 644);
-            this.panel_date.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_date.Margin = new System.Windows.Forms.Padding(4);
             this.panel_date.Name = "panel_date";
             this.panel_date.RowCount = 3;
             this.panel_date.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
@@ -129,7 +131,7 @@
             this.dateTimePicker_until.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker_until.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker_until.Location = new System.Drawing.Point(541, 44);
-            this.dateTimePicker_until.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker_until.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker_until.Name = "dateTimePicker_until";
             this.dateTimePicker_until.Size = new System.Drawing.Size(125, 22);
             this.dateTimePicker_until.TabIndex = 1;
@@ -139,7 +141,7 @@
             this.dateTimePicker_from.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker_from.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker_from.Location = new System.Drawing.Point(206, 44);
-            this.dateTimePicker_from.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker_from.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker_from.Name = "dateTimePicker_from";
             this.dateTimePicker_from.Size = new System.Drawing.Size(125, 22);
             this.dateTimePicker_from.TabIndex = 0;
@@ -168,7 +170,7 @@
             this.tableLayoutPanel1.Controls.Add(this.comboBox1, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 595);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -194,10 +196,21 @@
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(306, 4);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(392, 28);
             this.comboBox1.TabIndex = 4;
+            // 
+            // btnMakeCSV
+            // 
+            this.btnMakeCSV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMakeCSV.Location = new System.Drawing.Point(673, 3);
+            this.btnMakeCSV.Name = "btnMakeCSV";
+            this.btnMakeCSV.Size = new System.Drawing.Size(196, 31);
+            this.btnMakeCSV.TabIndex = 4;
+            this.btnMakeCSV.Text = "Make CSV (Debug)";
+            this.btnMakeCSV.UseVisualStyleBackColor = true;
+            this.btnMakeCSV.Click += new System.EventHandler(this.btnMakeCSV_Click);
             // 
             // SalesPrediction_UC
             // 
@@ -205,7 +218,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel_salesPredictions);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SalesPrediction_UC";
             this.Size = new System.Drawing.Size(880, 738);
             this.Load += new System.EventHandler(this.InitDate);
@@ -231,5 +244,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label_category;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnMakeCSV;
     }
 }

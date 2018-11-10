@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
+using System.Diagnostics;
 
 namespace TestForms
 {
     public partial class SalesPrediction_UC : UserControl
     {
+        private ConnectionString connString;
+
         public SalesPrediction_UC()
         {
             InitializeComponent();
+            connString = new ConnectionString();
         }
 
         private void InitDate(object sender, EventArgs e)
@@ -66,6 +72,55 @@ class PyClass:
             //string msg = py.CallFunction("isodd", 6).ToString();
             //Console.WriteLine(msg);
             //MessageBox.Show(msg, "Message");
+        }
+
+        private void btnMakeCSV_Click(object sender, EventArgs e)
+        {
+            string userName = Environment.UserName;
+            string selectStateForCSV = @"SELECT product_name AS 'Product Name', SUM(quantity_order) AS 'Quantity Order' FROM Product JOIN Sales_Record_Details ON Product.product_id = Sales_Record_Details.product_id JOIN Sales_Record ON Sales_Record.sales_record_id = Sales_Record_Details.sales_record_id WHERE Product.product_status = 1 AND Sales_Record.sales_status = 1 GROUP BY product_name";
+
+        SqlDataAdapter adapter = new SqlDataAdapter(selectStateForCSV, connString.getConnString());
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            try
+            {
+                StreamWriter streamWriter = new StreamWriter(@"C:\Users\" + userName + @"\Documents\predictionData.csv", false);
+
+                int colCount = dt.Columns.Count;
+                for (int i = 0; i < colCount; i++)
+                {
+                    streamWriter.Write(dt.Columns[i]);
+                    if (i < colCount - 1)
+                    {
+                        streamWriter.Write(",");
+                    }
+                }
+                streamWriter.Write(streamWriter.NewLine);
+                //write all the rows
+                foreach (DataRow dr in dt.Rows)
+                {
+                    for (int i = 0; i < colCount; i++)
+                    {
+                        if (!Convert.IsDBNull(dr[i]))
+                        {
+                            streamWriter.Write(dr[i].ToString());
+                        }
+                        if (i < colCount - 1)
+                        {
+                            streamWriter.Write(",");
+                        }
+                    }
+                    streamWriter.Write(streamWriter.NewLine);
+                }
+                streamWriter.Close();
+                MessageBox.Show("Successfully Exported");
+                Process.Start(@"C:\Users\" + userName + @"\Documents\predictionData.csv");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
