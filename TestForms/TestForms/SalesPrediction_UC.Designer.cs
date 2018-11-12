@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel_salesPredictions = new System.Windows.Forms.TableLayoutPanel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel_date = new System.Windows.Forms.TableLayoutPanel();
@@ -38,10 +38,10 @@
             this.dateTimePicker_until = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_from = new System.Windows.Forms.DateTimePicker();
             this.label_from = new System.Windows.Forms.Label();
+            this.btnMakeCSV = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label_category = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnMakeCSV = new System.Windows.Forms.Button();
+            this.cmbBoxCategory = new System.Windows.Forms.ComboBox();
             this.panel_salesPredictions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel_date.SuspendLayout();
@@ -68,22 +68,22 @@
             // 
             // chart1
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Top;
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(5, 5);
             this.chart1.Margin = new System.Windows.Forms.Padding(5);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea;
-            series4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            series4.YValuesPerPoint = 6;
-            this.chart1.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea;
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 6;
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(870, 581);
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
@@ -159,6 +159,17 @@
             this.label_from.Text = "From";
             this.label_from.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnMakeCSV
+            // 
+            this.btnMakeCSV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMakeCSV.Location = new System.Drawing.Point(673, 3);
+            this.btnMakeCSV.Name = "btnMakeCSV";
+            this.btnMakeCSV.Size = new System.Drawing.Size(196, 31);
+            this.btnMakeCSV.TabIndex = 4;
+            this.btnMakeCSV.Text = "Make CSV (Debug)";
+            this.btnMakeCSV.UseVisualStyleBackColor = true;
+            this.btnMakeCSV.Click += new System.EventHandler(this.btnMakeCSV_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 4;
@@ -167,7 +178,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 400F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.label_category, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cmbBoxCategory, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 595);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -190,27 +201,25 @@
             this.label_category.Text = "Category";
             this.label_category.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox1
+            // cmbBoxCategory
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(306, 4);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(392, 28);
-            this.comboBox1.TabIndex = 4;
-            // 
-            // btnMakeCSV
-            // 
-            this.btnMakeCSV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMakeCSV.Location = new System.Drawing.Point(673, 3);
-            this.btnMakeCSV.Name = "btnMakeCSV";
-            this.btnMakeCSV.Size = new System.Drawing.Size(196, 31);
-            this.btnMakeCSV.TabIndex = 4;
-            this.btnMakeCSV.Text = "Make CSV (Debug)";
-            this.btnMakeCSV.UseVisualStyleBackColor = true;
-            this.btnMakeCSV.Click += new System.EventHandler(this.btnMakeCSV_Click);
+            this.cmbBoxCategory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbBoxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cmbBoxCategory.FormattingEnabled = true;
+            this.cmbBoxCategory.Items.AddRange(new object[] {
+            "All",
+            "Cough, Cold & Nasal Medication",
+            "Digestive Health",
+            "First Aid",
+            "Fitness",
+            "Oral Care",
+            "Pain Medication",
+            "Vitamins & Supplements"});
+            this.cmbBoxCategory.Location = new System.Drawing.Point(306, 4);
+            this.cmbBoxCategory.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbBoxCategory.Name = "cmbBoxCategory";
+            this.cmbBoxCategory.Size = new System.Drawing.Size(392, 28);
+            this.cmbBoxCategory.TabIndex = 4;
             // 
             // SalesPrediction_UC
             // 
@@ -243,7 +252,7 @@
         private System.Windows.Forms.Label label_from;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label_category;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbBoxCategory;
         private System.Windows.Forms.Button btnMakeCSV;
     }
 }

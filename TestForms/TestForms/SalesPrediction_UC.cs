@@ -27,11 +27,12 @@ namespace TestForms
         {
             dateTimePicker_from.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             dateTimePicker_until.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month + 1, 1);
+            cmbBoxCategory.SelectedIndex = 0;
         }
 
         private void chart1_Click(object sender, EventArgs e)
         {
-            PythonInstance py = new PythonInstance(@"
+            /*PythonInstance py = new PythonInstance(@"
 import pandas as pd
 import matplotlib.pyplot as plt
 import csv
@@ -71,13 +72,24 @@ class PyClass:
             //py.CallMethod("somemethod");
             //string msg = py.CallFunction("isodd", 6).ToString();
             //Console.WriteLine(msg);
-            //MessageBox.Show(msg, "Message");
+            //MessageBox.Show(msg, "Message");*/
         }
 
         private void btnMakeCSV_Click(object sender, EventArgs e)
         {
             string userName = Environment.UserName;
-            string selectStateForCSV = @"SELECT product_name AS 'Product Name', SUM(quantity_order) AS 'Quantity Order' FROM Product JOIN Sales_Record_Details ON Product.product_id = Sales_Record_Details.product_id JOIN Sales_Record ON Sales_Record.sales_record_id = Sales_Record_Details.sales_record_id WHERE Product.product_status = 1 AND Sales_Record.sales_status = 1 GROUP BY product_name";
+            string selectStateForCSV = @"SELECT product_name AS 'Product Name', SUM(quantity_order) AS 'Quantity Order' FROM Product JOIN Sales_Record_Details ON Product.product_id = Sales_Record_Details.product_id JOIN Sales_Record ON Sales_Record.sales_record_id = Sales_Record_Details.sales_record_id WHERE Product.product_status = 1 AND Sales_Record.sales_status = 1";
+
+            if(cmbBoxCategory.SelectedIndex != 0)
+            {
+                string category = @" AND product_category = '" + cmbBoxCategory.SelectedItem +"'";
+                selectStateForCSV += category;
+            }
+            string groupBy = @" GROUP BY product_name";
+            selectStateForCSV += groupBy;
+            MessageBox.Show(selectStateForCSV);
+
+
 
         SqlDataAdapter adapter = new SqlDataAdapter(selectStateForCSV, connString.getConnString());
             DataTable dt = new DataTable();
