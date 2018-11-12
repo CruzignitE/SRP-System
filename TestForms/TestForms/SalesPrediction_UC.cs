@@ -25,8 +25,8 @@ namespace TestForms
 
         private void InitDate(object sender, EventArgs e)
         {
-            dateTimePicker_from.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-            dateTimePicker_until.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month + 1, 1);
+            dateTimePicker_from.Value = DateTime.Today.AddMonths(-1);
+            
             cmbBoxCategory.SelectedIndex = 0;
         }
 
@@ -80,18 +80,29 @@ class PyClass:
             string userName = Environment.UserName;
             string selectStateForCSV = @"SELECT product_name AS 'Product Name', SUM(quantity_order) AS 'Quantity Order' FROM Product JOIN Sales_Record_Details ON Product.product_id = Sales_Record_Details.product_id JOIN Sales_Record ON Sales_Record.sales_record_id = Sales_Record_Details.sales_record_id WHERE Product.product_status = 1 AND Sales_Record.sales_status = 1";
 
+            //CONDITION FOR CATEGORY
             if(cmbBoxCategory.SelectedIndex != 0)
             {
                 string category = @" AND product_category = '" + cmbBoxCategory.SelectedItem +"'";
                 selectStateForCSV += category;
             }
+
+            //CONDITION FOR DATE RANGE
+            string dateFrom = dateTimePicker_from.Value.ToString("yyyy-MM-dd");
+            string dateUntil = dateTimePicker_until.Value.ToString("yyyy-MM-dd");
+            string dateRange = " AND (Sales_Record.sales_record_date BETWEEN '" + dateFrom + "' AND '" + dateUntil + "')";
+            selectStateForCSV += dateRange;
+
+            //GROUP BY PRODUCT NAME
             string groupBy = @" GROUP BY product_name";
             selectStateForCSV += groupBy;
-            MessageBox.Show(selectStateForCSV);
 
+            //ORDER BY QUANTITY ORDER
+            string orderBy = @" ORDER BY SUM(quantity_order) DESC";
+            selectStateForCSV += orderBy;
 
-
-        SqlDataAdapter adapter = new SqlDataAdapter(selectStateForCSV, connString.getConnString());
+            //EXPORT CSV FILE BASED ON THE QUERY           
+            SqlDataAdapter adapter = new SqlDataAdapter(selectStateForCSV, connString.getConnString());
             DataTable dt = new DataTable();
             adapter.Fill(dt);
 
