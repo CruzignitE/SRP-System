@@ -44,7 +44,7 @@ namespace TestForms
             txtEditProductName.Text = productName;
             sltEditProductCategory.SelectedItem = productCategory;
             txtEditProductUnitPrice.Value = Decimal.Parse(productUnitPrice);
-            if (Int32.Parse(productStatus) == 1)
+            if (productStatus.Equals("Active"))
                 sltEditPruductStatus.SelectedIndex = 0;
             else
                 sltEditPruductStatus.SelectedIndex = 1;

@@ -29,6 +29,7 @@ namespace TestForms
         private static string productName;
         private static double productPrice;
         private int productQty;
+        private int productDiscount;
         private double grandTotal = 0.0;
         private double tempPrice = 0.0;
         private string lastInsertedID = "";
@@ -76,10 +77,11 @@ namespace TestForms
             if (isAdd)
             {
                 table = new DataTable();
-                table.Columns.AddRange(new DataColumn[5] {
+                table.Columns.AddRange(new DataColumn[6] {
                     new DataColumn("Product ID", typeof(string)),
                     new DataColumn("Product Name", typeof(string)),
                     new DataColumn("Product Qty", typeof(int)),
+                    new DataColumn("Discount Percentage", typeof(int)),
                     new DataColumn("Unit Price", typeof(double)),
                     new DataColumn("Total Price", typeof(double))
                 });
@@ -128,13 +130,14 @@ namespace TestForms
                     table.Rows[tableRowIndex]["Product ID"] = txtBox_productID.Text;
                     table.Rows[tableRowIndex]["Product Name"] = txtBox_productName.Text;
                     table.Rows[tableRowIndex]["Product Qty"] = txtBox_productQty.Text;
+                    table.Rows[tableRowIndex]["Discount Percentage"] = txtBox_discount.Text;
                     table.Rows[tableRowIndex]["Unit Price"] = txtBox_productPrice.Text;
                     table.Rows[tableRowIndex]["Total Price"] = productFinalPrice;
                     tableRowIndex = -1;
                 }
                 else
                 {
-                    table.Rows.Add(txtBox_productID.Text, txtBox_productName.Text, txtBox_productQty.Text, txtBox_productPrice.Text, productFinalPrice);
+                    table.Rows.Add(txtBox_productID.Text, txtBox_productName.Text, txtBox_productQty.Text, txtBox_discount.Text, txtBox_productPrice.Text, productFinalPrice);
                 }
                 grandTotal += productFinalPrice;
                 txtBoxGrandTotal.Text = grandTotal.ToString();
@@ -164,6 +167,7 @@ namespace TestForms
                 productID = row.Cells["Product ID"].Value.ToString();
                 productName = row.Cells["Product Name"].Value.ToString();
                 productQty = Convert.ToInt32(row.Cells["Product Qty"].Value);
+                productDiscount = Convert.ToInt32(row.Cells["Discount Percentage"].Value);
                 ProductPrice = Convert.ToInt32(row.Cells["Unit Price"].Value);
             }
         }
@@ -174,17 +178,19 @@ namespace TestForms
             string getMaxID_CMD = "SELECT MAX(id) AS maxID FROM Sales_Record";
             string insertCmd = @"INSERT INTO Sales_Record (sales_record_id, sales_record_date, sales_record_amount, sales_record_remark, sales_status)
                                     OUTPUT INSERTED.sales_record_id VALUES(@srID, @sDate, @sGrandTotal, @sRemark, 1)";
-            string insertSalesDetail = @"INSERT INTO Sales_Record_Details (sales_record_id, product_id, quantity_order)
-                                        VALUES(@srID, @pID, @qtyOrder)";
+            string insertSalesDetail = @"INSERT INTO Sales_Record_Details (sales_record_id, product_id, quantity_order, Discount_Percentage)
+                                        VALUES(@srID, @pID, @qtyOrder, @discount_percentage)";
             string resetSalesDetail = @"DELETE FROM Sales_Record_Details WHERE sales_record_id = @sSalesID";
             string updateCommand = @"UPDATE Sales_Record SET sales_record_amount = @sGrandTotal WHERE sales_record_id = @sSalesID";
 
             List<string> ids = new List<string>(table.Rows.Count);
             List<int> quantities = new List<int>(table.Rows.Count);
+            List<int> discountPercentage = new List<int>(table.Rows.Count);
 
             foreach (DataRow row in table.Rows) {
                 ids.Add((string)row["Product ID"]);
                 quantities.Add((int)row["Product Qty"]);
+                discountPercentage.Add((int)row["Discount Percentage"]);
             }
 
             
@@ -294,6 +300,7 @@ namespace TestForms
                                 command.Parameters.AddWithValue(@"srID", txtBox_saleID.Text);
                             command.Parameters.AddWithValue(@"pID", ids[i]);
                             command.Parameters.AddWithValue(@"qtyOrder", quantities[i]);
+                            command.Parameters.AddWithValue(@"discount_percentage", discountPercentage[i]);
                             command.ExecuteNonQuery();
                         }
                         conn.Close();
