@@ -123,14 +123,11 @@ D:\Github\SRP-System\TestForms\TestForms\bin\Debug\TestForms.exe
 D:\Github\SRP-System\TestForms\TestForms\bin\Debug\TestForms.pdb
 D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.AddEditSalesRecord.resources
 D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.BrowseProductForm.resources
-D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Inventory.resources
 D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ManagerControl.resources
 D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsAdd.resources
 D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsEdit.resources
-D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsList.resources
 D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.RefundAdd.resources
 D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Refunds.resources
-D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecords.resources
 D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Properties.Resources.resources
 D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecordsGraph.resources
 D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecordsPie.resources

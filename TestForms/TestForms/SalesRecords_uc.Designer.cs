@@ -37,23 +37,24 @@ namespace TestForms
             this.button_popupGraph = new System.Windows.Forms.Button();
             this.button_popupPie = new System.Windows.Forms.Button();
             this.button_csvExport = new System.Windows.Forms.Button();
+            this.panel_dates = new System.Windows.Forms.TableLayoutPanel();
+            this.label_until = new System.Windows.Forms.Label();
+            this.dateTimePicker_until = new System.Windows.Forms.DateTimePicker();
+            this.label_from = new System.Windows.Forms.Label();
+            this.dateTimePicker_from = new System.Windows.Forms.DateTimePicker();
             this.panel_bottomBar = new System.Windows.Forms.TableLayoutPanel();
             this.button_edit = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
             this.dataGridView_salesRecords = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.panel_dates = new System.Windows.Forms.TableLayoutPanel();
-            this.dateTimePicker_from = new System.Windows.Forms.DateTimePicker();
-            this.label_from = new System.Windows.Forms.Label();
-            this.dateTimePicker_until = new System.Windows.Forms.DateTimePicker();
-            this.label_until = new System.Windows.Forms.Label();
+            this.checkBox_filterDate = new System.Windows.Forms.CheckBox();
             this.panel_salesRecords.SuspendLayout();
             this.panel_sr_topBar.SuspendLayout();
+            this.panel_dates.SuspendLayout();
             this.panel_bottomBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_salesRecords)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            this.panel_dates.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_salesRecords
@@ -90,6 +91,7 @@ namespace TestForms
             this.panel_sr_topBar.Controls.Add(this.button_popupPie, 3, 0);
             this.panel_sr_topBar.Controls.Add(this.button_csvExport, 4, 0);
             this.panel_sr_topBar.Controls.Add(this.panel_dates, 0, 0);
+            this.panel_sr_topBar.Controls.Add(this.checkBox_filterDate, 1, 0);
             this.panel_sr_topBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_sr_topBar.Location = new System.Drawing.Point(22, 2);
             this.panel_sr_topBar.Margin = new System.Windows.Forms.Padding(2);
@@ -165,7 +167,70 @@ namespace TestForms
             this.button_csvExport.Text = "CSV Export";
             this.button_csvExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button_csvExport.UseVisualStyleBackColor = false;
-            this.button_csvExport.Click += new System.EventHandler(this.button_csvExport_Click);
+            this.button_csvExport.Click += new System.EventHandler(this.Btn_CsvExport_Click);
+            // 
+            // panel_dates
+            // 
+            this.panel_dates.ColumnCount = 2;
+            this.panel_dates.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.panel_dates.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.panel_dates.Controls.Add(this.label_until, 0, 1);
+            this.panel_dates.Controls.Add(this.dateTimePicker_until, 1, 1);
+            this.panel_dates.Controls.Add(this.label_from, 0, 0);
+            this.panel_dates.Controls.Add(this.dateTimePicker_from, 1, 0);
+            this.panel_dates.Location = new System.Drawing.Point(3, 3);
+            this.panel_dates.Name = "panel_dates";
+            this.panel_dates.RowCount = 2;
+            this.panel_dates.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panel_dates.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panel_dates.Size = new System.Drawing.Size(174, 61);
+            this.panel_dates.TabIndex = 27;
+            // 
+            // label_until
+            // 
+            this.label_until.AutoSize = true;
+            this.label_until.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_until.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label_until.Location = new System.Drawing.Point(3, 35);
+            this.label_until.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.label_until.Name = "label_until";
+            this.label_until.Size = new System.Drawing.Size(54, 21);
+            this.label_until.TabIndex = 5;
+            this.label_until.Text = "Until";
+            this.label_until.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dateTimePicker_until
+            // 
+            this.dateTimePicker_until.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker_until.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_until.Location = new System.Drawing.Point(63, 35);
+            this.dateTimePicker_until.Name = "dateTimePicker_until";
+            this.dateTimePicker_until.Size = new System.Drawing.Size(108, 20);
+            this.dateTimePicker_until.TabIndex = 4;
+            this.dateTimePicker_until.ValueChanged += new System.EventHandler(this.UpdateTable);
+            // 
+            // label_from
+            // 
+            this.label_from.AutoSize = true;
+            this.label_from.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_from.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label_from.Location = new System.Drawing.Point(3, 5);
+            this.label_from.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.label_from.Name = "label_from";
+            this.label_from.Size = new System.Drawing.Size(54, 20);
+            this.label_from.TabIndex = 3;
+            this.label_from.Text = "From";
+            this.label_from.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dateTimePicker_from
+            // 
+            this.dateTimePicker_from.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker_from.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_from.Location = new System.Drawing.Point(63, 5);
+            this.dateTimePicker_from.Name = "dateTimePicker_from";
+            this.dateTimePicker_from.Size = new System.Drawing.Size(108, 20);
+            this.dateTimePicker_from.TabIndex = 1;
+            this.dateTimePicker_from.ValueChanged += new System.EventHandler(this.UpdateTable);
             // 
             // panel_bottomBar
             // 
@@ -215,7 +280,7 @@ namespace TestForms
             this.button_add.Size = new System.Drawing.Size(76, 77);
             this.button_add.TabIndex = 10;
             this.button_add.UseVisualStyleBackColor = false;
-            this.button_add.Click += new System.EventHandler(this.button_add_Click);
+            this.button_add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
             // button_delete
             // 
@@ -243,66 +308,18 @@ namespace TestForms
             this.dataGridView_salesRecords.Size = new System.Drawing.Size(616, 440);
             this.dataGridView_salesRecords.TabIndex = 2;
             // 
-            // panel_dates
+            // checkBox_filterDate
             // 
-            this.panel_dates.ColumnCount = 2;
-            this.panel_dates.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.panel_dates.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panel_dates.Controls.Add(this.label_until, 0, 1);
-            this.panel_dates.Controls.Add(this.dateTimePicker_until, 1, 1);
-            this.panel_dates.Controls.Add(this.label_from, 0, 0);
-            this.panel_dates.Controls.Add(this.dateTimePicker_from, 1, 0);
-            this.panel_dates.Location = new System.Drawing.Point(3, 3);
-            this.panel_dates.Name = "panel_dates";
-            this.panel_dates.RowCount = 2;
-            this.panel_dates.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panel_dates.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panel_dates.Size = new System.Drawing.Size(174, 61);
-            this.panel_dates.TabIndex = 27;
-            // 
-            // dateTimePicker_from
-            // 
-            this.dateTimePicker_from.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker_from.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_from.Location = new System.Drawing.Point(63, 5);
-            this.dateTimePicker_from.Name = "dateTimePicker_from";
-            this.dateTimePicker_from.Size = new System.Drawing.Size(108, 20);
-            this.dateTimePicker_from.TabIndex = 1;
-            // 
-            // label_from
-            // 
-            this.label_from.AutoSize = true;
-            this.label_from.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_from.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_from.Location = new System.Drawing.Point(3, 5);
-            this.label_from.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.label_from.Name = "label_from";
-            this.label_from.Size = new System.Drawing.Size(54, 20);
-            this.label_from.TabIndex = 3;
-            this.label_from.Text = "From";
-            this.label_from.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dateTimePicker_until
-            // 
-            this.dateTimePicker_until.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker_until.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_until.Location = new System.Drawing.Point(63, 35);
-            this.dateTimePicker_until.Name = "dateTimePicker_until";
-            this.dateTimePicker_until.Size = new System.Drawing.Size(108, 20);
-            this.dateTimePicker_until.TabIndex = 4;
-            // 
-            // label_until
-            // 
-            this.label_until.AutoSize = true;
-            this.label_until.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_until.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_until.Location = new System.Drawing.Point(3, 35);
-            this.label_until.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.label_until.Name = "label_until";
-            this.label_until.Size = new System.Drawing.Size(54, 21);
-            this.label_until.TabIndex = 5;
-            this.label_until.Text = "Until";
-            this.label_until.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox_filterDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBox_filterDate.AutoSize = true;
+            this.checkBox_filterDate.Location = new System.Drawing.Point(183, 3);
+            this.checkBox_filterDate.Name = "checkBox_filterDate";
+            this.checkBox_filterDate.Size = new System.Drawing.Size(72, 61);
+            this.checkBox_filterDate.TabIndex = 28;
+            this.checkBox_filterDate.Text = "Filter date";
+            this.checkBox_filterDate.UseVisualStyleBackColor = true;
+            this.checkBox_filterDate.CheckedChanged += new System.EventHandler(this.UpdateTable);
             // 
             // SalesRecords_UC
             // 
@@ -317,11 +334,11 @@ namespace TestForms
             this.panel_salesRecords.PerformLayout();
             this.panel_sr_topBar.ResumeLayout(false);
             this.panel_sr_topBar.PerformLayout();
+            this.panel_dates.ResumeLayout(false);
+            this.panel_dates.PerformLayout();
             this.panel_bottomBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_salesRecords)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            this.panel_dates.ResumeLayout(false);
-            this.panel_dates.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -345,5 +362,6 @@ namespace TestForms
         private Label label_from;
         private DateTimePicker dateTimePicker_until;
         private Label label_until;
+        private CheckBox checkBox_filterDate;
     }
 }

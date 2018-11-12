@@ -68,7 +68,7 @@ namespace TestForms
             this.panel_sidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
             this.panel_sidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.panel_sidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panel_sidebar.Size = new System.Drawing.Size(123, 561);
+            this.panel_sidebar.Size = new System.Drawing.Size(123, 729);
             this.panel_sidebar.TabIndex = 23;
             // 
             // btn_ManagerControl
@@ -183,7 +183,7 @@ namespace TestForms
             this.uc_salesRecords.Location = new System.Drawing.Point(123, 0);
             this.uc_salesRecords.Margin = new System.Windows.Forms.Padding(4);
             this.uc_salesRecords.Name = "uc_salesRecords";
-            this.uc_salesRecords.Size = new System.Drawing.Size(661, 561);
+            this.uc_salesRecords.Size = new System.Drawing.Size(885, 729);
             this.uc_salesRecords.TabIndex = 22;
             // 
             // uc_products
@@ -194,7 +194,7 @@ namespace TestForms
             this.uc_products.Location = new System.Drawing.Point(123, 0);
             this.uc_products.Margin = new System.Windows.Forms.Padding(4);
             this.uc_products.Name = "uc_products";
-            this.uc_products.Size = new System.Drawing.Size(661, 561);
+            this.uc_products.Size = new System.Drawing.Size(885, 729);
             this.uc_products.TabIndex = 25;
             this.uc_products.Visible = false;
             // 
@@ -206,7 +206,7 @@ namespace TestForms
             this.uc_inventory.Location = new System.Drawing.Point(123, 0);
             this.uc_inventory.Margin = new System.Windows.Forms.Padding(4);
             this.uc_inventory.Name = "uc_inventory";
-            this.uc_inventory.Size = new System.Drawing.Size(661, 561);
+            this.uc_inventory.Size = new System.Drawing.Size(885, 729);
             this.uc_inventory.TabIndex = 24;
             this.uc_inventory.Visible = false;
             // 
@@ -215,9 +215,9 @@ namespace TestForms
             this.uc_salesPrediction.BackColor = System.Drawing.Color.White;
             this.uc_salesPrediction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_salesPrediction.Location = new System.Drawing.Point(123, 0);
-            this.uc_salesPrediction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uc_salesPrediction.Margin = new System.Windows.Forms.Padding(4);
             this.uc_salesPrediction.Name = "uc_salesPrediction";
-            this.uc_salesPrediction.Size = new System.Drawing.Size(661, 561);
+            this.uc_salesPrediction.Size = new System.Drawing.Size(885, 729);
             this.uc_salesPrediction.TabIndex = 26;
             this.uc_salesPrediction.Visible = false;
             // 
@@ -226,7 +226,7 @@ namespace TestForms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.uc_salesRecords);
             this.Controls.Add(this.uc_products);
             this.Controls.Add(this.uc_inventory);
@@ -234,7 +234,7 @@ namespace TestForms
             this.Controls.Add(this.panel_sidebar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "SRP_System";
             this.Text = "SRP_System";
             this.panel_sidebar.ResumeLayout(false);

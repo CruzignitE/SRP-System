@@ -22,11 +22,22 @@ namespace TestForms
         private string id, date, tPrice;
 
         private string selectQuery_SR = @"SELECT sales_record_id AS 'Sales ID', sales_record_date AS 'Sales Date', sales_record_amount AS 'Sales Total Price', sales_record_remark AS 'Remark' FROM Sales_Record WHERE sales_status = 1";
+        private string selectQuery_date1 = @"AND sales_record_date BETWEEN '";
+        private string selectQuery_date1_csv = @" WHERE sales_record_date BETWEEN '";
+        private string selectQuery_date2 = @"' AND '";
+        private string selectQuery_date3 = @"' ";
 
         public SalesRecords_UC()
         {
             InitializeComponent();
             connString = new ConnectionString();
+        }
+
+        private void Btn_Add_Click(object sender, EventArgs e)
+        {
+            AddEditSalesRecord AddRecord = new AddEditSalesRecord(true);
+            AddRecord.FormClosing += new FormClosingEventHandler(SalesRecords_FormClosing);
+            AddRecord.ShowDialog();  // Shows the Add Sakes page
         }
 
         private void Btn_Edit_Click(object sender, EventArgs e)
@@ -66,7 +77,7 @@ namespace TestForms
                     }
                 }
                 dataGridView_salesRecords.Update();
-                GetData(selectQuery_SR);
+                GetData();
             }
         }
 
@@ -74,22 +85,29 @@ namespace TestForms
         private void SalesRecords_Load(object sender, EventArgs e)
         {
             dataGridView_salesRecords.DataSource = bindingSource1;
-            GetData(selectQuery_SR);
+            GetData();
 
             dateTimePicker_from.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             dateTimePicker_until.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month + 1, 1);
         }
 
-        private void GetData(String cmd)
+        private void GetData()
         {
             try
             {
-                dataAdapter = new SqlDataAdapter(cmd, connString.getConnString());
+                if (checkBox_filterDate.Checked)
+                {
+                    string dateFrom = dateTimePicker_from.Value.Date.ToString("yyyy-MM-dd");
+                    string dateUntil = dateTimePicker_until.Value.Date.ToString("yyyy-MM-dd");
+
+                    dataAdapter = new SqlDataAdapter(selectQuery_SR + selectQuery_date1 + dateFrom + selectQuery_date2 + dateUntil + selectQuery_date3, connString.getConnString());
+                }
+                else
+                    dataAdapter = new SqlDataAdapter(selectQuery_SR, connString.getConnString());
                 table = new DataTable();
                 dataAdapter.Fill(table);
 
                 bindingSource1.DataSource = table;
-
             }
             catch (Exception ex)
             {
@@ -105,21 +123,32 @@ namespace TestForms
 
         private void PopupPieButton_Click(object sender, EventArgs e)
         {
-            SalesRecordsPie generatePieChart = new SalesRecordsPie();
+            SalesRecordsPie generatePieChart = new SalesRecordsPie(checkBox_filterDate.Checked, dateTimePicker_from.Value.Date, dateTimePicker_until.Value.Date);
             generatePieChart.ShowDialog(); // Shows the Pie chart
         }
 
         private void PopupGraphButton_Click(object sender, EventArgs e)
         {
-            SalesRecordsGraph generateGraph = new SalesRecordsGraph();
+            SalesRecordsGraph generateGraph = new SalesRecordsGraph(checkBox_filterDate.Checked, dateTimePicker_from.Value.Date, dateTimePicker_until.Value.Date);
             generateGraph.ShowDialog(); // Shows the Graph
         }
 
-        private void button_csvExport_Click(object sender, EventArgs e)
+        private void Btn_CsvExport_Click(object sender, EventArgs e)
         {
+            string selectStateForCSV = @"SELECT sr.sales_record_id AS 'Sales ID', CONVERT(VARCHAR(10), sales_record_date) AS 'Sales Date', product_name AS 'Product Name', quantity_order AS 'Quantity Order' FROM Sales_Record AS sr JOIN Sales_Record_Details AS srd ON sr.sales_record_id = srd.sales_record_id JOIN Product AS p ON p.product_id = srd.product_id";
+            SqlDataAdapter adapter;
 
-            string selectStateForCSV = @"SELECT Sales_Record.sales_record_id AS 'Sales ID', CONVERT(VARCHAR(10), sales_record_date) AS 'Sales Date', product_name AS 'Product Name', quantity_order AS 'Quantity Order' FROM Sales_Record JOIN Sales_Record_Details ON Sales_Record.sales_record_id = Sales_Record_Details.sales_record_id JOIN Product ON Product.product_id = Sales_Record_Details.product_id";
-            SqlDataAdapter adapter = new SqlDataAdapter(selectStateForCSV, connString.getConnString());
+            if (checkBox_filterDate.Checked)
+            {
+                string dateFrom = dateTimePicker_from.Value.Date.ToString("yyyy-MM-dd");
+                string dateUntil = dateTimePicker_until.Value.Date.ToString("yyyy-MM-dd");
+
+                adapter = new SqlDataAdapter(selectStateForCSV + selectQuery_date1_csv + dateFrom + selectQuery_date2 + dateUntil + selectQuery_date3, connString.getConnString());
+            }
+            else
+            {
+                adapter = new SqlDataAdapter(selectStateForCSV, connString.getConnString());
+            }
             DataTable dt = new DataTable();
             adapter.Fill(dt);
 
@@ -163,17 +192,16 @@ namespace TestForms
             
         }
 
-        private void button_add_Click(object sender, EventArgs e)
+        private void UpdateTable(object sender, EventArgs e)
         {
-            AddEditSalesRecord AddRecord = new AddEditSalesRecord(true);
-            AddRecord.FormClosing += new FormClosingEventHandler(SalesRecords_FormClosing);
-            AddRecord.ShowDialog();  // Shows the Add Sakes page
+            dataGridView_salesRecords.Update();
+            GetData();
         }
 
         private void SalesRecords_FormClosing(object sender, FormClosingEventArgs e)
         {
             dataGridView_salesRecords.Update();
-            GetData(selectQuery_SR);
+            GetData();
         }
     }
 }
