@@ -46,7 +46,12 @@ namespace TestForms
             string dateRangeWeek2 = " AND (Sales_Record.sales_record_date BETWEEN '" + dateMiddle1 + "' AND '" + dateMiddle2 + "')";
             string dateRangeWeek3 = " AND (Sales_Record.sales_record_date BETWEEN '" + dateMiddle2 + "' AND '" + dateMiddle3 + "')";
             string dateRangeWeek4 = " AND (Sales_Record.sales_record_date BETWEEN '" + dateMiddle3 + "' AND '" + dateUntil + "')";
-            string[] weeks = { selectStateForCSV += dateRangeWeek1, selectStateForCSV += dateRangeWeek2, selectStateForCSV += dateRangeWeek3, selectStateForCSV += dateRangeWeek4}; 
+            string[] weeks = { selectStateForCSV, selectStateForCSV, selectStateForCSV, selectStateForCSV };
+            weeks[0] += dateRangeWeek1;
+            weeks[1] += dateRangeWeek2;
+            weeks[2] += dateRangeWeek3;
+            weeks[3] += dateRangeWeek4;
+            
 
             //GROUP BY PRODUCT NAME
             string groupBy = @" GROUP BY product_name";
@@ -74,10 +79,14 @@ namespace TestForms
             
             cmbBoxCategory.SelectedIndex = 0;
 
-            prediction_chart.Series.Clear();
+            //CLEAR SERIES IN CHART
+            prediction_chart1.Series.Clear();
+            prediction_chart2.Series.Clear();
+            prediction_chart3.Series.Clear();
+            prediction_chart4.Series.Clear();
             SqlCommand command;
             string[] weeks =  generateQuery(); //generate select statement query
-            MessageBox.Show(weeks[0]);
+            MessageBox.Show(weeks[2]);
             using (SqlConnection conn = new SqlConnection(connString.getConnString()))
             {
                 conn.Open();
@@ -89,14 +98,11 @@ namespace TestForms
                         var series1 = new System.Windows.Forms.DataVisualization.Charting.Series
                         {
                             Name = reader["Product Name"].ToString(),
-                            IsVisibleInLegend = false,
-                            IsXValueIndexed = true,
                             ChartType = SeriesChartType.Bar
                         };
-                        if (prediction_chart.Series.IsUniqueName(reader["Product Name"].ToString()))
-                            this.prediction_chart.Series.Add(series1);
-                        this.prediction_chart.Series[reader["Product Name"].ToString()].Points.AddXY("Week 1", reader["Quantity Order"].ToString());
-                     
+                        if (prediction_chart1.Series.IsUniqueName(reader["Product Name"].ToString()))
+                            this.prediction_chart1.Series.Add(series1);
+                        this.prediction_chart1.Series[reader["Product Name"].ToString()].Points.AddXY("Week 1", reader["Quantity Order"].ToString());
                     }
                 }
 
@@ -108,14 +114,11 @@ namespace TestForms
                         var series1 = new System.Windows.Forms.DataVisualization.Charting.Series
                         {
                             Name = reader["Product Name"].ToString(),
-                            IsVisibleInLegend = false,
-                            IsXValueIndexed = true,
                             ChartType = SeriesChartType.Bar
                         };
-                        if (prediction_chart.Series.IsUniqueName(reader["Product Name"].ToString()))
-                            this.prediction_chart.Series.Add(series1);
-                        this.prediction_chart.Series[reader["Product Name"].ToString()].Points.AddXY("Week 2", reader["Quantity Order"].ToString());
-
+                        if (prediction_chart2.Series.IsUniqueName(reader["Product Name"].ToString()))
+                            this.prediction_chart2.Series.Add(series1);
+                        this.prediction_chart2.Series[reader["Product Name"].ToString()].Points.AddXY("Week 2", reader["Quantity Order"].ToString());
                     }
                 }
 
@@ -127,14 +130,11 @@ namespace TestForms
                         var series1 = new System.Windows.Forms.DataVisualization.Charting.Series
                         {
                             Name = reader["Product Name"].ToString(),
-                            IsVisibleInLegend = false,
-                            IsXValueIndexed = true,
                             ChartType = SeriesChartType.Bar
                         };
-                        if (prediction_chart.Series.IsUniqueName(reader["Product Name"].ToString()))
-                            this.prediction_chart.Series.Add(series1);
-                        this.prediction_chart.Series[reader["Product Name"].ToString()].Points.AddXY("Week 3", reader["Quantity Order"].ToString()); 
-
+                        if (prediction_chart3.Series.IsUniqueName(reader["Product Name"].ToString()))
+                            this.prediction_chart3.Series.Add(series1);
+                        this.prediction_chart3.Series[reader["Product Name"].ToString()].Points.AddXY("Week 3", reader["Quantity Order"].ToString()); 
                     }
                 }
 
@@ -146,14 +146,11 @@ namespace TestForms
                         var series1 = new System.Windows.Forms.DataVisualization.Charting.Series
                         {
                             Name = reader["Product Name"].ToString(),
-                            IsVisibleInLegend = false,
-                            IsXValueIndexed = true,
                             ChartType = SeriesChartType.Bar
                         };
-                        if (prediction_chart.Series.IsUniqueName(reader["Product Name"].ToString()))
-                            this.prediction_chart.Series.Add(series1);
-                        this.prediction_chart.Series[reader["Product Name"].ToString()].Points.AddXY("Week 4", reader["Quantity Order"].ToString());
-
+                        if (prediction_chart4.Series.IsUniqueName(reader["Product Name"].ToString()))
+                            this.prediction_chart4.Series.Add(series1);
+                        this.prediction_chart4.Series[reader["Product Name"].ToString()].Points.AddXY("Week 4", reader["Quantity Order"].ToString());
                     }
                 }
                 conn.Close();
