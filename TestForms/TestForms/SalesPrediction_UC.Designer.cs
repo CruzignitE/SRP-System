@@ -31,8 +31,10 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel_salesPredictions = new System.Windows.Forms.TableLayoutPanel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.prediction_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel_date = new System.Windows.Forms.TableLayoutPanel();
             this.label_until = new System.Windows.Forms.Label();
             this.dateTimePicker_until = new System.Windows.Forms.DateTimePicker();
@@ -43,7 +45,7 @@
             this.label_category = new System.Windows.Forms.Label();
             this.cmbBoxCategory = new System.Windows.Forms.ComboBox();
             this.panel_salesPredictions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prediction_chart)).BeginInit();
             this.panel_date.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +54,7 @@
             // 
             this.panel_salesPredictions.ColumnCount = 1;
             this.panel_salesPredictions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panel_salesPredictions.Controls.Add(this.chart1, 0, 0);
+            this.panel_salesPredictions.Controls.Add(this.prediction_chart, 0, 0);
             this.panel_salesPredictions.Controls.Add(this.panel_date, 0, 2);
             this.panel_salesPredictions.Controls.Add(this.tableLayoutPanel1, 0, 1);
             this.panel_salesPredictions.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -66,28 +68,35 @@
             this.panel_salesPredictions.Size = new System.Drawing.Size(880, 738);
             this.panel_salesPredictions.TabIndex = 0;
             // 
-            // chart1
+            // prediction_chart
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.prediction_chart.ChartAreas.Add(chartArea1);
+            this.prediction_chart.Dock = System.Windows.Forms.DockStyle.Top;
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(5, 5);
-            this.chart1.Margin = new System.Windows.Forms.Padding(5);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            this.prediction_chart.Legends.Add(legend1);
+            this.prediction_chart.Location = new System.Drawing.Point(5, 5);
+            this.prediction_chart.Margin = new System.Windows.Forms.Padding(5);
+            this.prediction_chart.Name = "prediction_chart";
+            this.prediction_chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea;
             series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "Product #1";
             series1.YValuesPerPoint = 6;
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(870, 581);
-            this.chart1.TabIndex = 2;
-            this.chart1.Text = "chart1";
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Product #2";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Product #3";
+            this.prediction_chart.Series.Add(series1);
+            this.prediction_chart.Series.Add(series2);
+            this.prediction_chart.Series.Add(series3);
+            this.prediction_chart.Size = new System.Drawing.Size(870, 581);
+            this.prediction_chart.TabIndex = 2;
+            this.prediction_chart.Text = "chart1";
+            this.prediction_chart.Click += new System.EventHandler(this.chart1_Click);
             // 
             // panel_date
             // 
@@ -232,7 +241,7 @@
             this.Size = new System.Drawing.Size(880, 738);
             this.Load += new System.EventHandler(this.InitDate);
             this.panel_salesPredictions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prediction_chart)).EndInit();
             this.panel_date.ResumeLayout(false);
             this.panel_date.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -244,7 +253,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel panel_salesPredictions;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart prediction_chart;
         private System.Windows.Forms.TableLayoutPanel panel_date;
         private System.Windows.Forms.Label label_until;
         private System.Windows.Forms.DateTimePicker dateTimePicker_until;

@@ -8,9 +8,7 @@ D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\images\sales-records.png
 D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\TestForms.exe.config
 D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\TestForms.exe
 D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\TestForms.pdb
-D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csprojAssemblyReference.cache
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.AddEditSalesRecord.resources
-D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecords.resources
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Properties.Resources.resources
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.GenerateResource.cache
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.CoreCompileInputs.cache
@@ -37,10 +35,8 @@ C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\Test
 D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\images\cancel.png
 D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\images\prediction.png
 D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\images\products.png
-D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Inventory.resources
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsAdd.resources
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsEdit.resources
-D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsList.resources
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockAdd.resources
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockEdit.resources
 C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\images\cancel.png
@@ -176,3 +172,4 @@ C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\Micr
 C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.CopyComplete
 D:\Github\SRP-System\TestForms\TestForms\bin\Debug\Microsoft.Dynamic.dll
 D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.CopyComplete
+D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csprojAssemblyReference.cache
