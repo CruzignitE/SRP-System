@@ -28,11 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel_salesPredictions = new System.Windows.Forms.TableLayoutPanel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel_date = new System.Windows.Forms.TableLayoutPanel();
             this.label_until = new System.Windows.Forms.Label();
             this.dateTimePicker_until = new System.Windows.Forms.DateTimePicker();
@@ -42,19 +50,28 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label_category = new System.Windows.Forms.Label();
             this.cmbBoxCategory = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.prediction_chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.prediction_chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.prediction_chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.prediction_chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel_salesPredictions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel_date.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prediction_chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prediction_chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prediction_chart3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prediction_chart4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_salesPredictions
             // 
             this.panel_salesPredictions.ColumnCount = 1;
             this.panel_salesPredictions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panel_salesPredictions.Controls.Add(this.chart1, 0, 0);
             this.panel_salesPredictions.Controls.Add(this.panel_date, 0, 2);
             this.panel_salesPredictions.Controls.Add(this.tableLayoutPanel1, 0, 1);
+            this.panel_salesPredictions.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.panel_salesPredictions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_salesPredictions.Location = new System.Drawing.Point(0, 0);
             this.panel_salesPredictions.Margin = new System.Windows.Forms.Padding(4);
@@ -65,29 +82,6 @@
             this.panel_salesPredictions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.panel_salesPredictions.Size = new System.Drawing.Size(880, 738);
             this.panel_salesPredictions.TabIndex = 0;
-            // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Top;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(5, 5);
-            this.chart1.Margin = new System.Windows.Forms.Padding(5);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea;
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.YValuesPerPoint = 6;
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(870, 581);
-            this.chart1.TabIndex = 2;
-            this.chart1.Text = "chart1";
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // panel_date
             // 
@@ -221,6 +215,92 @@
             this.cmbBoxCategory.Size = new System.Drawing.Size(392, 28);
             this.cmbBoxCategory.TabIndex = 4;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.prediction_chart4, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.prediction_chart3, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.prediction_chart2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.prediction_chart1, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(874, 585);
+            this.tableLayoutPanel2.TabIndex = 5;
+            // 
+            // prediction_chart1
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.prediction_chart1.ChartAreas.Add(chartArea4);
+            this.prediction_chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend4.Name = "Legend1";
+            this.prediction_chart1.Legends.Add(legend4);
+            this.prediction_chart1.Location = new System.Drawing.Point(3, 3);
+            this.prediction_chart1.Name = "prediction_chart1";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.prediction_chart1.Series.Add(series4);
+            this.prediction_chart1.Size = new System.Drawing.Size(431, 286);
+            this.prediction_chart1.TabIndex = 0;
+            this.prediction_chart1.Text = "chart1";
+            // 
+            // prediction_chart2
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.prediction_chart2.ChartAreas.Add(chartArea3);
+            this.prediction_chart2.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend3.Name = "Legend1";
+            this.prediction_chart2.Legends.Add(legend3);
+            this.prediction_chart2.Location = new System.Drawing.Point(440, 3);
+            this.prediction_chart2.Name = "prediction_chart2";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.prediction_chart2.Series.Add(series3);
+            this.prediction_chart2.Size = new System.Drawing.Size(431, 286);
+            this.prediction_chart2.TabIndex = 1;
+            this.prediction_chart2.Text = "chart2";
+            // 
+            // prediction_chart3
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.prediction_chart3.ChartAreas.Add(chartArea2);
+            this.prediction_chart3.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Name = "Legend1";
+            this.prediction_chart3.Legends.Add(legend2);
+            this.prediction_chart3.Location = new System.Drawing.Point(3, 295);
+            this.prediction_chart3.Name = "prediction_chart3";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.prediction_chart3.Series.Add(series2);
+            this.prediction_chart3.Size = new System.Drawing.Size(431, 287);
+            this.prediction_chart3.TabIndex = 2;
+            this.prediction_chart3.Text = "chart3";
+            // 
+            // prediction_chart4
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.prediction_chart4.ChartAreas.Add(chartArea1);
+            this.prediction_chart4.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.prediction_chart4.Legends.Add(legend1);
+            this.prediction_chart4.Location = new System.Drawing.Point(440, 295);
+            this.prediction_chart4.Name = "prediction_chart4";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.prediction_chart4.Series.Add(series1);
+            this.prediction_chart4.Size = new System.Drawing.Size(431, 287);
+            this.prediction_chart4.TabIndex = 3;
+            this.prediction_chart4.Text = "chart4";
+            // 
             // SalesPrediction_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -232,11 +312,15 @@
             this.Size = new System.Drawing.Size(880, 738);
             this.Load += new System.EventHandler(this.InitDate);
             this.panel_salesPredictions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel_date.ResumeLayout(false);
             this.panel_date.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.prediction_chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prediction_chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prediction_chart3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prediction_chart4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -244,7 +328,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel panel_salesPredictions;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.TableLayoutPanel panel_date;
         private System.Windows.Forms.Label label_until;
         private System.Windows.Forms.DateTimePicker dateTimePicker_until;
@@ -254,5 +337,10 @@
         private System.Windows.Forms.Label label_category;
         private System.Windows.Forms.ComboBox cmbBoxCategory;
         private System.Windows.Forms.Button btnMakeCSV;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart prediction_chart4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart prediction_chart3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart prediction_chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart prediction_chart1;
     }
 }

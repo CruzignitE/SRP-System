@@ -82,5 +82,10 @@ namespace TestForms
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void chart2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
