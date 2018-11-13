@@ -176,3 +176,4 @@ C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\Micr
 C:\Users\Cruz Lee\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.CopyComplete
 D:\Github\SRP-System\TestForms\TestForms\bin\Debug\Microsoft.Dynamic.dll
 D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.CopyComplete
+D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.DatabaseControl.resources

@@ -82,6 +82,12 @@
       <DependentUpon>BrowseProductForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="DatabaseControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatabaseControl.Designer.cs">
+      <DependentUpon>DatabaseControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Date.cs" />
     <Compile Include="Inventory_UC.cs">
       <SubType>UserControl</SubType>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BrowseProductForm.resx">
       <DependentUpon>BrowseProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatabaseControl.resx">
+      <DependentUpon>DatabaseControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory_UC.resx">
       <DependentUpon>Inventory_UC.cs</DependentUpon>

@@ -37,6 +37,9 @@ namespace TestForms
                     if (srpKey.GetValue("SRPvalue1") == null)
                     {
                         srpKey.SetValue("SRPvalue1", Encrypt("admin"), RegistryValueKind.String);
+                    }
+                    if (srpKey.GetValue("SRPvalue2") == null)
+                    {
                         srpKey.SetValue("SRPvalue2", "admin", RegistryValueKind.String);
                     }
                 }

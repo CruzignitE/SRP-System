@@ -33,14 +33,15 @@ namespace TestForms
             this.panel_sidebar = new System.Windows.Forms.TableLayoutPanel();
             this.btn_ManagerControl = new System.Windows.Forms.Button();
             this.label_logo = new System.Windows.Forms.Label();
-            this.button_side_salesRecords = new System.Windows.Forms.Button();
-            this.button_side_products = new System.Windows.Forms.Button();
-            this.button_side_inventory = new System.Windows.Forms.Button();
-            this.button_side_salesPrediction = new System.Windows.Forms.Button();
             this.uc_salesRecords = new TestForms.SalesRecords_UC();
             this.uc_products = new TestForms.ProductsList_UC();
             this.uc_inventory = new TestForms.Inventory_UC();
             this.uc_salesPrediction = new TestForms.SalesPrediction_UC();
+            this.btn_database = new System.Windows.Forms.Button();
+            this.button_side_salesRecords = new System.Windows.Forms.Button();
+            this.button_side_products = new System.Windows.Forms.Button();
+            this.button_side_inventory = new System.Windows.Forms.Button();
+            this.button_side_salesPrediction = new System.Windows.Forms.Button();
             this.panel_sidebar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,17 +56,19 @@ namespace TestForms
             this.panel_sidebar.Controls.Add(this.button_side_products, 0, 2);
             this.panel_sidebar.Controls.Add(this.button_side_inventory, 0, 3);
             this.panel_sidebar.Controls.Add(this.button_side_salesPrediction, 0, 4);
+            this.panel_sidebar.Controls.Add(this.btn_database, 0, 6);
             this.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_sidebar.ForeColor = System.Drawing.Color.White;
             this.panel_sidebar.Location = new System.Drawing.Point(0, 0);
             this.panel_sidebar.Margin = new System.Windows.Forms.Padding(0);
             this.panel_sidebar.Name = "panel_sidebar";
-            this.panel_sidebar.RowCount = 7;
+            this.panel_sidebar.RowCount = 8;
             this.panel_sidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.panel_sidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
             this.panel_sidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
             this.panel_sidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
             this.panel_sidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.panel_sidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.panel_sidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.panel_sidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.panel_sidebar.Size = new System.Drawing.Size(123, 729);
@@ -99,6 +102,63 @@ namespace TestForms
             this.label_logo.TabIndex = 0;
             this.label_logo.Text = "SRP System";
             this.label_logo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uc_salesRecords
+            // 
+            this.uc_salesRecords.BackColor = System.Drawing.Color.White;
+            this.uc_salesRecords.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_salesRecords.Location = new System.Drawing.Point(123, 0);
+            this.uc_salesRecords.Margin = new System.Windows.Forms.Padding(4);
+            this.uc_salesRecords.Name = "uc_salesRecords";
+            this.uc_salesRecords.Size = new System.Drawing.Size(885, 729);
+            this.uc_salesRecords.TabIndex = 22;
+            // 
+            // uc_products
+            // 
+            this.uc_products.BackColor = System.Drawing.Color.White;
+            this.uc_products.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_products.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.uc_products.Location = new System.Drawing.Point(123, 0);
+            this.uc_products.Margin = new System.Windows.Forms.Padding(4);
+            this.uc_products.Name = "uc_products";
+            this.uc_products.Size = new System.Drawing.Size(885, 729);
+            this.uc_products.TabIndex = 25;
+            this.uc_products.Visible = false;
+            // 
+            // uc_inventory
+            // 
+            this.uc_inventory.BackColor = System.Drawing.Color.White;
+            this.uc_inventory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.uc_inventory.Location = new System.Drawing.Point(123, 0);
+            this.uc_inventory.Margin = new System.Windows.Forms.Padding(4);
+            this.uc_inventory.Name = "uc_inventory";
+            this.uc_inventory.Size = new System.Drawing.Size(885, 729);
+            this.uc_inventory.TabIndex = 24;
+            this.uc_inventory.Visible = false;
+            // 
+            // uc_salesPrediction
+            // 
+            this.uc_salesPrediction.BackColor = System.Drawing.Color.White;
+            this.uc_salesPrediction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_salesPrediction.Location = new System.Drawing.Point(123, 0);
+            this.uc_salesPrediction.Margin = new System.Windows.Forms.Padding(4);
+            this.uc_salesPrediction.Name = "uc_salesPrediction";
+            this.uc_salesPrediction.Size = new System.Drawing.Size(885, 729);
+            this.uc_salesPrediction.TabIndex = 26;
+            this.uc_salesPrediction.Visible = false;
+            // 
+            // btn_database
+            // 
+            this.btn_database.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_database.ForeColor = System.Drawing.Color.Black;
+            this.btn_database.Location = new System.Drawing.Point(3, 543);
+            this.btn_database.Name = "btn_database";
+            this.btn_database.Size = new System.Drawing.Size(117, 44);
+            this.btn_database.TabIndex = 24;
+            this.btn_database.Text = "Database Control";
+            this.btn_database.UseVisualStyleBackColor = true;
+            this.btn_database.Click += new System.EventHandler(this.Btn_Database_Click);
             // 
             // button_side_salesRecords
             // 
@@ -176,51 +236,6 @@ namespace TestForms
             this.button_side_salesPrediction.UseVisualStyleBackColor = false;
             this.button_side_salesPrediction.Click += new System.EventHandler(this.Btn_Sidebar_Click);
             // 
-            // uc_salesRecords
-            // 
-            this.uc_salesRecords.BackColor = System.Drawing.Color.White;
-            this.uc_salesRecords.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uc_salesRecords.Location = new System.Drawing.Point(123, 0);
-            this.uc_salesRecords.Margin = new System.Windows.Forms.Padding(4);
-            this.uc_salesRecords.Name = "uc_salesRecords";
-            this.uc_salesRecords.Size = new System.Drawing.Size(885, 729);
-            this.uc_salesRecords.TabIndex = 22;
-            // 
-            // uc_products
-            // 
-            this.uc_products.BackColor = System.Drawing.Color.White;
-            this.uc_products.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uc_products.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.uc_products.Location = new System.Drawing.Point(123, 0);
-            this.uc_products.Margin = new System.Windows.Forms.Padding(4);
-            this.uc_products.Name = "uc_products";
-            this.uc_products.Size = new System.Drawing.Size(885, 729);
-            this.uc_products.TabIndex = 25;
-            this.uc_products.Visible = false;
-            // 
-            // uc_inventory
-            // 
-            this.uc_inventory.BackColor = System.Drawing.Color.White;
-            this.uc_inventory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uc_inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.uc_inventory.Location = new System.Drawing.Point(123, 0);
-            this.uc_inventory.Margin = new System.Windows.Forms.Padding(4);
-            this.uc_inventory.Name = "uc_inventory";
-            this.uc_inventory.Size = new System.Drawing.Size(885, 729);
-            this.uc_inventory.TabIndex = 24;
-            this.uc_inventory.Visible = false;
-            // 
-            // uc_salesPrediction
-            // 
-            this.uc_salesPrediction.BackColor = System.Drawing.Color.White;
-            this.uc_salesPrediction.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uc_salesPrediction.Location = new System.Drawing.Point(123, 0);
-            this.uc_salesPrediction.Margin = new System.Windows.Forms.Padding(4);
-            this.uc_salesPrediction.Name = "uc_salesPrediction";
-            this.uc_salesPrediction.Size = new System.Drawing.Size(885, 729);
-            this.uc_salesPrediction.TabIndex = 26;
-            this.uc_salesPrediction.Visible = false;
-            // 
             // SRP_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -237,6 +252,7 @@ namespace TestForms
             this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "SRP_System";
             this.Text = "SRP_System";
+            this.Load += new System.EventHandler(this.DatabaseBackup);
             this.panel_sidebar.ResumeLayout(false);
             this.panel_sidebar.PerformLayout();
             this.ResumeLayout(false);
@@ -255,5 +271,6 @@ namespace TestForms
         private ProductsList_UC uc_products;
         private Button btn_ManagerControl;
         private SalesPrediction_UC uc_salesPrediction;
+        private Button btn_database;
     }
 }
