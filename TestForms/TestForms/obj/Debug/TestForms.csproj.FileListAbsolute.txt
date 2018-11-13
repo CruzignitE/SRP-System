@@ -67,11 +67,8 @@ C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\TestFo
 C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\bin\Debug\TestForms.pdb
 C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csprojAssemblyReference.cache
 C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.AddEditSalesRecord.resources
-C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Inventory.resources
 C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsAdd.resources
 C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsEdit.resources
-C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.ProductsList.resources
-C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.SalesRecords.resources
 C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.Properties.Resources.resources
 C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockAdd.resources
 C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.StockEdit.resources

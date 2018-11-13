@@ -17,7 +17,7 @@ namespace TestForms
         private ConnectionString connString;
         private SqlDataAdapter dataAdapter;
         private DataTable table;
-        private string selectState = @"SELECT Sales_Record_Details.product_id AS 'Product ID', Sales_Record_Details.quantity_order AS 'Product Qty', Product.product_name AS 'Product Name', Product.product_price AS 'Unit Price', (Sales_Record_Details.quantity_order * Product.product_price) AS 'Total Price' FROM Sales_Record_Details JOIN Product ON Sales_Record_Details.product_id = Product.product_id WHERE Sales_Record_Details.sales_record_id = 'SalesID'";
+        private string selectState = @"SELECT Sales_Record_Details.product_id AS 'Product ID', Sales_Record_Details.quantity_order AS 'Product Qty', Product.product_name AS 'Product Name', Sales_Record_Details.Discount_Percentage AS 'Discount Percentage', Product.product_price AS 'Unit Price', (Sales_Record_Details.quantity_order * Product.product_price) AS 'Total Price' FROM Sales_Record_Details JOIN Product ON Sales_Record_Details.product_id = Product.product_id WHERE Sales_Record_Details.sales_record_id = 'SalesID'";
      
         private int maxID = 0;
         private String strMaxID = "";
@@ -328,6 +328,7 @@ namespace TestForms
                 txtBox_productQty.Value = productQty;
                 txtBox_productPrice.Text = productPrice.ToString();
                 tableRowIndex = dataGridSalesProduct.CurrentCell.RowIndex;
+                txtBox_discount.Text = table.Rows[tableRowIndex]["Discount Percentage"].ToString();
                 double totalPrice = Convert.ToDouble(table.Rows[tableRowIndex]["Total Price"]);
                 grandTotal -= totalPrice; //decrease the value
             }
@@ -354,11 +355,11 @@ namespace TestForms
 
         private void ValueChanged(object sender, EventArgs e)
         {
-            CalculateFinalPrice();
+            //CalculateFinalPrice();
         }
 
         private void CalculateFinalPrice() {
-            double DiscountPercent = Double.Parse(txtBox_discount.Text);
+            int DiscountPercent = Int32.Parse(txtBox_discount.Text);
             double DiscountPrice;
             int productQty = Int32.Parse(txtBox_productQty.Value.ToString());
             double productPrice = Double.Parse(txtBox_productPrice.Text);
@@ -371,6 +372,11 @@ namespace TestForms
             }
 
             txtBox_finalPrice.Text = productFinalPrice.ToString();
+        }
+
+        private void OnKeyUp(object sender, KeyEventArgs e)
+        {
+            CalculateFinalPrice();
         }
     }
 }

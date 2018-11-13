@@ -153,7 +153,7 @@
             this.txtBox_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtBox_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtBox_date.Location = new System.Drawing.Point(486, 21);
-            this.txtBox_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBox_date.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_date.Name = "txtBox_date";
             this.txtBox_date.Size = new System.Drawing.Size(101, 23);
             this.txtBox_date.TabIndex = 17;
@@ -200,7 +200,7 @@
             // btn_browseProduct
             // 
             this.btn_browseProduct.Location = new System.Drawing.Point(22, 84);
-            this.btn_browseProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_browseProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btn_browseProduct.Name = "btn_browseProduct";
             this.btn_browseProduct.Size = new System.Drawing.Size(104, 22);
             this.btn_browseProduct.TabIndex = 18;
@@ -213,7 +213,7 @@
             this.dataGridSalesProduct.AllowUserToAddRows = false;
             this.dataGridSalesProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridSalesProduct.Location = new System.Drawing.Point(128, 156);
-            this.dataGridSalesProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridSalesProduct.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridSalesProduct.Name = "dataGridSalesProduct";
             this.dataGridSalesProduct.ReadOnly = true;
             this.dataGridSalesProduct.RowTemplate.Height = 24;
@@ -280,6 +280,7 @@
             this.txtBox_discount.Size = new System.Drawing.Size(125, 21);
             this.txtBox_discount.TabIndex = 22;
             this.txtBox_discount.TextChanged += new System.EventHandler(this.PriceCalculate);
+            this.txtBox_discount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OnKeyUp);
             // 
             // AddEditSalesRecord
             // 
