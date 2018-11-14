@@ -83,7 +83,7 @@ namespace TestForms
 
         //DATABASE UDPATE 12/10/2018 BY FELIX
         private void SalesRecords_Load(object sender, EventArgs e)
-        {
+        {          
             dataGridView_salesRecords.DataSource = bindingSource1;
             GetData();
 

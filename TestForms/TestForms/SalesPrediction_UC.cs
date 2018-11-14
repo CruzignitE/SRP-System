@@ -17,7 +17,8 @@ namespace TestForms
     public partial class SalesPrediction_UC : UserControl
     {
         private ConnectionString connString;
-        private string selectStateForCSV;
+        private string prediction;
+        
 
         public SalesPrediction_UC()
         {
@@ -27,13 +28,19 @@ namespace TestForms
 
         private string[] generateQuery()
         {
-            selectStateForCSV = @"SELECT TOP 3 product_name AS 'Product Name', SUM(quantity_order) AS 'Quantity Order' FROM Product JOIN Sales_Record_Details ON Product.product_id = Sales_Record_Details.product_id JOIN Sales_Record ON Sales_Record.sales_record_id = Sales_Record_Details.sales_record_id WHERE Product.product_status = 1 AND Sales_Record.sales_status = 1";
+            string selectState, selectTop1, selectTop3;
+            selectTop1 = @"SELECT TOP 1";
+            selectTop3 = @"SELECT TOP 3";
+            selectState = @" product_name AS 'Product Name', SUM(quantity_order) AS 'Quantity Order' FROM Product JOIN Sales_Record_Details ON Product.product_id = Sales_Record_Details.product_id JOIN Sales_Record ON Sales_Record.sales_record_id = Sales_Record_Details.sales_record_id WHERE Product.product_status = 1 AND Sales_Record.sales_status = 1";
+            selectTop1 += selectState;
+            selectTop3 += selectState;
 
             //CONDITION FOR CATEGORY
             if (cmbBoxCategory.SelectedIndex != 0)
             {
                 string category = @" AND product_category = '" + cmbBoxCategory.SelectedItem + "'";
-                selectStateForCSV += category;
+                selectTop1 += category;
+                selectTop3 += category;
             }
 
             //CONDITION FOR DATE RANGE
@@ -46,51 +53,65 @@ namespace TestForms
             string dateRangeWeek2 = " AND (Sales_Record.sales_record_date BETWEEN '" + dateMiddle1 + "' AND '" + dateMiddle2 + "')";
             string dateRangeWeek3 = " AND (Sales_Record.sales_record_date BETWEEN '" + dateMiddle2 + "' AND '" + dateMiddle3 + "')";
             string dateRangeWeek4 = " AND (Sales_Record.sales_record_date BETWEEN '" + dateMiddle3 + "' AND '" + dateUntil + "')";
-            string[] weeks = { selectStateForCSV, selectStateForCSV, selectStateForCSV, selectStateForCSV };
-            weeks[0] += dateRangeWeek1;
-            weeks[1] += dateRangeWeek2;
-            weeks[2] += dateRangeWeek3;
-            weeks[3] += dateRangeWeek4;
-            
+            string dateRangeMonth = " AND (Sales_Record.sales_record_date BETWEEN '" + dateFrom + "' AND '" + dateUntil + "')";
+            string[] date = { selectTop3, selectTop3, selectTop3, selectTop3, selectTop1 };
+            date[0] += dateRangeWeek1;
+            date[1] += dateRangeWeek2;
+            date[2] += dateRangeWeek3;
+            date[3] += dateRangeWeek4;
+            date[4] += dateRangeMonth;
+
 
             //GROUP BY PRODUCT NAME
             string groupBy = @" GROUP BY product_name";
-            for(int i = 0; i <= 3; i++)
+            for(int i = 0; i <= 4; i++)
             {
-                weeks[i] += groupBy;
+                date[i] += groupBy;
             }
            
 
             //ORDER BY QUANTITY ORDER
             string orderBy = @" ORDER BY SUM(quantity_order) DESC";
-            for (int i = 0; i <= 3; i++)
+            for (int i = 0; i <= 4; i++)
             {
-                weeks[i] += orderBy;
+                date[i] += orderBy;
             }
 
-            return weeks;
+            return date;
         }
 
         private void InitDate(object sender, EventArgs e)
         {
-            //dateTimePicker_from.Value = DateTime.Today.AddMonths(-1);
-            dateTimePicker_from.Value = new Date(2018, 11, 5);
-            dateTimePicker_until.Value = new Date(2018, 12, 5);
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+            {
+                Application.OpenForms[i].WindowState = FormWindowState.Maximized;
+            }
+
+            dateTimePicker_from.Value = DateTime.Today.AddMonths(-1);
             
             cmbBoxCategory.SelectedIndex = 0;
 
+            generateGraph();
+        }
+
+        private void btnGenerateGraph_Click(object sender, EventArgs e)
+        {
+            generateGraph();
+        }
+
+        private void generateGraph()
+        {
             //CLEAR SERIES IN CHART
             prediction_chart1.Series.Clear();
             prediction_chart2.Series.Clear();
             prediction_chart3.Series.Clear();
             prediction_chart4.Series.Clear();
             SqlCommand command;
-            string[] weeks =  generateQuery(); //generate select statement query
-            MessageBox.Show(weeks[2]);
+            string[] date = generateQuery(); //generate select statement query
             using (SqlConnection conn = new SqlConnection(connString.getConnString()))
             {
                 conn.Open();
-                command = new SqlCommand(weeks[0], conn);
+                command = new SqlCommand(date[0], conn);
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -102,11 +123,11 @@ namespace TestForms
                         };
                         if (prediction_chart1.Series.IsUniqueName(reader["Product Name"].ToString()))
                             this.prediction_chart1.Series.Add(series1);
-                        this.prediction_chart1.Series[reader["Product Name"].ToString()].Points.AddXY("Week 1", reader["Quantity Order"].ToString());
+                        this.prediction_chart1.Series[reader["Product Name"].ToString()].Points.AddXY("First Week", reader["Quantity Order"].ToString());
                     }
                 }
 
-                command = new SqlCommand(weeks[1], conn);
+                command = new SqlCommand(date[1], conn);
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -118,11 +139,11 @@ namespace TestForms
                         };
                         if (prediction_chart2.Series.IsUniqueName(reader["Product Name"].ToString()))
                             this.prediction_chart2.Series.Add(series1);
-                        this.prediction_chart2.Series[reader["Product Name"].ToString()].Points.AddXY("Week 2", reader["Quantity Order"].ToString());
+                        this.prediction_chart2.Series[reader["Product Name"].ToString()].Points.AddXY("Second Week", reader["Quantity Order"].ToString());
                     }
                 }
 
-                command = new SqlCommand(weeks[2], conn);
+                command = new SqlCommand(date[2], conn);
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -134,11 +155,11 @@ namespace TestForms
                         };
                         if (prediction_chart3.Series.IsUniqueName(reader["Product Name"].ToString()))
                             this.prediction_chart3.Series.Add(series1);
-                        this.prediction_chart3.Series[reader["Product Name"].ToString()].Points.AddXY("Week 3", reader["Quantity Order"].ToString()); 
+                        this.prediction_chart3.Series[reader["Product Name"].ToString()].Points.AddXY("Third Week", reader["Quantity Order"].ToString());
                     }
                 }
 
-                command = new SqlCommand(weeks[3], conn);
+                command = new SqlCommand(date[3], conn);
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -150,12 +171,36 @@ namespace TestForms
                         };
                         if (prediction_chart4.Series.IsUniqueName(reader["Product Name"].ToString()))
                             this.prediction_chart4.Series.Add(series1);
-                        this.prediction_chart4.Series[reader["Product Name"].ToString()].Points.AddXY("Week 4", reader["Quantity Order"].ToString());
+                        this.prediction_chart4.Series[reader["Product Name"].ToString()].Points.AddXY("Fourth Week", reader["Quantity Order"].ToString());
                     }
                 }
+
+                command = new SqlCommand(date[4], conn);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        prediction = reader["Product Name"].ToString();                      
+                    }
+                }
+
                 conn.Close();
             }
+        }
 
+        private void dateTimePicker_from_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePicker_until.Value = dateTimePicker_from.Value.AddMonths(1);
+        }
+
+        private void dateTimePicker_until_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePicker_from.Value = dateTimePicker_until.Value.AddMonths(-1);
+        }
+
+        private void btnDisplayPrediction_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show(prediction);
         }
 
         private void chart1_Click(object sender, EventArgs e)
@@ -201,56 +246,6 @@ class PyClass:
             //string msg = py.CallFunction("isodd", 6).ToString();
             //Console.WriteLine(msg);
             //MessageBox.Show(msg, "Message");*/
-        }
-
-        private void btnMakeCSV_Click(object sender, EventArgs e)
-        {
-            string userName = Environment.UserName;
-
-            string[] weeks = generateQuery();
-            //EXPORT CSV FILE BASED ON THE QUERY           
-            SqlDataAdapter adapter = new SqlDataAdapter(weeks[1], connString.getConnString());
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-
-            try
-            {
-                StreamWriter streamWriter = new StreamWriter(@"C:\Users\" + userName + @"\Documents\predictionData.csv", false);
-
-                int colCount = dt.Columns.Count;
-                for (int i = 0; i < colCount; i++)
-                {
-                    streamWriter.Write(dt.Columns[i]);
-                    if (i < colCount - 1)
-                    {
-                        streamWriter.Write(",");
-                    }
-                }
-                streamWriter.Write(streamWriter.NewLine);
-                //write all the rows
-                foreach (DataRow dr in dt.Rows)
-                {
-                    for (int i = 0; i < colCount; i++)
-                    {
-                        if (!Convert.IsDBNull(dr[i]))
-                        {
-                            streamWriter.Write(dr[i].ToString());
-                        }
-                        if (i < colCount - 1)
-                        {
-                            streamWriter.Write(",");
-                        }
-                    }
-                    streamWriter.Write(streamWriter.NewLine);
-                }
-                streamWriter.Close();
-                MessageBox.Show("Successfully Exported");
-                Process.Start(@"C:\Users\" + userName + @"\Documents\predictionData.csv");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
     }
 }
