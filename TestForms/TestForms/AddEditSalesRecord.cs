@@ -389,6 +389,7 @@ namespace TestForms
 
         private void ValueChanged(object sender, EventArgs e)
         {
+            CalculateFinalPrice();
             SqlCommand command;
 
             using (SqlConnection conn = new SqlConnection(connString.getConnString())) {
@@ -409,19 +410,29 @@ namespace TestForms
         }
 
         private void CalculateFinalPrice() {
-            int DiscountPercent = Int32.Parse(txtBox_discount.Text);
+            double DiscountPercent;
             double DiscountPrice;
-            int productQty = Int32.Parse(txtBox_productQty.Value.ToString());
-            double productPrice = Double.Parse(txtBox_productPrice.Text);
-            productFinalPrice = (productQty * productPrice);
+            double productQty;
+            double productPrice;
 
-            if (DiscountPercent > 0)
+            if (txtBox_discount.Text == "")
+                txtBox_discount.Text = "0";
+
+            if (txtBox_productQty.Value.ToString() != "" && txtBox_productPrice.Text != "")
             {
-                DiscountPrice = (productQty * ProductPrice * (DiscountPercent / 100));
-                productFinalPrice = productFinalPrice - DiscountPrice;
-            }
+                productQty = Convert.ToDouble(txtBox_productQty.Value);
+                productPrice = Convert.ToDouble(txtBox_productPrice.Text);
+                productFinalPrice = Convert.ToDouble(productQty * productPrice);
+                DiscountPercent = Convert.ToDouble(txtBox_discount.Text);
 
-            txtBox_finalPrice.Text = productFinalPrice.ToString();
+                if (DiscountPercent > 0)
+                {
+                    DiscountPrice = (productFinalPrice * (DiscountPercent / 100));
+                    productFinalPrice = Math.Round(Convert.ToDouble(productFinalPrice) - Convert.ToDouble(DiscountPrice), 2);
+                }
+
+                txtBox_finalPrice.Text = productFinalPrice.ToString();
+            }
         }
 
         private void OnKeyUp(object sender, KeyEventArgs e)
