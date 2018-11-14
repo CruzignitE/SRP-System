@@ -365,6 +365,8 @@ namespace TestForms
                 txtBox_discount.Text = table.Rows[tableRowIndex]["Discount Percentage"].ToString();
                 double totalPrice = Convert.ToDouble(table.Rows[tableRowIndex]["Total Price"]);
                 grandTotal -= totalPrice; //decrease the value
+                if (!isAdd)
+                    btnRefundProduct.Enabled = true;
             }
         }
 
@@ -438,6 +440,19 @@ namespace TestForms
         private void OnKeyUp(object sender, KeyEventArgs e)
         {
             CalculateFinalPrice();
+        }
+
+        private void btnRefundProduct_Click(object sender, EventArgs e)
+        {
+            RefundAdd addRefund = new RefundAdd(txtBox_productID.Text, txtBox_productName.Text, Convert.ToInt32(txtBox_productQty.Value));
+            addRefund.ShowDialog();
+            btnRefundProduct.Enabled = false;
+            txtBox_productID.Text = "";
+            txtBox_productName.Text = "";
+            txtBox_productQty.Value = 0;
+            txtBox_productPrice.Text = "";
+            txtBox_discount.Text = "";
+            txtBox_finalPrice.Text = "";
         }
     }
 }

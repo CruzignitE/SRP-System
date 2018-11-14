@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.label_desc = new System.Windows.Forms.Label();
-            this.textBox_desc = new System.Windows.Forms.TextBox();
+            this.txtBoxDescription = new System.Windows.Forms.TextBox();
             this.label_pName = new System.Windows.Forms.Label();
-            this.textBox_pName = new System.Windows.Forms.TextBox();
+            this.txtBoxProductName = new System.Windows.Forms.TextBox();
             this.label_pID = new System.Windows.Forms.Label();
-            this.textBox_pID = new System.Windows.Forms.TextBox();
+            this.txtBoxProductID = new System.Windows.Forms.TextBox();
             this.editButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.label_qty = new System.Windows.Forms.Label();
             this.textBox_managerPass = new System.Windows.Forms.TextBox();
             this.label_managerPass = new System.Windows.Forms.Label();
-            this.numericUpDown_qty = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_qty)).BeginInit();
+            this.txtBoxQty = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBoxQty)).BeginInit();
             this.SuspendLayout();
             // 
             // label_desc
@@ -54,14 +54,14 @@
             this.label_desc.TabIndex = 12;
             this.label_desc.Text = "Description:";
             // 
-            // textBox_desc
+            // txtBoxDescription
             // 
-            this.textBox_desc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_desc.Location = new System.Drawing.Point(44, 145);
-            this.textBox_desc.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_desc.Name = "textBox_desc";
-            this.textBox_desc.Size = new System.Drawing.Size(699, 26);
-            this.textBox_desc.TabIndex = 11;
+            this.txtBoxDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBoxDescription.Location = new System.Drawing.Point(44, 145);
+            this.txtBoxDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxDescription.Name = "txtBoxDescription";
+            this.txtBoxDescription.Size = new System.Drawing.Size(699, 26);
+            this.txtBoxDescription.TabIndex = 11;
             // 
             // label_pName
             // 
@@ -74,14 +74,15 @@
             this.label_pName.TabIndex = 10;
             this.label_pName.Text = "Product Name:";
             // 
-            // textBox_pName
+            // txtBoxProductName
             // 
-            this.textBox_pName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_pName.Location = new System.Drawing.Point(280, 65);
-            this.textBox_pName.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_pName.Name = "textBox_pName";
-            this.textBox_pName.Size = new System.Drawing.Size(463, 26);
-            this.textBox_pName.TabIndex = 9;
+            this.txtBoxProductName.Enabled = false;
+            this.txtBoxProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBoxProductName.Location = new System.Drawing.Point(280, 65);
+            this.txtBoxProductName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxProductName.Name = "txtBoxProductName";
+            this.txtBoxProductName.Size = new System.Drawing.Size(463, 26);
+            this.txtBoxProductName.TabIndex = 9;
             // 
             // label_pID
             // 
@@ -94,14 +95,15 @@
             this.label_pID.TabIndex = 8;
             this.label_pID.Text = "Product ID:";
             // 
-            // textBox_pID
+            // txtBoxProductID
             // 
-            this.textBox_pID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox_pID.Location = new System.Drawing.Point(44, 65);
-            this.textBox_pID.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_pID.Name = "textBox_pID";
-            this.textBox_pID.Size = new System.Drawing.Size(184, 26);
-            this.textBox_pID.TabIndex = 7;
+            this.txtBoxProductID.Enabled = false;
+            this.txtBoxProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBoxProductID.Location = new System.Drawing.Point(44, 65);
+            this.txtBoxProductID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxProductID.Name = "txtBoxProductID";
+            this.txtBoxProductID.Size = new System.Drawing.Size(184, 26);
+            this.txtBoxProductID.TabIndex = 7;
             // 
             // editButton
             // 
@@ -129,6 +131,7 @@
             this.addButton.Size = new System.Drawing.Size(67, 62);
             this.addButton.TabIndex = 28;
             this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click_1);
             // 
             // label_qty
             // 
@@ -162,14 +165,15 @@
             this.label_managerPass.TabIndex = 41;
             this.label_managerPass.Text = "Manager Password:";
             // 
-            // numericUpDown_qty
+            // txtBoxQty
             // 
-            this.numericUpDown_qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.numericUpDown_qty.Location = new System.Drawing.Point(796, 65);
-            this.numericUpDown_qty.Margin = new System.Windows.Forms.Padding(4);
-            this.numericUpDown_qty.Name = "numericUpDown_qty";
-            this.numericUpDown_qty.Size = new System.Drawing.Size(160, 26);
-            this.numericUpDown_qty.TabIndex = 43;
+            this.txtBoxQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBoxQty.Location = new System.Drawing.Point(796, 65);
+            this.txtBoxQty.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxQty.Name = "txtBoxQty";
+            this.txtBoxQty.Size = new System.Drawing.Size(160, 26);
+            this.txtBoxQty.TabIndex = 43;
+            this.txtBoxQty.ValueChanged += new System.EventHandler(this.txtBoxQty_ValueChanged);
             // 
             // RefundAdd
             // 
@@ -177,22 +181,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1045, 273);
-            this.Controls.Add(this.numericUpDown_qty);
+            this.Controls.Add(this.txtBoxQty);
             this.Controls.Add(this.textBox_managerPass);
             this.Controls.Add(this.label_managerPass);
             this.Controls.Add(this.label_qty);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.label_desc);
-            this.Controls.Add(this.textBox_desc);
+            this.Controls.Add(this.txtBoxDescription);
             this.Controls.Add(this.label_pName);
-            this.Controls.Add(this.textBox_pName);
+            this.Controls.Add(this.txtBoxProductName);
             this.Controls.Add(this.label_pID);
-            this.Controls.Add(this.textBox_pID);
+            this.Controls.Add(this.txtBoxProductID);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RefundAdd";
             this.Text = "Add Refund";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_qty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBoxQty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,16 +205,16 @@
         #endregion
 
         private System.Windows.Forms.Label label_desc;
-        private System.Windows.Forms.TextBox textBox_desc;
+        private System.Windows.Forms.TextBox txtBoxDescription;
         private System.Windows.Forms.Label label_pName;
-        private System.Windows.Forms.TextBox textBox_pName;
+        private System.Windows.Forms.TextBox txtBoxProductName;
         private System.Windows.Forms.Label label_pID;
-        private System.Windows.Forms.TextBox textBox_pID;
+        private System.Windows.Forms.TextBox txtBoxProductID;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Label label_qty;
         private System.Windows.Forms.TextBox textBox_managerPass;
         private System.Windows.Forms.Label label_managerPass;
-        private System.Windows.Forms.NumericUpDown numericUpDown_qty;
+        private System.Windows.Forms.NumericUpDown txtBoxQty;
     }
 }
