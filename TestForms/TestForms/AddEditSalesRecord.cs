@@ -310,11 +310,45 @@ namespace TestForms
                         MessageBox.Show(ex.Message);
                     }
                 }
+                StockDeduct(ids, quantities);
                 
             this.Close();
             }
             else
                 MessageBox.Show("Please select a product!");
+        }
+
+        private void StockDeduct(List<String> id, List<int> qty) {
+            SqlCommand command;
+            int currentStock, newStock;
+            string currentStockCommand = @"SELECT product_stock_qty FROM Product WHERE product_id = @productID";
+            string updateStockCommand = @"UPDATE Product SET product_stock_qty = @salesQty WHERE product_id = @productID";
+
+            using (SqlConnection conn = new SqlConnection(connString.getConnString())) {
+
+                conn.Open();
+                
+                for (int i = 0; i < id.Count; i++) {
+                    command = new SqlCommand(currentStockCommand, conn);
+                    command.Parameters.AddWithValue(@"productID", id[i]);
+
+                    using (SqlDataReader reader = command.ExecuteReader()) {
+                        if (reader.Read()) {
+                            currentStock = Int32.Parse(reader["product_stock_qty"].ToString());
+                            newStock = currentStock - qty[i];
+
+                            reader.Close();
+
+                            command = new SqlCommand(updateStockCommand, conn);
+                            command.Parameters.AddWithValue(@"salesQty", newStock);
+                            command.Parameters.AddWithValue(@"productID", id[i]);
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                }
+                conn.Close();
+            }
+
         }
 
         private void dataGridSalesProduct_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -355,7 +389,23 @@ namespace TestForms
 
         private void ValueChanged(object sender, EventArgs e)
         {
-            //CalculateFinalPrice();
+            SqlCommand command;
+
+            using (SqlConnection conn = new SqlConnection(connString.getConnString())) {
+                conn.Open();
+
+                command = new SqlCommand(@"SELECT product_stock_qty AS 'stock_qty' FROM Product WHERE product_id = '" + txtBox_productID.Text + "'", conn);
+                using (SqlDataReader reader = command.ExecuteReader()) {
+                    if (reader.Read())
+                    {
+                        if (Int32.Parse(txtBox_productQty.Value.ToString()) > Int32.Parse(reader["stock_qty"].ToString())) {
+                            MessageBox.Show("Current stock have only " + reader["stock_qty"].ToString());
+                            txtBox_productQty.Value = Int32.Parse(reader["stock_qty"].ToString());
+                        }
+                    }
+                }
+                conn.Close();
+            }
         }
 
         private void CalculateFinalPrice() {
