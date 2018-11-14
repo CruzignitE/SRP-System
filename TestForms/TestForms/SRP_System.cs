@@ -76,33 +76,25 @@ namespace TestForms
         private void DatabaseBackup(object sender, EventArgs e)
         {
             SqlCommand command;
-            
-            string backupFolder = "C:\\SRPbackup\\";
-            string database = "SRP_SYSTEM.mdf";
-
-            try
+            string userName = Environment.UserName;
+            using (SqlConnection conn = new SqlConnection(connString.getConnString()))
             {
-                using (SqlConnection conn = new SqlConnection(connString.getConnString()))
-                {
-                    // Creates backup query with filename containing date
-                    string backupQuery = "BACKUP DATABASE \"" + AppDomain.CurrentDomain.BaseDirectory + database + "\" TO DISK = '" + backupFolder + database + "-" + DateTime.Now.ToString("yyyy-MM-dd.HH-mm-ss") + ".bak'";
+                // Creates backup query with filename containing date
+                //string backupQuery = "BACKUP DATABASE SRP_SYSTEM TO DISK = 'D:\  + DateTime.Now.ToString("yyyy-MM-dd") + ".bak'";
+                string backupQuery = @"BACKUP DATABASE SRP_SYSTEM TO DISK = 'C:\Users\"+userName+@"\Documents\BACKUP_DATABASE_"+ DateTime.Now.ToString("yyyy-MM-dd") + @".bak'";
 
-                    try
-                    {
-                        conn.Open();
-                        command = new SqlCommand(backupQuery, conn);
-                        command.ExecuteNonQuery();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                try
+                {
+                    conn.Open();
+                    command = new SqlCommand(backupQuery, conn);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
 
         }
 

@@ -17,7 +17,7 @@ namespace TestForms
         public ConnectionString()
         {
             databasePath = path.Substring(0, path.Length - 3);
-            conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + databasePath + @"database\SRP_SYSTEM.mdf;Integrated Security=True;Connect Timeout=30";
+            conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + databasePath + @"database\SRP_SYSTEM.mdf;Initial Catalog=SRP_SYSTEM;Integrated Security=True;Connect Timeout=30;database=SRP_SYSTEM";
         }
 
         public string getConnString()

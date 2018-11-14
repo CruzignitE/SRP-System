@@ -135,6 +135,7 @@ namespace TestForms
 
         private void Btn_CsvExport_Click(object sender, EventArgs e)
         {
+            string userName = Environment.UserName;
             string selectStateForCSV = @"SELECT sr.sales_record_id AS 'Sales ID', CONVERT(VARCHAR(10), sales_record_date) AS 'Sales Date', product_name AS 'Product Name', quantity_order AS 'Quantity Order' FROM Sales_Record AS sr JOIN Sales_Record_Details AS srd ON sr.sales_record_id = srd.sales_record_id JOIN Product AS p ON p.product_id = srd.product_id";
             SqlDataAdapter adapter;
 
@@ -154,7 +155,7 @@ namespace TestForms
 
             try
             {
-                StreamWriter streamWriter = new StreamWriter("D:\\csvData.csv", false);
+                StreamWriter streamWriter = new StreamWriter(@"C:\Users\"+userName+@"\Documents\csvData.csv", false);
 
                 int colCount = dt.Columns.Count;
                 for (int i = 0; i < colCount; i++)
@@ -184,7 +185,7 @@ namespace TestForms
                 }
                 streamWriter.Close();
                 MessageBox.Show("Successfully Exported");
-                Process.Start(@"D:\\csvData.csv");
+                Process.Start(@"C:\Users\" + userName + @"\Documents\csvData.csv");
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
