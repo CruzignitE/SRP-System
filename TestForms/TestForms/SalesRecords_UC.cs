@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Diagnostics;
 
-namespace TestForms
+namespace SRP_System
 {
     public partial class SalesRecords_UC : UserControl
     {

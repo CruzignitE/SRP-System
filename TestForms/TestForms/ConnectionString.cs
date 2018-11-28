@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 
-namespace TestForms
+namespace SRP_System
 {
     class ConnectionString
     {

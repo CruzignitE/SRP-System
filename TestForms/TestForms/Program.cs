@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using Microsoft.Win32;
 using System.Security.Cryptography;
 
-namespace TestForms
+namespace SRP_System
 {
     static class Program
     {

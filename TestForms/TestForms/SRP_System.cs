@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TestForms
+namespace SRP_System
 {
     public partial class SRP_System : Form
     {
@@ -68,11 +68,7 @@ namespace TestForms
 
         }
 
-        /// <summary>
-        /// This fires on loading the application, checks the date and if it differs from the one in the registry, performs a backup.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
         private void DatabaseBackup(object sender, EventArgs e)
         {
             SqlCommand command;
@@ -81,7 +77,7 @@ namespace TestForms
             {
                 // Creates backup query with filename containing date
                 //string backupQuery = "BACKUP DATABASE SRP_SYSTEM TO DISK = 'D:\  + DateTime.Now.ToString("yyyy-MM-dd") + ".bak'";
-                string backupQuery = @"BACKUP DATABASE SRP_SYSTEM TO DISK = 'C:\Users\"+userName+@"\Documents\BACKUP_DATABASE_"+ DateTime.Now.ToString("yyyy-MM-dd") + @".bak'";
+                string backupQuery = @"BACKUP DATABASE SRP_SYSTEM TO DISK = 'C:\Users\"+userName+@"\DropBox\BACKUP_DATABASE_"+ DateTime.Now.ToString("yyyy-MM-dd") + @".bak'";
 
                 try
                 {
@@ -94,14 +90,6 @@ namespace TestForms
                     MessageBox.Show(ex.Message);
                 }
             }
-            
-
-        }
-
-        private void Btn_Database_Click(object sender, EventArgs e)
-        {
-            DatabaseControl databaseControl = new DatabaseControl();
-            databaseControl.ShowDialog();
         }
     }
 }

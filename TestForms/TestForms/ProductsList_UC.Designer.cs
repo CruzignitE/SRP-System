@@ -1,4 +1,4 @@
-﻿namespace TestForms
+﻿namespace SRP_System
 {
     partial class ProductsList_UC
     {
@@ -147,7 +147,7 @@
             this.button_delete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_delete.FlatAppearance.BorderSize = 0;
             this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_delete.Image = global::TestForms.Properties.Resources.delete;
+            this.button_delete.Image = global::SRP_System.Properties.Resources.delete;
             this.button_delete.Location = new System.Drawing.Point(349, 2);
             this.button_delete.Margin = new System.Windows.Forms.Padding(2);
             this.button_delete.Name = "button_delete";
@@ -162,7 +162,7 @@
             this.button_edit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_edit.FlatAppearance.BorderSize = 0;
             this.button_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_edit.Image = global::TestForms.Properties.Resources.edit;
+            this.button_edit.Image = global::SRP_System.Properties.Resources.edit;
             this.button_edit.Location = new System.Drawing.Point(269, 2);
             this.button_edit.Margin = new System.Windows.Forms.Padding(2);
             this.button_edit.Name = "button_edit";
@@ -177,7 +177,7 @@
             this.button_add.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_add.FlatAppearance.BorderSize = 0;
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_add.Image = global::TestForms.Properties.Resources.add;
+            this.button_add.Image = global::SRP_System.Properties.Resources.add;
             this.button_add.Location = new System.Drawing.Point(189, 2);
             this.button_add.Margin = new System.Windows.Forms.Padding(2);
             this.button_add.Name = "button_add";

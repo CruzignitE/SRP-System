@@ -175,3 +175,7 @@ D:\Github\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csproj.CopyComplete
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.csprojAssemblyReference.cache
 D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.DatabaseControl.resources
 C:\Users\Steven\Documents\GitHub\SRP-System\TestForms\TestForms\obj\Debug\TestForms.DatabaseControl.resources
+D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\TestForms.exe.manifest
+D:\Projects\SRP-System\TestForms\TestForms\bin\Debug\TestForms.application
+D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.exe.manifest
+D:\Projects\SRP-System\TestForms\TestForms\obj\Debug\TestForms.application

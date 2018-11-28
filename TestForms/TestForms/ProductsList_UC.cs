@@ -10,7 +10,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace TestForms
+namespace SRP_System
 {
     public partial class ProductsList_UC : UserControl
     {
@@ -18,7 +18,7 @@ namespace TestForms
         private SqlDataAdapter dataAdapter;
         private DataTable table;
         private String productID, productName, productUnitPrice, productStatus, productCategory;
-        private String selectQuery_Products = "SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_category AS 'Product Category', product_unit AS 'Product Unit', product_price AS 'Product Price', product_description AS 'Product Description', CASE WHEN product_status=1 THEN 'Active' ELSE 'Inactive' END AS 'Product Status' FROM Product";
+        private String selectQuery_Products = "SELECT product_id AS 'Product ID', product_name AS 'Product Name', product_category AS 'Product Category', product_price AS 'Product Price', product_description AS 'Product Description', CASE WHEN product_status=1 THEN 'Active' ELSE 'Inactive' END AS 'Product Status' FROM Product";
 
         public ProductsList_UC()
         {

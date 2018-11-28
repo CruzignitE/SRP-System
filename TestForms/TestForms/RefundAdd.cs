@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Data.SqlClient;
 
-namespace TestForms
+namespace SRP_System
 {
     public partial class RefundAdd : Form
     {
@@ -114,8 +114,6 @@ namespace TestForms
                 }
                 else
                     MessageBox.Show("Incorrect manager password.", "Wrong password", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                
             }
         }
 

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace TestForms
+namespace SRP_System
 {
     partial class SalesRecords_UC
     {
@@ -126,7 +126,7 @@ namespace TestForms
             this.button_popupGraph.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_popupGraph.FlatAppearance.BorderSize = 0;
             this.button_popupGraph.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_popupGraph.Image = global::TestForms.Properties.Resources.sales_display_graph;
+            this.button_popupGraph.Image = global::SRP_System.Properties.Resources.sales_display_graph;
             this.button_popupGraph.Location = new System.Drawing.Point(352, 2);
             this.button_popupGraph.Margin = new System.Windows.Forms.Padding(2);
             this.button_popupGraph.Name = "button_popupGraph";
@@ -142,7 +142,7 @@ namespace TestForms
             this.button_popupPie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_popupPie.FlatAppearance.BorderSize = 0;
             this.button_popupPie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_popupPie.Image = global::TestForms.Properties.Resources.sales_display_pie;
+            this.button_popupPie.Image = global::SRP_System.Properties.Resources.sales_display_pie;
             this.button_popupPie.Location = new System.Drawing.Point(407, 2);
             this.button_popupPie.Margin = new System.Windows.Forms.Padding(2);
             this.button_popupPie.Name = "button_popupPie";
@@ -258,7 +258,7 @@ namespace TestForms
             this.button_edit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_edit.FlatAppearance.BorderSize = 0;
             this.button_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_edit.Image = global::TestForms.Properties.Resources.edit;
+            this.button_edit.Image = global::SRP_System.Properties.Resources.edit;
             this.button_edit.Location = new System.Drawing.Point(270, 2);
             this.button_edit.Margin = new System.Windows.Forms.Padding(2);
             this.button_edit.Name = "button_edit";
@@ -273,7 +273,7 @@ namespace TestForms
             this.button_add.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_add.FlatAppearance.BorderSize = 0;
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_add.Image = global::TestForms.Properties.Resources.add;
+            this.button_add.Image = global::SRP_System.Properties.Resources.add;
             this.button_add.Location = new System.Drawing.Point(190, 2);
             this.button_add.Margin = new System.Windows.Forms.Padding(2);
             this.button_add.Name = "button_add";
@@ -288,7 +288,7 @@ namespace TestForms
             this.button_delete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_delete.FlatAppearance.BorderSize = 0;
             this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_delete.Image = global::TestForms.Properties.Resources.delete;
+            this.button_delete.Image = global::SRP_System.Properties.Resources.delete;
             this.button_delete.Location = new System.Drawing.Point(350, 2);
             this.button_delete.Margin = new System.Windows.Forms.Padding(2);
             this.button_delete.Name = "button_delete";

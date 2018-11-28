@@ -1,4 +1,4 @@
-﻿namespace TestForms
+﻿namespace SRP_System
 {
     partial class AddEditSalesRecord
     {
@@ -173,7 +173,7 @@
             this.btn_addProduct.BackColor = System.Drawing.Color.Transparent;
             this.btn_addProduct.FlatAppearance.BorderSize = 0;
             this.btn_addProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_addProduct.Image = global::TestForms.Properties.Resources.add;
+            this.btn_addProduct.Image = global::SRP_System.Properties.Resources.add;
             this.btn_addProduct.Location = new System.Drawing.Point(947, 112);
             this.btn_addProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_addProduct.Name = "btn_addProduct";
@@ -187,7 +187,7 @@
             this.btn_cancel.BackColor = System.Drawing.Color.Transparent;
             this.btn_cancel.FlatAppearance.BorderSize = 0;
             this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancel.Image = global::TestForms.Properties.Resources.cancel;
+            this.btn_cancel.Image = global::SRP_System.Properties.Resources.cancel;
             this.btn_cancel.Location = new System.Drawing.Point(943, 603);
             this.btn_cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_cancel.Name = "btn_cancel";
@@ -201,7 +201,7 @@
             this.btn_confirm.BackColor = System.Drawing.Color.Transparent;
             this.btn_confirm.FlatAppearance.BorderSize = 0;
             this.btn_confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_confirm.Image = global::TestForms.Properties.Resources.confirm;
+            this.btn_confirm.Image = global::SRP_System.Properties.Resources.confirm;
             this.btn_confirm.Location = new System.Drawing.Point(868, 603);
             this.btn_confirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_confirm.Name = "btn_confirm";

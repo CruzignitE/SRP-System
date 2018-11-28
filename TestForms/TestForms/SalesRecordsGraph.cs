@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TestForms
+namespace SRP_System
 {
     public partial class SalesRecordsGraph : Form
     {

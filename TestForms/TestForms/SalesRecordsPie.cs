@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TestForms
+namespace SRP_System
 {
     public partial class SalesRecordsPie : Form
     {
@@ -21,12 +21,6 @@ namespace TestForms
         System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
 
         List<String> categories = new List<String>();
-
-        // TODO: Pass starting and ending dates in constructor for chart generation
-        //private string selectQuery_part1 = @"SELECT sr.sales_record_date AS 'Sales Date', SUM(p.product_price * srd.quantity_order) AS 'Sales Total Price' FROM Sales_Record AS sr JOIN Sales_Record_Details  srd ON sr.sales_record_id = srd.sales_record_id JOIN Product as p ON srd.product_id = p.product_id WHERE product_category = '";
-        //private string selectQuery_part2 = @"' GROUP BY sr.sales_record_date";
-        //private string selectQuery_date1 = @"' AND sr.sales_record_date BETWEEN '";
-        //private string selectQuery_date2 = @"' AND '";
 
         private string selectQuery_part1 = @"SELECT SUM(p.product_price * srd.quantity_order) AS 'Sales Total Price', p.product_category AS 'Category' FROM Sales_Record AS sr JOIN Sales_Record_Details srd ON sr.sales_record_id = srd.sales_record_id JOIN Product as p ON srd.product_id = p.product_id ";
         private string selectQuery_part2 = @"GROUP BY p.product_category";

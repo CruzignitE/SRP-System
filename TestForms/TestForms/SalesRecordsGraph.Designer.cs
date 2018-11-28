@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace TestForms
+namespace SRP_System
 {
     partial class SalesRecordsGraph
     {

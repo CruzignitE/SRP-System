@@ -1,4 +1,4 @@
-﻿namespace TestForms
+﻿namespace SRP_System
 {
     partial class ProductsAdd
     {
@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBoxName = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.editButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
@@ -46,7 +45,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBox1.Location = new System.Drawing.Point(44, 65);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(184, 26);
@@ -78,22 +77,10 @@
             // 
             this.txtBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtBoxName.Location = new System.Drawing.Point(280, 65);
-            this.txtBoxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.Size = new System.Drawing.Size(463, 26);
             this.txtBoxName.TabIndex = 2;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.checkBox1.Location = new System.Drawing.Point(783, 65);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(119, 24);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Perishable?";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -111,7 +98,7 @@
             this.editButton.BackColor = System.Drawing.Color.Transparent;
             this.editButton.FlatAppearance.BorderSize = 0;
             this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editButton.Image = global::TestForms.Properties.Resources.cancel;
+            this.editButton.Image = global::SRP_System.Properties.Resources.cancel;
             this.editButton.Location = new System.Drawing.Point(831, 145);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(67, 61);
@@ -124,7 +111,7 @@
             this.addButton.BackColor = System.Drawing.Color.Transparent;
             this.addButton.FlatAppearance.BorderSize = 0;
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addButton.Image = global::TestForms.Properties.Resources.confirm;
+            this.addButton.Image = global::SRP_System.Properties.Resources.confirm;
             this.addButton.Location = new System.Drawing.Point(744, 145);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(67, 61);
@@ -149,7 +136,7 @@
             this.txtBoxPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtBoxPrice.InterceptArrowKeys = false;
             this.txtBoxPrice.Location = new System.Drawing.Point(280, 145);
-            this.txtBoxPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxPrice.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -172,7 +159,7 @@
             "Pain Medication",
             "Vitamins & Supplements"});
             this.sltCategory.Location = new System.Drawing.Point(44, 145);
-            this.sltCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sltCategory.Margin = new System.Windows.Forms.Padding(4);
             this.sltCategory.Name = "sltCategory";
             this.sltCategory.Size = new System.Drawing.Size(184, 24);
             this.sltCategory.TabIndex = 31;
@@ -190,12 +177,11 @@
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBoxName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductsAdd";
             this.Text = "Add Product";
             ((System.ComponentModel.ISupportInitialize)(this.txtBoxPrice)).EndInit();
@@ -210,7 +196,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBoxName;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button addButton;

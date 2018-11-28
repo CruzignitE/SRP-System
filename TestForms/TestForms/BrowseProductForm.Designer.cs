@@ -1,4 +1,4 @@
-﻿namespace TestForms
+﻿namespace SRP_System
 {
     partial class BrowseProductForm
     {

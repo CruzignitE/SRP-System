@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 
-namespace TestForms
+namespace SRP_System
 {
     public partial class ProductsEdit : Form
     {

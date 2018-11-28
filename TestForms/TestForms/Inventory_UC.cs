@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace TestForms
+namespace SRP_System
 {
     public partial class Inventory_UC : UserControl
     {

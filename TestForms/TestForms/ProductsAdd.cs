@@ -10,7 +10,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace TestForms
+namespace SRP_System
 {
     public partial class ProductsAdd : Form
     {

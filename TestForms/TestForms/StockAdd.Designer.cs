@@ -1,4 +1,4 @@
-﻿namespace TestForms
+﻿namespace SRP_System
 {
     partial class StockAdd
     {
@@ -154,7 +154,7 @@
             this.editButton.BackColor = System.Drawing.Color.Transparent;
             this.editButton.FlatAppearance.BorderSize = 0;
             this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editButton.Image = global::TestForms.Properties.Resources.cancel;
+            this.editButton.Image = global::SRP_System.Properties.Resources.cancel;
             this.editButton.Location = new System.Drawing.Point(885, 165);
             this.editButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editButton.Name = "editButton";
@@ -168,7 +168,7 @@
             this.addButton.BackColor = System.Drawing.Color.Transparent;
             this.addButton.FlatAppearance.BorderSize = 0;
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addButton.Image = global::TestForms.Properties.Resources.confirm;
+            this.addButton.Image = global::SRP_System.Properties.Resources.confirm;
             this.addButton.Location = new System.Drawing.Point(798, 165);
             this.addButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addButton.Name = "addButton";

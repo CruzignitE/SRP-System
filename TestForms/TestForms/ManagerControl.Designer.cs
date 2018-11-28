@@ -1,4 +1,4 @@
-﻿namespace TestForms
+﻿namespace SRP_System
 {
     partial class ManagerControl
     {
@@ -65,7 +65,7 @@
             this.btn_cancel.BackColor = System.Drawing.Color.Transparent;
             this.btn_cancel.FlatAppearance.BorderSize = 0;
             this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancel.Image = global::TestForms.Properties.Resources.cancel;
+            this.btn_cancel.Image = global::SRP_System.Properties.Resources.cancel;
             this.btn_cancel.Location = new System.Drawing.Point(160, 274);
             this.btn_cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_cancel.Name = "btn_cancel";
@@ -79,7 +79,7 @@
             this.btn_confirm.BackColor = System.Drawing.Color.Transparent;
             this.btn_confirm.FlatAppearance.BorderSize = 0;
             this.btn_confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_confirm.Image = global::TestForms.Properties.Resources.confirm;
+            this.btn_confirm.Image = global::SRP_System.Properties.Resources.confirm;
             this.btn_confirm.Location = new System.Drawing.Point(95, 274);
             this.btn_confirm.Margin = new System.Windows.Forms.Padding(2);
             this.btn_confirm.Name = "btn_confirm";

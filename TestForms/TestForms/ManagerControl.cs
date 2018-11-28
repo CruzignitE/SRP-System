@@ -10,7 +10,7 @@ using Microsoft.Win32;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 
-namespace TestForms
+namespace SRP_System
 {
     public partial class ManagerControl : Form
     {
